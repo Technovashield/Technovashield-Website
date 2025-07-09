@@ -1,0 +1,79 @@
+/* src/styles/Navbar.css */
+
+.navbar-header {
+  font-family: Arial, sans-serif;
+}
+
+.navbar-top {
+  background-color: #002b45; /* deep blue */
+  color: white;
+  padding: 10px 40px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 50px; /* Increase this */
+  font-size: 0.95rem;
+}
+
+.navbar-top-links a {
+  color: white;
+  margin-left: 1.5rem;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.donate-button {
+  margin-left: 1.5rem;
+  background-color: #74B9FF;
+  color: #002d4d;
+  padding: 0.6rem 1.4rem; /* Increased padding */
+  border: none;
+  border-radius: 20px;
+  font-size: 1rem; /* Increased from default (~0.9rem) */
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.donate-button:hover {
+  background-color: #a5d3ff;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: white;
+  color: #0A3D62;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.logo-only {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.logo-img-only {
+  width: 120px;              /* Make logo more prominent horizontally */
+  height: 120px;             /* Keep height fixed to avoid stretching navbar */
+  object-fit: contain;      /* Ensure it doesn’t overflow */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.7rem;
+}
+
+.nav-links a {
+  color: #002b45; /* darker navy shade */
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-decoration: none;
+  padding: 0 1rem;
+}
+
+.nav-links a:hover {
+  color: #74B9FF;
+}
