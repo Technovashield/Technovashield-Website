@@ -1,4 +1,12 @@
 // Example for AboutPage.js
 import React from "react";
-const AboutPage = () => <div>About Page (coming soon)</div>;
+import Footer from "../components/Footer";
+
+const AboutPage = () => (
+  <div>
+    About Page (coming soon)
+    <Footer />
+  </div>
+);
+
 export default AboutPage;

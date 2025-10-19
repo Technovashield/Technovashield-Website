@@ -1,13 +1,16 @@
-import React from "react";
+﻿import React from "react";
 import HeroSection from "../components/HeroSection";
+import FocusAreas from "../components/FocusAreas";
+import FeaturedProjects from "../components/FeaturedProjects";
+import Footer from "../components/Footer";
 
 const HomePage = () => {
   return (
     <div>
       <HeroSection />
-      <div className="p-6 text-center">
-        <h2 className="text-xl font-semibold mt-6">More exciting content coming soon...</h2>
-      </div>
+      <FocusAreas />
+      <FeaturedProjects />
+      <Footer />
     </div>
   );
 };
