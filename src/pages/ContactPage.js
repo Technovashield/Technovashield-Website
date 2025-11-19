@@ -1,6 +1,12 @@
-﻿import React, { useState } from "react";
+﻿import React, { useState, useEffect } from "react";
 import '../styles/ContactPage.css';
 import Footer from "../components/Footer";
+import emailjs from '@emailjs/browser';
+
+// EmailJS configuration
+const EMAILJS_SERVICE_ID = 'service_e5r4nvt';
+const EMAILJS_TEMPLATE_ID = 'template_94wayx1';
+const EMAILJS_PUBLIC_KEY = 'umV7HF4yoG6OoQ2rJ';
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -10,6 +16,11 @@ const ContactPage = () => {
   });
   
   const [formStatus, setFormStatus] = useState('');
+
+  // Initialize EmailJS
+  useEffect(() => {
+    emailjs.init(EMAILJS_PUBLIC_KEY);
+  }, []);
 
   const handleChange = (e) => {
     setFormData({
@@ -34,16 +45,38 @@ const ContactPage = () => {
       return;
     }
     
-    // Simulate form submission
+    // Set sending status
     setFormStatus('sending');
-    setTimeout(() => {
-      setFormStatus('success');
-      setFormData({ name: '', email: '', message: '' });
-      
-      setTimeout(() => {
-        setFormStatus('');
-      }, 5000);
-    }, 2000);
+    
+    // Prepare email data
+    const emailData = {
+      from_name: formData.name,
+      from_email: formData.email,
+      message: formData.message,
+      to_email: 'admin@technovashield.com'
+    };
+    
+    // Send email using EmailJS
+    emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, emailData)
+      .then((response) => {
+        console.log('SUCCESS!', response.status, response.text);
+        setFormStatus('success');
+        setFormData({ name: '', email: '', message: '' });
+        
+        // Hide success message after 5 seconds
+        setTimeout(() => {
+          setFormStatus('');
+        }, 5000);
+      })
+      .catch((error) => {
+        console.log('FAILED...', error);
+        setFormStatus('Failed to send message. Please try again.');
+        
+        // Hide error message after 5 seconds
+        setTimeout(() => {
+          setFormStatus('');
+        }, 5000);
+      });
   };
 
   return (
