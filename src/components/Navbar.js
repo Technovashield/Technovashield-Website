@@ -18,26 +18,30 @@ const Navbar = () => {
       {/* Top Strip */}
       <div className="navbar-top">
         <div className="navbar-top-links">
-          <Link to="/careers">Careers</Link>
-          <Link to="/contact">Contact Us</Link>
+          <Link to="/careers" className="top-link">Careers</Link>
+          <Link to="/contact" className="top-link">Contact Us</Link>
           <button className="donate-button">Donate</button>
         </div>
       </div>
 
-      {/* Main Nav */}
+      {/* Main Navbar */}
       <nav className="navbar">
         <div className="logo-only">
-          <img src="/techImg.png" alt="Technovashield logo" className="logo-img-only" />
+          <img src="/Tech_Logo2.png" alt="Technovashield logo" className="logo-img-only" />
         </div>
-        
-        {/* Hamburger Menu Icon */}
-        <button className={`hamburger ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu} aria-label="Toggle menu">
+
+        {/* Hamburger Menu */}
+        <button
+          className={`hamburger ${isMenuOpen ? "active" : ""}`}
+          onClick={toggleMenu}
+          aria-label="Toggle menu"
+        >
           <span></span>
           <span></span>
           <span></span>
         </button>
 
-        <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
+        <ul className={`nav-links ${isMenuOpen ? "active" : ""}`}>
           <li><Link to="/" onClick={closeMenu}>Home</Link></li>
           <li><Link to="/about" onClick={closeMenu}>About</Link></li>
           <li><Link to="/products" onClick={closeMenu}>Products</Link></li>

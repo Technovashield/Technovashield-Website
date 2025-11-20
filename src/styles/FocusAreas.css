@@ -1,81 +1,118 @@
-﻿/* Focus Areas Section Styles */
-.focus-section {
-    padding: 100px 20px;
-    background: #f8f9fa;
-}
+﻿/* FocusAreas.css */
 
-.focus-content {
-    max-width: 1200px;
-    margin: 0 auto;
+.focus-section {
+  background: linear-gradient(180deg, #ffffff, #eafcff);
+  padding: 80px 20px;
+  text-align: center;
 }
 
 .focus-header {
-    text-align: center;
-    margin-bottom: 60px;
+  margin-bottom: 50px;
 }
 
-.focus-header h2 {
-    font-size: 42px;
-    color: #333;
-    margin-bottom: 16px;
+.focus-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #00363d;
+  margin-bottom: 10px;
 }
 
-.focus-header p {
-    font-size: 18px;
-    color: #666;
-    max-width: 700px;
-    margin: 0 auto;
+.focus-subtext {
+  font-size: 1.2rem;
+  color: #4f6367;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
 }
 
 .focus-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  justify-content: center;
 }
 
 .focus-card {
-    background: white;
-    padding: 40px 30px;
-    border-radius: 12px;
-    text-align: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 40px 25px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s ease;
+  cursor: pointer;
+  border: 1px solid rgba(0, 168, 181, 0.2);
 }
 
 .focus-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 168, 181, 0.3);
+  border-color: rgba(0, 168, 181, 0.4);
 }
 
 .focus-icon {
-    font-size: 48px;
-    color: #0ea5e9;
-    margin-bottom: 24px;
+  font-size: 3rem;
+  color: #00a8b5;
+  margin-bottom: 20px;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.focus-card h3 {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 16px;
+.focus-card:hover .focus-icon {
+  color: #007f91;
+  transform: scale(1.1);
+  text-shadow: 0 0 12px rgba(0, 168, 181, 0.7);
 }
 
-.focus-card p {
-    font-size: 16px;
-    color: #666;
-    line-height: 1.6;
+.focus-card-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #00363d;
+  margin-bottom: 12px;
 }
 
+.focus-card-text {
+  font-size: 1rem;
+  color: #4f6367;
+  line-height: 1.6;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+/* Scroll animation effect */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.focus-card {
+  animation: fadeInUp 1.2s ease-in-out;
+}
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
-    .focus-section {
-        padding: 60px 20px;
-    }
-    
-    .focus-header h2 {
-        font-size: 32px;
-    }
-    
-    .focus-grid {
-        grid-template-columns: 1fr;
-        gap: 24px;
-    }
+  .focus-title {
+    font-size: 2rem;
+  }
+  .focus-subtext {
+    font-size: 1rem;
+  }
+  .focus-card {
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .focus-title {
+    font-size: 1.8rem;
+  }
+  .focus-card-title {
+    font-size: 1.3rem;
+  }
+  .focus-card-text {
+    font-size: 0.9rem;
+  }
 }

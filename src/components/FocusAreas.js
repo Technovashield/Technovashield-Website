@@ -1,5 +1,6 @@
-﻿import React from "react";
-import '../styles/FocusAreas.css';
+﻿
+import React from "react";
+import "../styles/FocusAreas.css";
 
 const FocusAreas = () => {
   const focusData = [
@@ -7,28 +8,34 @@ const FocusAreas = () => {
       id: 1,
       icon: "fas fa-heartbeat",
       title: "Healthcare AI",
-      description: "Predictive patient monitoring and clinical automation.",
+      description:
+        "Empowering clinicians with predictive analytics and early detection tools through CareSentinelAI.",
     },
     {
       id: 2,
       icon: "fas fa-shield-alt",
       title: "Cybersecurity",
-      description: "Real-time AI-driven defense for modern enterprises.",
+      description:
+        "Protecting networks and enterprises with AI-driven DDoS detection and real-time defense through CyberShield.",
     },
     {
       id: 3,
       icon: "fas fa-robot",
       title: "Intelligent Automation",
-      description: "Smart UiPath bots that simplify complex business operations.",
+      description:
+        "Building smart UiPath bots that streamline processes and enhance efficiency for modern enterprises.",
     },
   ];
 
   return (
-    <section className="focus-section">
+    <section className="focus-section" id="focus">
       <div className="focus-content">
         <div className="focus-header">
-          <h2>What We Do</h2>
-          <p>Innovative solutions across healthcare, cybersecurity, and automation</p>
+          <h2 className="focus-title">What We Do</h2>
+          <p className="focus-subtext">
+            Innovative solutions across healthcare, cybersecurity, and
+            automation — empowering organizations with AI-driven intelligence.
+          </p>
         </div>
 
         <div className="focus-grid">
@@ -37,8 +44,8 @@ const FocusAreas = () => {
               <div className="focus-icon">
                 <i className={item.icon}></i>
               </div>
-              <h3>{item.title}</h3>
-              <p>{item.description}</p>
+              <h3 className="focus-card-title">{item.title}</h3>
+              <p className="focus-card-text">{item.description}</p>
             </div>
           ))}
         </div>

@@ -1,111 +1,145 @@
-﻿/* Featured Projects Section Styles */
+﻿
+
 .projects-section {
-    padding: 100px 20px;
-    background: white;
+  padding: 100px 20px;
+  background: linear-gradient(180deg, #ffffff, #eafcff);
 }
 
 .projects-content {
-    max-width: 1200px;
-    margin: 0 auto;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .projects-header {
-    text-align: center;
-    margin-bottom: 60px;
+  text-align: center;
+  margin-bottom: 60px;
 }
 
 .projects-header h2 {
-    font-size: 42px;
-    color: #333;
-    margin-bottom: 16px;
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #00363d;
+  margin-bottom: 12px;
 }
 
 .projects-header p {
-    font-size: 18px;
-    color: #666;
-    max-width: 700px;
-    margin: 0 auto;
+  font-size: 1.2rem;
+  color: #4f6367;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 40px;
+  justify-items: center;
 }
 
+/* Standard Project Card */
 .project-card {
-    background: #f8f9fa;
-    border-radius: 12px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s ease;
+  border: 1px solid rgba(0, 168, 181, 0.2);
+  width: 100%;
+  max-width: 380px;
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(0, 168, 181, 0.25);
+  border-color: rgba(0, 168, 181, 0.4);
 }
 
+/* ✅ Flagship Card Fix — CareSentinelAI Highlight, same size but glowing */
+.featured-card {
+  background: linear-gradient(135deg, #00a8b5, #00d4b4);
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(0, 168, 181, 0.3);
+  border: none;
+}
+
+.featured-card .project-info h3,
+.featured-card .project-info p,
+.featured-card .project-link {
+  color: #ffffff;
+}
+
+.featured-card .project-link:hover {
+  background: #ffffff;
+  color: #00a8b5;
+}
+
+/* Icon */
 .project-icon {
-    background: linear-gradient(135deg, #0ea5e9, #0284c7);
-    padding: 60px 30px;
-    text-align: center;
+  background: linear-gradient(135deg, #00a8b5, #007f91);
+  padding: 60px 30px;
+  text-align: center;
 }
 
 .project-icon i {
-    font-size: 64px;
-    color: white;
+  font-size: 3rem;
+  color: white;
+  transition: transform 0.3s ease;
 }
 
+.project-card:hover .project-icon i {
+  transform: scale(1.1);
+}
+
+/* Content */
 .project-info {
-    padding: 30px;
+  padding: 30px;
+  text-align: center;
 }
 
 .project-info h3 {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 12px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #00363d;
 }
 
 .project-info p {
-    font-size: 16px;
-    color: #666;
-    line-height: 1.6;
-    margin-bottom: 20px;
+  font-size: 1rem;
+  color: #4f6367;
+  line-height: 1.6;
+  margin-bottom: 20px;
 }
 
+/* Button */
 .project-link {
-    display: inline-block;
-    color: #0ea5e9;
-    font-weight: 600;
-    text-decoration: none;
-    transition: color 0.3s ease;
+  display: inline-block;
+  border: 2px solid #00a8b5;
+  color: #00a8b5;
+  padding: 10px 24px;
+  border-radius: 25px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
 .project-link:hover {
-    color: #0284c7;
+  background: #00a8b5;
+  color: #ffffff;
 }
 
-.project-link i {
-    margin-left: 6px;
-    transition: transform 0.3s ease;
-}
-
-.project-link:hover i {
-    transform: translateX(4px);
+@media (max-width: 992px) {
+  .projects-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media (max-width: 768px) {
-    .projects-section {
-        padding: 60px 20px;
-    }
-    
-    .projects-header h2 {
-        font-size: 32px;
-    }
-    
-    .projects-grid {
-        grid-template-columns: 1fr;
-        gap: 24px;
-    }
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  .project-card {
+    max-width: 100%;
+  }
 }
+
+

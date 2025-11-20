@@ -2,6 +2,7 @@
 import HeroSection from "../components/HeroSection";
 import FocusAreas from "../components/FocusAreas";
 import FeaturedProjects from "../components/FeaturedProjects";
+import HealthcareImpactSection from "../components/HealthcareImpactSection";
 import Footer from "../components/Footer";
 
 const HomePage = () => {
@@ -10,6 +11,7 @@ const HomePage = () => {
       <HeroSection />
       <FocusAreas />
       <FeaturedProjects />
+      <HealthcareImpactSection />
       <Footer />
     </div>
   );

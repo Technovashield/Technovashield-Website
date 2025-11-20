@@ -1,0 +1,88 @@
+/* ✅ HealthcareImpact Section CSS — Moving Teal Gradient Background and Overlay Styling */
+
+.healthcare-impact-section {
+  position: relative;
+  background: linear-gradient(120deg, #00a8b5, #007f91, #00d4b4);
+  background-size: 300% 300%;
+  animation: gradientMove 8s ease infinite;
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Moving gradient animation */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.healthcare-impact-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.healthcare-impact-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 1;
+}
+
+.healthcare-impact-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.6);
+}
+
+.healthcare-impact-text {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: #eafcff;
+  margin-bottom: 30px;
+}
+
+.healthcare-impact-btn {
+  background-color: #ffffff;
+  color: #007f91;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 32px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+}
+
+.healthcare-impact-btn:hover {
+  background-color: #eafcff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(255, 255, 255, 0.5);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .healthcare-impact-title {
+    font-size: 2rem;
+  }
+  .healthcare-impact-text {
+    font-size: 1rem;
+  }
+  .healthcare-impact-btn {
+    padding: 10px 24px;
+  }
+}

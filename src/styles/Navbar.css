@@ -1,88 +1,129 @@
-/* src/styles/Navbar.css */
-
+/* Navbar.css */
 .navbar-header {
-  font-family: Arial, sans-serif;
+  font-family: "Poppins", Arial, sans-serif;
+  font-weight: 500;
 }
 
+/* --- Top Strip --- */
 .navbar-top {
-  background-color: #002b45; /* deep blue */
+  background: linear-gradient(90deg, #015871, #0284c7);
   color: white;
-  padding: 10px 40px;
+  padding: 12px 50px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  height: 50px; /* Increase this */
-  font-size: 0.95rem;
+  height: 55px;
+  font-size: 1rem;
+  letter-spacing: 0.3px;
 }
 
 .navbar-top-links a {
-  color: white;
-  margin-left: 1.5rem;
+  color: #eafcff;
+  margin-left: 1.8rem;
   text-decoration: none;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
+  transition: color 0.3s ease;
+}
+
+.navbar-top-links a:hover {
+  color: #bdf3ff;
 }
 
 .donate-button {
-  margin-left: 1.5rem;
-  background-color: #74B9FF;
-  color: #002d4d;
-  padding: 0.6rem 1.4rem; /* Increased padding */
+  margin-left: 1.8rem;
+  background: linear-gradient(135deg, #00c8d6, #0284c7);
+  color: white;
+  padding: 0.7rem 1.6rem;
   border: none;
-  border-radius: 20px;
-  font-size: 1rem; /* Increased from default (~0.9rem) */
-  font-weight: bold;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
 }
 
 .donate-button:hover {
-  background-color: #a5d3ff;
+  background: linear-gradient(135deg, #02a5b8, #016fa1);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 168, 181, 0.5);
 }
 
+/* --- Main Navbar --- */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  background-color: white;
-  color: #0A3D62;
-  border-bottom: 1px solid #e0e0e0;
+  padding: 1rem 3rem;
+  background: linear-gradient(90deg, #f8fdff, #e6f7fa);
+  color: #013950;
+  border-bottom: 1px solid #d0ebf4;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .logo-only {
   display: flex;
   align-items: center;
-  height: 100%;
 }
 
+/* Adjusted logo size and alignment for better balance */
 .logo-img-only {
-  width: 120px;              /* Make logo more prominent horizontally */
-  height: 120px;             /* Keep height fixed to avoid stretching navbar */
-  object-fit: contain;      /* Ensure it doesn’t overflow */
+  width: 135px;                  /* larger and more balanced */
+  height: 135px;
+  object-fit: contain;           /* ensures entire logo fits */
+  margin: 6px 10px;
+  background-color: #f4fbff;     
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 150, 180, 0.3);
+  padding: 4px;                  /* reduced padding to prevent cropping */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.logo-img-only:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 14px rgba(0, 150, 180, 0.45);
+}
+
+/* --- Navigation Links --- */
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 1.7rem;
+  gap: 2rem;
 }
 
 .nav-links a {
-  color: #002b45; /* darker navy shade */
-  font-weight: 700;
-  font-size: 1.1rem;
+  color: #01445e;
+  font-weight: 600;
+  font-size: 1.2rem;
   text-decoration: none;
-  padding: 0 1rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background-color: #02a5b8;
+  transition: width 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: #74B9FF;
+  color: #02a5b8;
 }
 
-/* Hamburger Menu */
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* --- Hamburger --- */
 .hamburger {
   display: none;
   flex-direction: column;
-  gap: 5px;
+  gap: 6px;
   background: none;
   border: none;
   cursor: pointer;
@@ -93,13 +134,13 @@
 .hamburger span {
   width: 30px;
   height: 3px;
-  background-color: #002b45;
+  background-color: #01445e;
   border-radius: 3px;
   transition: all 0.3s ease;
 }
 
 .hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(8px, 8px);
+  transform: rotate(45deg) translate(6px, 6px);
 }
 
 .hamburger.active span:nth-child(2) {
@@ -107,146 +148,76 @@
 }
 
 .hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(8px, -8px);
+  transform: rotate(-45deg) translate(6px, -6px);
 }
 
-/* Mobile Responsive Styles */
+/* --- Responsive Design --- */
 @media (max-width: 1024px) {
   .navbar {
-    padding: 1rem 1.5rem;
+    padding: 1rem 2rem;
   }
-  
-  .nav-links {
-    gap: 1.2rem;
-  }
-  
+
   .nav-links a {
-    font-size: 1rem;
-    padding: 0 0.5rem;
+    font-size: 1.1rem;
   }
 }
 
 @media (max-width: 768px) {
   .navbar-top {
-    padding: 8px 20px;
-    height: auto;
-    font-size: 0.85rem;
+    justify-content: center;
+    padding: 10px 20px;
   }
-  
-  .navbar-top-links {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-  }
-  
-  .navbar-top-links a {
-    margin-left: 0;
-    font-size: 0.9rem;
-  }
-  
-  .donate-button {
-    margin-left: 0;
-    padding: 0.5rem 1rem;
-    font-size: 0.85rem;
-  }
-  
+
   .navbar {
-    padding: 0.8rem 1rem;
-    position: relative;
+    padding: 0.8rem 1.2rem;
   }
-  
-  .logo-img-only {
-    width: 80px;
-    height: 80px;
-  }
-  
+
   .hamburger {
     display: flex;
   }
-  
+
   .nav-links {
     position: fixed;
     top: 0;
     right: -100%;
     height: 100vh;
-    width: 70%;
-    max-width: 300px;
-    background-color: white;
+    width: 75%;
+    background: linear-gradient(180deg, #f8fdff, #d9f5fa);
     flex-direction: column;
-    gap: 0;
-    padding: 80px 0 20px 0;
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-    transition: right 0.3s ease;
-    z-index: 1000;
-    overflow-y: auto;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+    padding-top: 120px;
+    box-shadow: -4px 0 12px rgba(0, 0, 0, 0.1);
+    transition: right 0.4s ease;
   }
-  
+
   .nav-links.active {
     right: 0;
   }
-  
-  .nav-links li {
-    width: 100%;
-    border-bottom: 1px solid #e0e0e0;
-  }
-  
+
   .nav-links a {
-    display: block;
-    padding: 1.2rem 1.5rem;
-    width: 100%;
-    font-size: 1.1rem;
-    text-align: left;
+    font-size: 1.4rem;
+    padding: 1rem 2rem;
   }
-  
-  .nav-links a:hover {
-    background-color: #f5f5f5;
+
+  .nav-links a::after {
+    display: none;
   }
 }
 
 @media (max-width: 480px) {
-  .navbar-top {
-    padding: 8px 15px;
-    font-size: 0.75rem;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .navbar-top-links {
-    gap: 0.5rem;
-    font-size: 0.8rem;
-  }
-  
-  .navbar-top-links a {
-    font-size: 0.8rem;
-  }
-  
-  .donate-button {
-    padding: 0.4rem 0.8rem;
-    font-size: 0.75rem;
-  }
-  
-  .navbar {
-    padding: 0.6rem 0.8rem;
-  }
-  
   .logo-img-only {
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
   }
-  
-  .hamburger span {
-    width: 25px;
-    height: 2.5px;
-  }
-  
-  .nav-links {
-    width: 80%;
-    max-width: 280px;
-  }
-  
+
   .nav-links a {
-    font-size: 1rem;
-    padding: 1rem 1.2rem;
+    font-size: 1.2rem;
+  }
+
+  .donate-button {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
   }
 }
-
