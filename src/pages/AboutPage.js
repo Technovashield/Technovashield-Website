@@ -4,6 +4,10 @@ import '../styles/AboutPage.css';
 import Footer from "../components/Footer";
 
 const AboutPage = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <div className="about-page">
       {/* Hero Section */}
@@ -110,7 +114,7 @@ const AboutPage = () => {
             priorities and ethical standards.
           </p>
           <div className="team-cta">
-            <Link to="/team" className="btn btn-primary">Meet the Team</Link>
+            <Link to="/team" className="btn btn-primary" onClick={scrollToTop}>Meet the Team</Link>
           </div>
         </div>
       </section>
@@ -144,7 +148,7 @@ const AboutPage = () => {
         <div className="container">
           <div className="cta-content">
             <h2>Together, we believe in building technology that protects, predicts, and empowers.</h2>
-            <Link to="/products" className="btn btn-primary btn-glow">Explore Our Projects</Link>
+            <Link to="/products" className="btn btn-primary btn-glow" onClick={scrollToTop}>Explore Our Projects</Link>
           </div>
         </div>
       </section>
