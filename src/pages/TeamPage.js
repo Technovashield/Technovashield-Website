@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import '../styles/TeamPage.css';
 import Footer from "../components/Footer";
 

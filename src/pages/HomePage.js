@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import HeroSection from "../components/HeroSection";
 import FocusAreas from "../components/FocusAreas";
 import FeaturedProjects from "../components/FeaturedProjects";

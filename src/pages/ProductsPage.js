@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import '../styles/ProductsPage.css';
 import Footer from "../components/Footer";
 
