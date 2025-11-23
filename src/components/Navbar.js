@@ -27,7 +27,7 @@ const Navbar = () => {
       {/* Main Navbar */}
       <nav className="navbar">
         <div className="logo-only">
-          <img src="/Tech_Logo2.png" alt="Technovashield logo" className="logo-img-only" />
+          <img src="/Tech_logo3.png" alt="Technovashield logo" className="logo-img-only" />
         </div>
 
         {/* Hamburger Menu */}
