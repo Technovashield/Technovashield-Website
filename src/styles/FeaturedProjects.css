@@ -1,64 +1,69 @@
-﻿
+﻿/* FeaturedProjects.css – Final Optimized Version (Readable Text + Larger Buttons) */
 
 .projects-section {
-  padding: 100px 20px;
+  padding: 120px 40px;
   background: linear-gradient(180deg, #ffffff, #eafcff);
 }
 
 .projects-content {
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 100%;
+  margin: 0;
+  padding: 0 40px;
 }
 
 .projects-header {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 80px;
 }
 
 .projects-header h2 {
-  font-size: 2.6rem;
-  font-weight: 700;
+  font-size: 3.5rem;
+  font-weight: 800;
   color: #00363d;
-  margin-bottom: 12px;
+  margin-bottom: 20px;
 }
 
 .projects-header p {
-  font-size: 1.2rem;
-  color: #4f6367;
-  max-width: 700px;
+  font-size: 1.6rem;
+  color: #2e4a4d; /* darker and more readable */
+  font-weight: 500;
+  max-width: 900px;
   margin: 0 auto;
+  line-height: 1.8;
 }
 
+/* Grid layout – evenly spaced 3 cards horizontally */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-  gap: 40px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
   justify-items: center;
+  align-items: stretch;
+  width: 100%;
 }
 
-/* Standard Project Card */
+/* Project Card Styling */
 .project-card {
   background: #ffffff;
-  border-radius: 16px;
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
   transition: all 0.4s ease;
   border: 1px solid rgba(0, 168, 181, 0.2);
   width: 100%;
-  max-width: 380px;
 }
 
 .project-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 28px rgba(0, 168, 181, 0.25);
+  box-shadow: 0 16px 28px rgba(0, 168, 181, 0.25);
   border-color: rgba(0, 168, 181, 0.4);
 }
 
-/* ✅ Flagship Card Fix — CareSentinelAI Highlight, same size but glowing */
+/* Highlighted Card */
 .featured-card {
   background: linear-gradient(135deg, #00a8b5, #00d4b4);
   color: #ffffff;
-  box-shadow: 0 8px 20px rgba(0, 168, 181, 0.3);
+  box-shadow: 0 12px 30px rgba(0, 168, 181, 0.3);
   border: none;
 }
 
@@ -73,15 +78,15 @@
   color: #00a8b5;
 }
 
-/* Icon */
+/* Icon Section */
 .project-icon {
   background: linear-gradient(135deg, #00a8b5, #007f91);
-  padding: 60px 30px;
+  padding: 80px 30px;
   text-align: center;
 }
 
 .project-icon i {
-  font-size: 3rem;
+  font-size: 4rem;
   color: white;
   transition: transform 0.3s ease;
 }
@@ -90,34 +95,35 @@
   transform: scale(1.1);
 }
 
-/* Content */
+/* Info Section */
 .project-info {
-  padding: 30px;
+  padding: 40px;
   text-align: center;
 }
 
 .project-info h3 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 10px;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
   color: #00363d;
 }
 
 .project-info p {
-  font-size: 1rem;
-  color: #4f6367;
-  line-height: 1.6;
-  margin-bottom: 20px;
+  font-size: 1.4rem; /* larger text for readability */
+  color: #2e4a4d; /* darker tone */
+  line-height: 1.8;
+  margin-bottom: 40px; /* more breathing space before button */
 }
 
-/* Button */
+/* Button Styling */
 .project-link {
   display: inline-block;
   border: 2px solid #00a8b5;
   color: #00a8b5;
-  padding: 10px 24px;
-  border-radius: 25px;
-  font-weight: 600;
+  padding: 16px 42px; /* larger button */
+  border-radius: 40px;
+  font-weight: 700;
+  font-size: 1.4rem; /* larger text */
   text-decoration: none;
   transition: all 0.3s ease;
 }
@@ -125,21 +131,91 @@
 .project-link:hover {
   background: #00a8b5;
   color: #ffffff;
+  box-shadow: 0 8px 24px rgba(0, 168, 181, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 992px) {
+  .projects-header h2 {
+    font-size: 3rem;
+  }
+
+  .projects-header p {
+    font-size: 1.3rem;
+  }
+
   .projects-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+  .project-info p {
+    font-size: 1.2rem;
+  }
+
+  .project-link {
+    font-size: 1.2rem;
+    padding: 14px 36px;
   }
 }
 
 @media (max-width: 768px) {
+  .projects-section {
+    padding: 80px 20px;
+  }
+
+  .projects-header h2 {
+    font-size: 2.5rem;
+  }
+
+  .projects-header p {
+    font-size: 1.2rem;
+  }
+
   .projects-grid {
     grid-template-columns: 1fr;
+    gap: 30px;
   }
-  .project-card {
-    max-width: 100%;
+
+  .project-info h3 {
+    font-size: 1.6rem;
+  }
+
+  .project-info p {
+    font-size: 1.1rem;
+  }
+
+  .project-link {
+    font-size: 1.1rem;
+    padding: 12px 30px;
   }
 }
 
+@media (max-width: 480px) {
+  .projects-header h2 {
+    font-size: 2.2rem;
+  }
 
+  .projects-header p {
+    font-size: 1rem;
+  }
+
+  .project-info h3 {
+    font-size: 1.4rem;
+  }
+
+  .project-info p {
+    font-size: 1rem;
+  }
+
+  .project-link {
+    font-size: 1rem;
+    padding: 10px 26px;
+  }
+}

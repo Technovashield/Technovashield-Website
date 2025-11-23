@@ -1,10 +1,15 @@
-/* HeroSection.css */
+/* HeroSection.css - Centered, Larger & Clean */
 .hero-section {
   position: relative;
-  height: 80vh; /* Reduced from 100vh to improve visibility of other sections */
+  height: 100vh;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
+/* Keep video clear and sharp */
 .hero-bg-video {
   width: 100%;
   height: 100%;
@@ -13,9 +18,10 @@
   top: 0;
   left: 0;
   z-index: -2;
+  filter: none; /* ensures video clarity */
 }
 
-/* Gradient overlay for better text visibility */
+/* Light overlay for subtle contrast */
 .hero-overlay::before {
   content: "";
   position: absolute;
@@ -23,60 +29,73 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
+  background: rgba(0, 0, 0, 0.25);
   z-index: -1;
 }
 
 .hero-overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: white;
+  position: relative;
   z-index: 1;
-  width: 90%;
+  width: 100%;
+  max-width: 1400px;
   padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+/* Center the content block */
 .hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   animation: fadeInUp 1.2s ease-in-out;
+  width: 100%;
+  text-align: center;
 }
 
+/* Large, bold title */
 .hero-title {
-  font-size: 3.5rem; /* Slightly reduced for proportional scaling */
-  font-weight: 700;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
-  margin-bottom: 1rem;
+  font-size: 6rem;
+  font-weight: 900;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
 }
 
+/* Large tagline */
 .hero-tagline {
-  font-size: 1.4rem;
-  font-weight: 300;
+  font-size: 2.2rem;
   color: #eafcff;
-  margin-bottom: 1.8rem;
-  animation: fadeIn 2s ease-in;
+  margin-bottom: 3rem;
+  font-weight: 400;
+  max-width: 1000px;
+  line-height: 1.5;
 }
 
+/* Prominent button */
 .hero-btn {
   background-color: #00a8b5;
   color: #fff;
   border: none;
-  border-radius: 30px;
-  padding: 12px 32px;
-  font-size: 1.1rem;
+  border-radius: 40px;
+  padding: 18px 50px;
+  font-size: 1.5rem;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 168, 181, 0.4);
+  box-shadow: 0 6px 20px rgba(0, 168, 181, 0.4);
 }
 
 .hero-btn:hover {
   background-color: #0095a2;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 168, 181, 0.6);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 168, 181, 0.6);
 }
 
-/* Fade animations */
+/* Animation for smooth entry */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -88,41 +107,42 @@
   }
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 4rem;
   }
-  to {
-    opacity: 1;
+  .hero-tagline {
+    font-size: 1.6rem;
+  }
+  .hero-btn {
+    font-size: 1.2rem;
+    padding: 14px 40px;
   }
 }
 
-/* Mobile responsiveness */
 @media (max-width: 768px) {
-  .hero-section {
-    height: 70vh; /* Slightly smaller for mobile */
-  }
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 3rem;
+  }
+  .hero-tagline {
+    font-size: 1.2rem;
+  }
+  .hero-btn {
+    font-size: 1.1rem;
+    padding: 12px 34px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.4rem;
   }
   .hero-tagline {
     font-size: 1rem;
   }
   .hero-btn {
-    padding: 10px 24px;
     font-size: 1rem;
+    padding: 10px 28px;
   }
 }
-
-@media (max-width: 480px) {
-  .hero-section {
-    height: 65vh;
-  }
-  .hero-title {
-    font-size: 2rem;
-  }
-  .hero-tagline {
-    font-size: 0.9rem;
-  }
-}
-

@@ -1,10 +1,7 @@
-
-
 import React from "react";
 import "../styles/HeroSection.css";
 
 const HeroSection = () => {
-  // Smooth scroll to Featured Projects section
   const scrollToProjects = () => {
     const section = document.getElementById("featured-projects");
     if (section) {
