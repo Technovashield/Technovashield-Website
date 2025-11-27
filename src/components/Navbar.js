@@ -20,15 +20,25 @@ const Navbar = () => {
         <div className="navbar-top-links">
           <Link to="/careers" className="top-link">Careers</Link>
           <Link to="/contact" className="top-link">Contact Us</Link>
-          <button className="donate-button">Donate</button>
+
+          {/* UPDATED BUTTON */}
+          <Link to="/support-caresentinelai" className="support-button">
+            Support CareSentinelAI
+          </Link>
         </div>
       </div>
 
       {/* Main Navbar */}
       <nav className="navbar">
         <div className="logo-only">
-          <img src="/Tech_logo3.png" alt="Technovashield logo" className="logo-img-only" />
-        </div>
+  <Link to="/" onClick={closeMenu}>
+    <img
+      src="/Tech_logo3.png"
+      alt="Technovashield logo"
+      className="logo-img-only"
+    />
+  </Link>
+</div>
 
         {/* Hamburger Menu */}
         <button
@@ -47,6 +57,13 @@ const Navbar = () => {
           <li><Link to="/products" onClick={closeMenu}>Products</Link></li>
           <li><Link to="/team" onClick={closeMenu}>Team</Link></li>
           <li><Link to="/contact" onClick={closeMenu}>Contact</Link></li>
+
+          {/* Add this inside hamburger menu as well */}
+          {/* <li>
+            <Link to="/support-caresentinelai" onClick={closeMenu}>
+              Support CareSentinelAI
+            </Link>
+          </li> */}
         </ul>
       </nav>
     </header>

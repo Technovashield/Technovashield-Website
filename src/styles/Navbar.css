@@ -1,4 +1,4 @@
-/* Navbar.css — Updated for Consistent Large Fonts and Modern Look */
+/* Navbar.css — Updated with Support CareSentinelAI Button */
 .navbar-header {
   font-family: "Poppins", Arial, sans-serif;
   font-weight: 500;
@@ -26,30 +26,31 @@
   font-weight: 600;
 }
 
-
 .navbar-top-links a:hover {
   color: #bdf3ff;
 }
 
-/* Donate Button */
-.donate-button {
+/* 🎯 NEW — Support CareSentinelAI Button */
+.support-button {
   margin-left: 2rem;
-  background: linear-gradient(135deg, #00c8d6, #0284c7);
-  color: white;
-  padding: 0.8rem 2rem;
+  background: linear-gradient(135deg, #00d0d8, #026aa7);
+  color: white !important;
+  padding: 0.9rem 2.2rem;
   border: none;
-  border-radius: 30px;
-  font-size: 1.4rem;
-  font-weight: 700;
+  border-radius: 40px;
+  font-size: 1.45rem;
+  font-weight: 800;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+  text-decoration: none;
+  transition: all 0.35s ease;
+  box-shadow: 0 6px 16px rgba(0, 150, 180, 0.35);
+  letter-spacing: 0.5px;
 }
 
-.donate-button:hover {
-  background: linear-gradient(135deg, #02a5b8, #016fa1);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 168, 181, 0.5);
+.support-button:hover {
+  background: linear-gradient(135deg, #04bcc4, #015a8e);
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 10px 22px rgba(0, 150, 180, 0.5);
 }
 
 /* --- Main Navbar --- */
@@ -213,6 +214,17 @@
   .nav-links a::after {
     display: none;
   }
+
+  /* Support Button inside mobile menu */
+  .nav-links a.support-button {
+    background: linear-gradient(135deg, #00d0d8, #026aa7);
+    padding: 1rem 2rem;
+    border-radius: 40px;
+    color: white;
+    margin-top: 1rem;
+    display: inline-block;
+    box-shadow: 0 6px 16px rgba(0, 150, 180, 0.4);
+  }
 }
 
 @media (max-width: 480px) {
@@ -225,8 +237,8 @@
     font-size: 1.3rem;
   }
 
-  .donate-button {
-    font-size: 1rem;
-    padding: 0.7rem 1.4rem;
+  .support-button {
+    font-size: 1.2rem;
+    padding: 0.7rem 1.5rem;
   }
 }
