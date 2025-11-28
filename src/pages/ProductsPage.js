@@ -1,118 +1,99 @@
 import React from "react";
-import '../styles/ProductsPage.css';
-import Footer from "../components/Footer";
+import "../styles/ProductsPage.css";
 
 const ProductsPage = () => {
   return (
     <div className="products-page">
-      <section className="page-header">
-        <div className="container">
-          <h1>Our Projects</h1>
-          <p>Innovative solutions transforming healthcare, cybersecurity, and automation</p>
+
+     {/* HERO SECTION */}
+<section className="products-hero">
+  <div className="hero-light"></div>
+
+  {/* Dark Patch that holds the content */}
+  <div className="hero-inner-box">
+    <div className="hero-content">
+      <h1>Our Products & Innovation Portfolio</h1>
+      <p>
+        Explore our AI-driven solutions across healthcare, retail automation,
+        virtual assistants, and wellbeing. Each product reflects real-world
+        development work, practical implementations, and our journey toward
+        building meaningful technology for people and communities.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+      {/* ---------------- PRODUCT BLOCKS ---------------- */}
+
+      {/* 1 — CareSentinelAI */}
+      <section className="product-block">
+        <div className="product-text">
+          <h2>CareSentinelAI — Predictive Health Intelligence</h2>
+          <p>
+            Our flagship product designed to detect early-risk health conditions 
+            such as sepsis using multi-source data, real-time analysis, and clinician-focused 
+            alerts. This video shows the full workflow from ingestion to prediction.
+          </p>
+        </div>
+        <div className="product-video-wrapper">
+          <video className="product-video" controls>
+            <source src="/videos/CareSentinelAI_Flow_Video_V3.mp4" type="video/mp4" />
+          </video>
         </div>
       </section>
 
-      {/* CareSentinelAI */}
-      <section className="project-detail caresentinel-bg">
-        <div className="project-content">
-          <div className="project-text">
-            <h2>CareSentinelAI  Predictive Health Intelligence</h2>
-            <p className="project-description">
-              CareSentinelAI is a next-generation AI-driven platform that predicts patient health risks in real time. 
-              It unifies wearable, lab, and clinical data to help clinicians detect life-threatening conditions like sepsis before escalation.
-            </p>
-            
-            <div className="project-mission-vision">
-              <div className="mission-box">
-                <h3>Mission</h3>
-                <p>To empower healthcare professionals with predictive intelligence that identifies and prevents life-threatening conditions.</p>
-              </div>
-              <div className="vision-box">
-                <h3>Vision</h3>
-                <p>A healthcare future where technology predicts and prevents crises through continuous learning and automation.</p>
-              </div>
-            </div>
-            
-            <div className="features-section">
-              <h3>Key Features</h3>
-              <ul className="features-list">
-                <li>Sepsis-specific early-detection model</li>
-                <li>Voice-to-Speech clinical documentation and interaction</li>
-                <li>Real-time ML-based risk scoring</li>
-                <li>Automated alerts for clinicians, nurses, and patients</li>
-                <li>Privacy and compliance layer for NZ/AUS standards</li>
-              </ul>
-            </div>
-          </div>
+      {/* 2 — Virtual Clinical Assistant */}
+      <section className="product-block reverse">
+        <div className="product-text">
+          <h2>CareSentinelAI — Virtual Clinical Assistant</h2>
+          <p>
+            A real AI-powered assistant capable of answering patient queries, 
+            retrieving personalised information, and working alongside clinicians 
+            to reduce administrative time. This is the prototype demonstration.
+          </p>
+        </div>
+        <div className="product-video-wrapper">
+          <video className="product-video" controls>
+            <source src="/videos/Roopap-chatbot.mp4" type="video/mp4" />
+          </video>
         </div>
       </section>
 
-      {/* CyberShield */}
-      <section className="project-detail cybershield-bg">
-        <div className="project-content">
-          <div className="project-text">
-            <h2>CyberShield  AI-Driven Cyber Defense</h2>
-            <p className="project-description">
-              CyberShield uses AI-based traffic analytics to detect and mitigate DDoS and network anomalies. 
-              It offers adaptive security to protect digital infrastructure.
-            </p>
-            
-            <div className="project-mission-vision">
-              <div className="mission-box">
-                <h3>Mission</h3>
-                <p>To safeguard enterprises with real-time AI-powered defense and resilience.</p>
-              </div>
-              <div className="vision-box">
-                <h3>Vision</h3>
-                <p>A secure digital future where AI learns and evolves with every threat.</p>
-              </div>
-            </div>
-            
-            <div className="features-section">
-              <h3>Key Features</h3>
-              <ul className="features-list">
-                <li>Real-time anomaly detection and blocking</li>
-                <li>FastAPI-based ML inference backend</li>
-                <li>Scalable architecture with cloud readiness</li>
-              </ul>
-            </div>
-          </div>
-          
-          
+      {/* 3 — Smart Retail Automation */}
+      <section className="product-block">
+        <div className="product-text">
+          <h2>Smart Retail Automation — AI-Enabled Kiwi Mall</h2>
+          <p>
+            This automation simulates a real-world retail checkout and product 
+            recommendation experience, fully built using React, UI automation 
+            and machine-driven responses. A complete practical project.
+          </p>
+        </div>
+        <div className="product-video-wrapper">
+          <video className="product-video" controls>
+            <source src="/videos/EcommerceKiwiMall-video.mp4" type="video/mp4" />
+          </video>
         </div>
       </section>
 
-      {/* Smart Automation Bots */}
-      <section className="project-detail automation-bg">
-        <div className="project-content">
-          <div className="project-text">
-            <h2>Smart Automation Bots</h2>
-            <p className="project-description">
-              TechnovaShield's automation portfolio showcases UiPath-based bots developed for businesses. 
-              These include retail price updates, healthcare data handling, and supply-chain optimizations.
-            </p>
-            
-            <ul className="feature-list">
-              <li><i className="fas fa-robot"></i> <strong>RPA Excellence:</strong> UiPath-based automation for repetitive tasks</li>
-              <li><i className="fas fa-shopping-cart"></i> <strong>Retail Solutions:</strong> Automated price updates and inventory management</li>
-              <li><i className="fas fa-hospital"></i> <strong>Healthcare Automation:</strong> Patient data processing and record management</li>
-              <li><i className="fas fa-truck"></i> <strong>Supply Chain:</strong> Order processing and logistics optimization</li>
-            </ul>
-
-            <div className="mission-vision-boxes">
-              <div className="mission-box">
-                <h3>Mission</h3>
-                <p>Automate repetitive tasks to free human potential for creative problem-solving and innovation.</p>
-              </div>
-              <div className="vision-box">
-                <h3>Vision</h3>
-                <p>A future where intelligent automation enhances productivity across all industries, enabling businesses to focus on strategic growth.</p>
-              </div>
-            </div>
-          </div>
+      {/* 4 — MindfulAI */}
+      <section className="product-block reverse">
+        <div className="product-text">
+          <h2>MindfulAI — Guided Meditation & Wellness Automation</h2>
+          <p>
+            An AI-generated guided meditation system built to support wellbeing, 
+            stress reduction, and personalised mental health journeys through 
+            dynamic scripting and automated flows.
+          </p>
+        </div>
+        <div className="product-video-wrapper">
+          <video className="product-video" controls>
+            <source src="/videos/Meditation-video.mp4" type="video/mp4" />
+          </video>
         </div>
       </section>
-      <Footer />
+
     </div>
   );
 };
