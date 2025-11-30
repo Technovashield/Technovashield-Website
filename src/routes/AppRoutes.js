@@ -7,6 +7,8 @@ import ProductsPage from "../pages/ProductsPage";
 import TeamPage from "../pages/TeamPage";
 import ContactPage from "../pages/ContactPage";
 import SupportCareSentinelAI from "../pages/SupportCareSentinelAI";
+import NewsPage from "../pages/NewsPage";
+import NewsPostPage from "../pages/NewsPostPage";
 
 const routes = [
   <Route key="home" path="/" element={<HomePage />} />,
@@ -14,6 +16,8 @@ const routes = [
   <Route key="products" path="/products" element={<ProductsPage />} />,
   <Route key="team" path="/team" element={<TeamPage />} />,
   <Route key="contact" path="/contact" element={<ContactPage />} />,
+  <Route key="news" path="/news" element={<NewsPage />} />,
+  <Route key="news-post" path="/news/:slug" element={<NewsPostPage />} />,
   <Route
     key="support-caresentinelai"
     path="/support-caresentinelai"

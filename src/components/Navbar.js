@@ -21,7 +21,7 @@ const Navbar = () => {
           <Link to="/careers" className="top-link">Careers</Link>
           <Link to="/contact" className="top-link">Contact Us</Link>
 
-          {/* UPDATED BUTTON */}
+          {/* Support Button */}
           <Link to="/support-caresentinelai" className="support-button">
             Support CareSentinelAI
           </Link>
@@ -30,17 +30,18 @@ const Navbar = () => {
 
       {/* Main Navbar */}
       <nav className="navbar">
+        {/* Logo */}
         <div className="logo-only">
-  <Link to="/" onClick={closeMenu}>
-    <img
-      src="/Tech_logo3.png"
-      alt="Technovashield logo"
-      className="logo-img-only"
-    />
-  </Link>
-</div>
+          <Link to="/" onClick={closeMenu}>
+            <img
+              src="/Tech_logo3.png"
+              alt="Technovashield logo"
+              className="logo-img-only"
+            />
+          </Link>
+        </div>
 
-        {/* Hamburger Menu */}
+        {/* Hamburger Menu for Mobile */}
         <button
           className={`hamburger ${isMenuOpen ? "active" : ""}`}
           onClick={toggleMenu}
@@ -51,19 +52,17 @@ const Navbar = () => {
           <span></span>
         </button>
 
+        {/* Nav Links */}
         <ul className={`nav-links ${isMenuOpen ? "active" : ""}`}>
           <li><Link to="/" onClick={closeMenu}>Home</Link></li>
           <li><Link to="/about" onClick={closeMenu}>About</Link></li>
           <li><Link to="/products" onClick={closeMenu}>Products</Link></li>
           <li><Link to="/team" onClick={closeMenu}>Team</Link></li>
-          <li><Link to="/contact" onClick={closeMenu}>Contact</Link></li>
 
-          {/* Add this inside hamburger menu as well */}
-          {/* <li>
-            <Link to="/support-caresentinelai" onClick={closeMenu}>
-              Support CareSentinelAI
-            </Link>
-          </li> */}
+          {/* ⭐ NEW — News Button */}
+          <li><Link to="/news" onClick={closeMenu}>News</Link></li>
+
+          <li><Link to="/contact" onClick={closeMenu}>Contact</Link></li>
         </ul>
       </nav>
     </header>

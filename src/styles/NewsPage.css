@@ -1,0 +1,167 @@
+/* ----------------------------------------------------
+   NEWS PAGE — CareSentinelAI Brand Consistent Version
+-----------------------------------------------------*/
+
+.news-page {
+  font-family: "Poppins", sans-serif;
+  width: 100%;
+  overflow-x: hidden;
+  background: #f4fafa;
+}
+
+/* ---------------- HERO SECTION ---------------- */
+
+.news-hero {
+  position: relative;
+  width: 100%;
+  padding: 180px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+
+  background: linear-gradient(135deg, #015871, #0284c7, #02b3d9, #027a9e);
+  background-size: 400% 400%;
+  animation: newsGradientFlow 14s ease infinite;
+}
+
+@keyframes newsGradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.news-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(rgba(255,255,255,0.14) 3px, transparent 3px),
+    radial-gradient(rgba(255,255,255,0.1) 2px, transparent 2px);
+  background-size: 140px 140px, 100px 100px;
+  opacity: 0.45;
+  animation: newsParticles 22s linear infinite;
+  z-index: 1;
+}
+
+@keyframes newsParticles {
+  from { transform: translateY(0); }
+  to { transform: translateY(-160px); }
+}
+
+.news-hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 1000px;
+  padding: 20px;
+  color: white;
+}
+
+.news-hero-content h1 {
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 25px;
+}
+
+.news-hero-content p {
+  font-size: 1.7rem;
+  line-height: 1.85;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+/* ---------------- NEWS LIST ---------------- */
+
+.news-container {
+  max-width: 1400px;
+  margin: 100px auto;
+  padding: 0 40px;
+}
+
+/* FIXED NEWS CARD LAYOUT */
+.news-card {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  background: #ffffff;
+  border-radius: 22px;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.09);
+  margin-bottom: 70px;
+  overflow: hidden;
+  min-height: 380px; /* ensures equal image + content height */
+  transition: transform 0.3s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-6px);
+}
+
+/* LEFT IMAGE — FIXED + FULL COVER */
+.news-card-image {
+  width: 45%;
+  height: 100%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* RIGHT CONTENT — CENTERED + CLEAN */
+.news-card-content {
+  width: 55%;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertically centers text */
+}
+
+.news-card-content h2 {
+  font-size: 2.4rem;
+  color: #014a5a;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.news-card-excerpt {
+  font-size: 1.45rem;
+  color: #2e4a4d;
+  line-height: 1.85;
+  margin-bottom: 35px;
+}
+
+.news-read-more {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #0284c7;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.news-read-more:hover {
+  color: #00b4d8;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+
+@media (max-width: 900px) {
+  .news-card {
+    flex-direction: column;
+  }
+
+  .news-card-image {
+    width: 100%;
+    height: 260px;
+  }
+
+  .news-card-content {
+    width: 100%;
+    padding: 30px;
+  }
+
+  .news-hero-content h1 {
+    font-size: 3rem;
+  }
+
+  .news-hero-content p {
+    font-size: 1.35rem;
+  }
+}

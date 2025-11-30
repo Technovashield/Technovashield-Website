@@ -1,0 +1,113 @@
+/* ----------------------------------------------------
+   NEWS POST PAGE — FIXED LAYOUT + HERO + CARD SIZING
+-----------------------------------------------------*/
+
+.news-post-page {
+  font-family: "Poppins", sans-serif;
+  background: #f4fafa;
+  padding-bottom: 80px;
+  color: #00363d;
+}
+
+/* ---------- FULL-WIDTH HERO IMAGE ---------- */
+
+.news-post-hero {
+  width: 100%;
+}
+
+.news-post-image {
+  width: 100%;
+  height: auto;
+  max-height: 700px; /* keeps things tidy */
+  object-fit: contain;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+/* ---------- MAIN ARTICLE CONTAINER ---------- */
+
+.news-post-content {
+  background: #ffffff;
+  max-width: 1300px;      /* Bigger card */
+  margin: 60px auto 0;    /* No overlap */
+  padding: 60px 70px 90px;
+  border-radius: 24px;    /* Slightly bigger round corners */
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
+}
+
+/* ---------- HEADINGS ---------- */
+
+.news-post-content h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #014a5a;
+  margin-bottom: 30px;
+}
+
+.news-post-content h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #016b7b;
+  margin-top: 45px;
+  margin-bottom: 18px;
+}
+
+/* ---------- PARAGRAPHS ---------- */
+
+.news-post-content p {
+  font-size: 1.2rem;
+  line-height: 1.9;
+  margin-bottom: 25px;
+  color: #1c3a41;
+}
+
+/* ---------- LISTS ---------- */
+
+.news-post-content ul {
+  padding-left: 28px;
+  margin-bottom: 28px;
+}
+
+.news-post-content li {
+  font-size: 1.18rem;
+  line-height: 1.85;
+  color: #1e4a55;
+  margin-bottom: 12px;
+}
+
+/* ---------- REFERENCES ---------- */
+
+.reference-links a {
+  color: #0284c7;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.reference-links a:hover {
+  color: #00b4d8;
+  text-decoration: underline;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 900px) {
+  .news-post-image {
+    height: 280px;
+  }
+
+  .news-post-content {
+    padding: 35px 25px 50px;
+    margin-top: 40px;
+  }
+
+  .news-post-content h1 {
+    font-size: 2.4rem;
+  }
+
+  .news-post-content p {
+    font-size: 1.05rem;
+  }
+
+  .news-post-content h2 {
+    font-size: 1.5rem;
+  }
+}

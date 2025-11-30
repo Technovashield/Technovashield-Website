@@ -63,9 +63,9 @@
 }
 
 .hero-subtitle {
-  font-size: 20px;
+  font-size: 24px;
   color: #c8f4e2;
-  line-height: 1.6;
+  line-height: 1.8;
 }
 
 /* Section Spacing */
@@ -87,19 +87,24 @@
 }
 
 .story-content h2 {
-  font-size: 36px;
+  font-size: 40px; /* Bigger heading */
   color: #00263a;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
 .story-content p {
-  font-size: 18.5px;
-  line-height: 1.8;
-  color: #444;
+  font-size: 25px; /* Bigger paragraph */
+  line-height: 1.85;
+  color: #333;
+}
+
+/* Reduce huge side gaps */
+.story-grid {
+  padding: 0 20px; /* Previously too wide */
 }
 
 .story-image-img {
-  width: 100%;
+  width: 140%;
   height: auto;
   max-height: 400px;
   object-fit: cover;
@@ -122,7 +127,8 @@
 }
 
 .section-subheading {
-  font-size: 19px;
+  font-size: 28px;
+  line-height: 1.7;
   color: #555;
   text-align: center;
   margin-bottom: 40px;
@@ -133,14 +139,15 @@
 
 .philosophy-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 40px;
-  margin-top: 40px;
+  grid-template-columns: repeat(3, 1fr); /* Force 3 equal wide columns */
+  gap: 60px; /* Slightly bigger spacing */
+  padding: 0 50px; /* Reduce empty side-space */
+  margin-top: 60px;
 }
 
 .philosophy-card {
   background: #ffffff;
-  padding: 36px 28px;
+  padding: 48px 40px;
   border-radius: 12px;
   text-align: center;
   transition: all 0.4s ease;
@@ -155,22 +162,22 @@
 }
 
 .philosophy-icon {
-  width: 90px;
-  height: 90px;
+  width: 110px;
+  height: 110px;
   margin: 0 auto 20px;
   display: block;
   object-fit: contain;
 }
 
 .philosophy-card h3 {
-  font-size: 22px;
+  font-size: 26px;
   color: #00263a;
   margin-bottom: 12px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .philosophy-card p {
-  font-size: 17.5px;
+  font-size: 22px;
   color: #555;
   line-height: 1.6;
 }
@@ -185,11 +192,12 @@
 }
 
 .network-description {
-  font-size: 18.5px;
+  font-size: 24px;
   color: #444;
-  line-height: 1.8;
+  line-height: 1.85;
   text-align: center;
   max-width: 900px;
+  padding: 0 40px;
   margin: 0 auto 20px;
 }
 
@@ -197,13 +205,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 50px;
+  gap: 40px;
   margin-top: 50px;
   flex-wrap: wrap;
+  padding: 0 40px;
 }
 
 .partner-logo {
-  font-size: 17px;
+  font-size: 22px;
   font-weight: 600;
   color: #777;
   padding: 16px 30px;
@@ -227,17 +236,26 @@
 }
 
 .team-description {
-  font-size: 18.5px;
+  font-size: 24px;
   color: #444;
   line-height: 1.8;
   text-align: center;
   max-width: 900px;
   margin: 0 auto 20px;
+  padding: 0 40px;
 }
 
 .team-cta {
   text-align: center;
   margin-top: 30px;
+  font-size: 28px; /* Bigger button text */
+  padding: 16px 42px;
+}
+
+.team-cta .btn {
+  font-size: 24px !important; /* Bigger font */
+  padding: 16px 48px !important; /* Larger button */
+  border-radius: 10px;
 }
 
 /* Healthcare Impact */
@@ -278,12 +296,13 @@
 }
 
 .impact-content h2 {
-  font-size: 36px;
+  font-size: 42px;
+  font-weight: 700;
   margin-bottom: 20px;
 }
 
 .impact-content p {
-  font-size: 18.5px;
+  font-size: 26px;
   line-height: 1.8;
 }
 
@@ -310,7 +329,7 @@
 .btn {
   display: inline-block;
   padding: 14px 36px;
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 600;
   border-radius: 8px;
   text-decoration: none;
