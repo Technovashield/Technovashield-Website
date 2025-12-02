@@ -9,6 +9,7 @@ import ContactPage from "../pages/ContactPage";
 import SupportCareSentinelAI from "../pages/SupportCareSentinelAI";
 import NewsPage from "../pages/NewsPage";
 import NewsPostPage from "../pages/NewsPostPage";
+import CareersPage from "../pages/CareersPage";
 
 const routes = [
   <Route key="home" path="/" element={<HomePage />} />,
@@ -18,6 +19,7 @@ const routes = [
   <Route key="contact" path="/contact" element={<ContactPage />} />,
   <Route key="news" path="/news" element={<NewsPage />} />,
   <Route key="news-post" path="/news/:slug" element={<NewsPostPage />} />,
+  <Route key="careers" path="/careers" element={<CareersPage />} />,
   <Route
     key="support-caresentinelai"
     path="/support-caresentinelai"

@@ -3,7 +3,7 @@ import HeroSection from "../components/HeroSection";
 import FocusAreas from "../components/FocusAreas";
 import FeaturedProjects from "../components/FeaturedProjects";
 import HealthcareImpactSection from "../components/HealthcareImpactSection";
-import Footer from "../components/Footer";
+// import Footer from "../components/Footer";
 
 const HomePage = () => {
   return (
@@ -12,7 +12,7 @@ const HomePage = () => {
       <FocusAreas />
       <FeaturedProjects />
       <HealthcareImpactSection />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

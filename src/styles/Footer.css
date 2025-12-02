@@ -1,118 +1,114 @@
-﻿/* Footer Component Styles — Updated for Modern Look */
+﻿/* FOOTER WRAPPER */
 .footer {
-  background: #1e293b; /* Dark navy background */
+  background: #0f1a2b; /* Dark navy – matches Contact + About */
   color: white;
-  padding: 60px 20px;
+  padding: 50px 20px 35px;
   text-align: center;
-  position: relative;
-  margin-top: auto;
+  border-top: 2px solid rgba(255, 255, 255, 0.08);
 }
 
-/* Footer container for alignment */
-.footer-container {
+/* TOP SECTION */
+.footer-top {
   max-width: 1200px;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 25px;
+  padding-bottom: 25px;
 }
 
-/* Logo and company name */
+/* BRAND AREA */
+.footer-brand {
+  margin-bottom: 18px;
+}
+
 .footer-logo {
   display: flex;
   align-items: center;
-  gap: 12px;
+  justify-content: center;
+  gap: 14px;
   text-decoration: none;
 }
 
 .footer-logo img {
-  width: 50px;
-  height: 50px;
+  width: 85px;   /* Bigger Logo */
+  height: 85px;
   object-fit: contain;
 }
 
 .footer-logo span {
-  font-size: 1.8rem;
+  font-size: 2.2rem; /* Larger Text */
   font-weight: 700;
-  color: #00a8b5;
+  color: #05c1d6;
 }
 
-/* Tagline styling */
 .footer-tagline {
-  font-size: 1.2rem;
-  color: #eafcff;
+  font-size: 1.4rem;   /* Bigger */
   margin-top: 10px;
   opacity: 0.9;
-  font-weight: 400;
+  color: #e5faff;
 }
 
-/* LinkedIn icon styling */
+/* SOCIAL BAR */
 .footer-social {
-  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin: 20px 0;
 }
 
 .footer-social a {
-  color: #00a8b5;
-  font-size: 2rem;
-  margin: 0 10px;
-  transition: all 0.3s ease;
+  font-size: 2.4rem; /* Big icons like ModMed */
+  color: #05c1d6;
+  transition: 0.3s ease;
 }
 
 .footer-social a:hover {
-  color: #00d4b4;
-  transform: scale(1.2);
+  color: #00f0ff;
+  transform: scale(1.25);
 }
 
-/* Back to Top Button */
+/* BACK TO TOP BUTTON */
 .back-to-top {
-  margin-top: 20px;
-  background-color: #00a8b5;
-  color: #ffffff;
+  margin-top: 10px; /* Reduced big gap */
+  background: #05c1d6;
+  color: #072635;
   border: none;
+  padding: 14px 40px;
   border-radius: 30px;
-  padding: 12px 36px;
-  font-size: 1.1rem;
-  font-weight: 600;
+  font-size: 1.2rem;
+  font-weight: 700;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 168, 181, 0.4);
+  transition: 0.3s ease;
 }
 
 .back-to-top:hover {
-  background-color: #00d4b4;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(0, 168, 181, 0.6);
+  background: #00e5ff;
+  transform: translateY(-4px);
 }
 
-/* Copyright */
+/* COPYRIGHT */
 .footer-bottom {
-  margin-top: 40px;
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.8);
+  padding-top: 25px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  margin-top: 25px;
 }
 
-/* Responsive Styling */
+.footer-bottom p {
+  font-size: 1.4rem;
+  opacity: 0.85;
+}
+
+/* RESPONSIVE */
 @media (max-width: 768px) {
-  .footer-logo {
-    flex-direction: column;
-    gap: 8px;
-  }
-
   .footer-logo span {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
   }
-
+  .footer-logo img {
+    width: 65px;
+    height: 65px;
+  }
   .footer-tagline {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
-
   .footer-social a {
-    font-size: 1.6rem;
-  }
-
-  .back-to-top {
-    font-size: 1rem;
-    padding: 10px 28px;
+    font-size: 2rem;
   }
 }

@@ -1,0 +1,259 @@
+/* ===========================
+   Careers Page – Premium Style
+   =========================== */
+
+.careers-page {
+  padding-top: 70px;
+  background: linear-gradient(135deg, #f0f9ff, #e6f7fa);
+  font-family: "Inter", sans-serif;
+}
+
+/* HERO */
+.careers-hero {
+  padding: 90px 20px 70px;
+  text-align: center;
+  background: linear-gradient(135deg, #00263a, #005f73);
+  color: white;
+}
+
+.careers-hero h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.careers-hero p {
+  font-size: 22px;
+  line-height: 1.7;
+  max-width: 900px;
+  margin: 0 auto;
+  opacity: 0.95;
+}
+
+/* WHY JOIN */
+.careers-why {
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.careers-why h2 {
+  font-size: 40px;
+  color: #00263a;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.why-description {
+  font-size: 22px;
+  color: #555;
+  max-width: 900px;
+  margin: 0 auto 50px;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+}
+
+.why-card {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 14px;
+  box-shadow: 0 8px 25px rgba(0, 166, 166, 0.15);
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1.5px solid transparent;
+}
+
+.why-card:hover {
+  transform: translateY(-8px);
+  border-color: #00a6a6;
+  box-shadow: 0 12px 30px rgba(0, 166, 166, 0.25);
+}
+
+.why-card h3 {
+  color: #00263a;
+  font-size: 26px;
+  margin-bottom: 16px;
+}
+
+.why-card p {
+  font-size: 20px;
+  color: #555;
+  line-height: 1.7;
+}
+
+/* ROLES */
+.careers-roles {
+  padding: 100px 20px;
+  background: #f8f9fa;
+  text-align: center;
+}
+
+.careers-roles h2 {
+  font-size: 40px;
+  font-weight: 700;
+  color: #00263a;
+}
+
+.roles-description {
+  font-size: 22px;
+  max-width: 850px;
+  margin: 0 auto 50px;
+  color: #444;
+}
+
+.roles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+}
+
+.role-card {
+  background: white;
+  padding: 36px 32px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 166, 166, 0.1);
+  transition: all 0.3s ease;
+  border: 1.5px solid transparent;
+}
+
+.role-card:hover {
+  transform: translateY(-10px);
+  border-color: #00a6a6;
+}
+
+.role-card h3 {
+  font-size: 26px;
+  color: #00263a;
+  margin-bottom: 16px;
+}
+
+.role-card p {
+  font-size: 20px;
+  color: #555;
+  line-height: 1.7;
+}
+
+/* CULTURE SECTION */
+.careers-culture {
+  padding: 90px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #00263a, #004d7a);
+  color: white;
+}
+
+.careers-culture h2 {
+  font-size: 40px;
+  margin-bottom: 25px;
+}
+
+.careers-culture p {
+  font-size: 22px;
+  max-width: 900px;
+  margin: 0 auto;
+  opacity: 0.95;
+  line-height: 1.7;
+}
+
+/* FORM SECTION */
+.careers-form-section {
+  padding: 100px 20px;
+}
+
+.careers-form-section h2 {
+  text-align: center;
+  font-size: 40px;
+  color: #00263a;
+  margin-bottom: 40px;
+}
+
+.careers-form {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 166, 166, 0.15);
+}
+
+.form-group {
+  margin-bottom: 28px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #00a6a6;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 16px 20px;
+  font-size: 18px;
+  border-radius: 10px;
+  border: 2px solid rgba(0, 166, 166, 0.3);
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #00a6a6;
+  box-shadow: 0 0 8px rgba(0, 166, 166, 0.25);
+  outline: none;
+}
+
+.careers-form .btn {
+  width: 100%;
+  padding: 16px;
+  font-size: 22px;
+  margin-top: 10px;
+  font-weight: 700;
+}
+
+.form-message {
+  margin-top: 20px;
+  padding: 16px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.form-message.success {
+  background: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+}
+
+.form-message.error {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .careers-hero h1 {
+    font-size: 36px;
+  }
+  .careers-hero p,
+  .why-description,
+  .roles-description,
+  .careers-culture p {
+    font-size: 18px;
+  }
+
+  .role-card h3,
+  .why-card h3 {
+    font-size: 22px;
+  }
+
+  .careers-form {
+    padding: 30px 20px;
+  }
+}

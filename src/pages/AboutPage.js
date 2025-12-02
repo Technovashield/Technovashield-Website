@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import '../styles/AboutPage.css';
-import Footer from "../components/Footer";
+// import Footer from "../components/Footer";
 
 const AboutPage = () => {
   const scrollToTop = () => {
@@ -153,7 +153,7 @@ const AboutPage = () => {
         </div>
       </section>
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
