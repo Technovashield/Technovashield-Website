@@ -143,24 +143,25 @@ const CareersPage = () => {
       </section>
 
       {/* FUTURE ROLES */}
-      <section className="careers-roles">
-        <div className="container">
-          <h2>Future Opportunities</h2>
-          <p className="roles-description">
-            We're not hiring yet—but we're building our talent network for
-            upcoming roles.
-          </p>
+      <section className="careers-roles future-opportunities">
+  <div className="container">
+    <h2>Future Opportunities</h2>
 
-          <div className="roles-grid">
-            {futureRoles.map((role, index) => (
-              <div key={index} className="role-card">
-                <h3>{role.title}</h3>
-                <p>{role.desc}</p>
-              </div>
-            ))}
-          </div>
+    <p className="roles-description">
+      We're not hiring yet—but we're building our talent network for
+      upcoming roles.
+    </p>
+
+    <div className="roles-grid">
+      {futureRoles.map((role, index) => (
+        <div key={index} className="role-card">
+          <h3>{role.title}</h3>
+          <p>{role.desc}</p>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* CULTURE & ETHICAL AI */}
       <section className="careers-culture">
@@ -177,82 +178,105 @@ const CareersPage = () => {
 
       {/* EXPRESSION OF INTEREST FORM */}
       <section className="careers-form-section">
-        <div className="container">
-          <h2>Submit Your Expression of Interest</h2>
+  <div className="container">
+    <h2>Submit Your Expression of Interest</h2>
 
-          <form onSubmit={handleSubmit} className="careers-form">
-            <div className="form-group">
-              <label>Name *</label>
-              <input
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-              />
-            </div>
+    <form onSubmit={handleSubmit} className="careers-form" encType="multipart/form-data">
 
-            <div className="form-group">
-              <label>Email *</label>
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-              />
-            </div>
+      {/* Name */}
+      <div className="form-group">
+        <label>Name *</label>
+        <input
+          type="text"
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+          required
+        />
+      </div>
 
-            <div className="form-group">
-              <label>Area of Interest *</label>
-              <select
-                name="roleInterest"
-                value={formData.roleInterest}
-                onChange={handleChange}
-                required
-              >
-                <option value="">Select...</option>
-                {futureRoles.map((role, idx) => (
-                  <option key={idx} value={role.title}>
-                    {role.title}
-                  </option>
-                ))}
-              </select>
-            </div>
+      {/* Email */}
+      <div className="form-group">
+        <label>Email *</label>
+        <input
+          type="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+          required
+        />
+      </div>
 
-            <div className="form-group">
-              <label>Message (Optional)</label>
-              <textarea
-                name="message"
-                rows="5"
-                value={formData.message}
-                onChange={handleChange}
-              />
+      {/* Area of Interest */}
+      <div className="form-group">
+        <label>Area of Interest *</label>
+        <select
+          name="roleInterest"
+          value={formData.roleInterest}
+          onChange={handleChange}
+          required
+        >
+          <option value="">Select...</option>
+          {futureRoles.map((role, idx) => (
+            <option key={idx} value={role.title}>
+              {role.title}
+            </option>
+          ))}
+        </select>
+      </div>
 
-            </div>
+      {/* Message (Optional) */}
+      <div className="form-group">
+        <label>Message (Optional)</label>
+        <textarea
+          name="message"
+          rows="5"
+          value={formData.message}
+          onChange={handleChange}
+        />
+      </div>
 
-            <button
-              type="submit"
-              className="btn btn-primary"
-              disabled={status === "sending"}
-            >
-              {status === "sending" ? "Sending..." : "Submit Expression of Interest"}
-            </button>
+      {/* CV Upload */}
+      <div className="form-group">
+        <label>Upload Your CV (PDF or DOC) *</label>
+        <input
+          type="file"
+          name="resume"
+          accept=".pdf,.doc,.docx"
+          onChange={(e) =>
+            setFormData({ ...formData, resume: e.target.files[0] })
+          }
+          required
+          className="file-input"
+        />
+      </div>
 
-            {status === "success" && (
-              <p className="form-message success">
-                Thank you! Your expression of interest has been submitted.
-              </p>
-            )}
+      {/* Submit Button */}
+      <button
+        type="submit"
+        className="btn btn-primary"
+        disabled={status === "sending"}
+      >
+        {status === "sending"
+          ? "Sending..."
+          : "Submit Expression of Interest"}
+      </button>
 
-            {status === "error" && (
-              <p className="form-message error">
-                Something went wrong. Please try again.
-              </p>
-            )}
-          </form>
-        </div>
-      </section>
+      {/* Messages */}
+      {status === "success" && (
+        <p className="form-message success">
+          Thank you! Your expression of interest has been submitted.
+        </p>
+      )}
+
+      {status === "error" && (
+        <p className="form-message error">
+          Something went wrong. Please try again.
+        </p>
+      )}
+    </form>
+  </div>
+</section>
 
       
     </div>

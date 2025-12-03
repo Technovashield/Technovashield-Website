@@ -99,9 +99,9 @@
 
 .roles-description {
   font-size: 22px;
-  max-width: 850px;
+  color: #555;      /* <-- THIS was giving the light grey colour */
+  max-width: 900px;
   margin: 0 auto 50px;
-  color: #444;
 }
 
 .roles-grid {
@@ -234,6 +234,21 @@
 .form-message.error {
   background: rgba(239, 68, 68, 0.15);
   color: #ef4444;
+}
+
+.future-opportunities {
+  margin-top: 18px; /* creates clean spacing above this section */
+}
+
+.future-opportunities h2 {
+  margin-bottom: 25px; /* increase gap between title and sentence */
+}
+
+.future-opportunities .roles-description {
+  font-size: 24px;
+  line-height: 1.6;
+  color: #555;        /* restores original soft grey colour */
+  margin-top: -5px;
 }
 
 /* RESPONSIVE */

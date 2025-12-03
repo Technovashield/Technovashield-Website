@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../styles/SupportCareSentinelAI.css";
+import { Link } from "react-router-dom";
 
 const SupportCareSentinelAI = () => {
   const [openPanel, setOpenPanel] = useState(null); // null = no panel open
@@ -202,21 +203,23 @@ const SupportCareSentinelAI = () => {
 
       {/* CONTACT */}
       <section className="support-contact" id="contact-support">
-        <div className="contact-box">
-          <h2>Get In Touch</h2>
-          <p>
-            Want to support CareSentinelAI or become a pilot partner?  
-            We’d love to hear from you.
-          </p>
+  <div className="contact-box">
+    <h2>Connect With Us</h2>
+    <p>
+      Want to support CareSentinelAI or become a pilot partner?  
+      We’d love to hear from you.
+    </p>
 
-          <div className="contact-details">
-            <p><strong>Email:</strong> admin@technovashield.com</p>
-            <p><strong>Phone:</strong> +64 21 0865 7999</p>
-          </div>
+    <div className="contact-details">
+      <p><strong>Email:</strong> admin@technovashield.com</p>
+      <p><strong>Phone:</strong> +64 21 0865 7999</p>
+    </div>
 
-          <a href="/contact" className="contact-btn">Go To Contact Page</a>
-        </div>
-      </section>
+    <Link to="/contact" className="contact-btn">
+      Get in Touch
+    </Link>
+  </div>
+</section>
     </div>
   );
 };
