@@ -9,8 +9,7 @@ const TeamPage = () => {
       name: "Sunil Patel",
       role: "Director",
       description:
-        "Director of TechnovaShield Limited, responsible for governance and high-level oversight.",
-      image: "/Sunil Patel.jpg",
+        "Director of TechnovaShield Limited, Sunil provides oversight, steady leadership, and thoughtful guidance—supporting the company’s growth while ensuring our work stays grounded in integrity, clarity, and meaningful human impact",     image: "/Sunil Patel.jpg",
     },
     {
       id: 2,
