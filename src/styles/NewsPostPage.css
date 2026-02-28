@@ -1,85 +1,110 @@
 /* ----------------------------------------------------
-   NEWS POST PAGE — FIXED LAYOUT + HERO + CARD SIZING
+   NEWS POST PAGE — PREMIUM EDITORIAL REFINEMENT
 -----------------------------------------------------*/
 
 .news-post-page {
   font-family: "Poppins", sans-serif;
   background: #f4fafa;
-  padding-bottom: 80px;
+  padding-bottom: 100px;
   color: #00363d;
 }
 
-/* ---------- FULL-WIDTH HERO IMAGE ---------- */
+/* ====================================================
+   HERO IMAGE
+==================================================== */
 
 .news-post-hero {
   width: 100%;
+  overflow: hidden;
+  background: #ffffff;
 }
 
 .news-post-image {
   width: 100%;
-  height: auto;
-  max-height: 700px; /* keeps things tidy */
-  object-fit: contain;
-  border-bottom: 1px solid rgba(0,0,0,0.08);
+  height: 60vh;              /* Controlled hero height */
+  min-height: 380px;
+  max-height: 650px;
+  object-fit: cover;         /* IMPORTANT: makes it premium */
+  display: block;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
-/* ---------- MAIN ARTICLE CONTAINER ---------- */
+/* ====================================================
+   MAIN ARTICLE CONTAINER
+==================================================== */
 
 .news-post-content {
   background: #ffffff;
-  max-width: 1300px;      /* Bigger card */
-  margin: 60px auto 0;    /* No overlap */
-  padding: 60px 70px 90px;
-  border-radius: 24px;    /* Slightly bigger round corners */
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
+  max-width: 960px;           /* Better reading width */
+  margin: 70px auto 0;
+  padding: 70px 80px 100px;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.06);
+  position: relative;
 }
 
-/* ---------- HEADINGS ---------- */
+/* ====================================================
+   TYPOGRAPHY SYSTEM
+==================================================== */
+
+/* ---------- H1 (Article Title) ---------- */
 
 .news-post-content h1 {
-  font-size: 3rem;
+  font-size: 2.8rem;
   font-weight: 800;
+  line-height: 1.25;
   color: #014a5a;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
+  letter-spacing: -0.5px;
 }
+
+/* ---------- H2 (Section Titles) ---------- */
 
 .news-post-content h2 {
-  font-size: 2rem;
+  font-size: 1.9rem;
   font-weight: 700;
   color: #016b7b;
-  margin-top: 45px;
-  margin-bottom: 18px;
+  margin-top: 60px;
+  margin-bottom: 22px;
+  line-height: 1.35;
 }
 
-/* ---------- PARAGRAPHS ---------- */
+/* ---------- Paragraphs ---------- */
 
 .news-post-content p {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   line-height: 1.9;
-  margin-bottom: 25px;
+  margin-bottom: 28px;
   color: #1c3a41;
 }
 
-/* ---------- LISTS ---------- */
+/* ---------- Lists ---------- */
 
 .news-post-content ul {
-  padding-left: 28px;
-  margin-bottom: 28px;
+  padding-left: 26px;
+  margin-bottom: 30px;
 }
 
 .news-post-content li {
-  font-size: 1.18rem;
+  font-size: 1.12rem;
   line-height: 1.85;
   color: #1e4a55;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
-/* ---------- REFERENCES ---------- */
+/* ====================================================
+   REFERENCES
+==================================================== */
+
+.reference-links {
+  margin-top: 50px;
+}
 
 .reference-links a {
   color: #0284c7;
   font-weight: 600;
   text-decoration: none;
+  transition: color 0.25s ease;
 }
 
 .reference-links a:hover {
@@ -87,27 +112,74 @@
   text-decoration: underline;
 }
 
-/* ---------- RESPONSIVE ---------- */
+/* ====================================================
+   BACK TO NEWS LINK
+==================================================== */
 
-@media (max-width: 900px) {
-  .news-post-image {
-    height: 280px;
-  }
+.news-back-link {
+  max-width: 960px;
+  margin: 60px auto 20px;
+  padding: 0 20px;
+}
 
+.news-back-link a {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 700;
+  color: #0a5c6b;
+  font-size: 1.05rem;
+  letter-spacing: 0.4px;
+  transition: all 0.3s ease;
+}
+
+.news-back-link a:hover {
+  color: #083e47;
+  transform: translateX(-5px);
+}
+
+/* ====================================================
+   RESPONSIVE REFINEMENT
+==================================================== */
+
+@media (max-width: 1024px) {
   .news-post-content {
-    padding: 35px 25px 50px;
-    margin-top: 40px;
+    padding: 60px 50px 80px;
   }
 
   .news-post-content h1 {
     font-size: 2.4rem;
   }
 
-  .news-post-content p {
-    font-size: 1.05rem;
+  .news-post-content h2 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .news-post-image {
+    height: 320px;
+  }
+
+  .news-post-content {
+    padding: 40px 25px 60px;
+    margin-top: 40px;
+  }
+
+  .news-post-content h1 {
+    font-size: 2rem;
   }
 
   .news-post-content h2 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+    margin-top: 40px;
+  }
+
+  .news-post-content p {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .news-post-content li {
+    font-size: 1rem;
   }
 }
