@@ -58,6 +58,7 @@ const Navbar = () => {
           <li><Link to="/about" onClick={closeMenu}>About</Link></li>
           <li><Link to="/products" onClick={closeMenu}>Products</Link></li>
           <li><Link to="/team" onClick={closeMenu}>Team</Link></li>
+          <li><Link to="/advisory" onClick={closeMenu}>Advisory</Link></li>
 
           {/* ⭐ NEW — News Button */}
           <li><Link to="/news" onClick={closeMenu}>News</Link></li>
