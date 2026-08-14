@@ -78,8 +78,8 @@ const SupportCareSentinelAI = () => {
           <p>
             Our ecosystem brings together organisations and professionals who
             contribute practical expertise, technical capability, governance
-            perspectives, and sector knowledge to strengthen the development
-            and future deployment of TechnovaShield initiatives.
+            perspectives, and sector knowledge to strengthen the development and
+            future deployment of TechnovaShield initiatives.
           </p>
         </div>
       </section>
@@ -94,9 +94,9 @@ const SupportCareSentinelAI = () => {
           <h2>Working Together for Real-World Impact</h2>
 
           <p>
-            Our collaborations connect clinical practice, technology,
-            Indigenous data governance, research, and innovation to help
-            translate responsible ideas into practical solutions.
+            Our collaborations connect clinical practice, technology, Indigenous
+            data governance, research, and innovation to help translate
+            responsible ideas into practical solutions.
           </p>
         </div>
 
@@ -109,15 +109,13 @@ const SupportCareSentinelAI = () => {
 
             <div className="collaboration-logo-wrap">
               <img
-                src="/Dominion Road Surgery Logo.png"
+                src="/Dominion Road Surgery.avif"
                 alt="Dominion Road Surgery"
                 className="collaboration-logo dominion-logo"
               />
             </div>
 
-            <span className="ecosystem-type">
-              Clinical Pilot Partner
-            </span>
+            <span className="ecosystem-type">Clinical Pilot Partner</span>
 
             <h3>Dominion Road Surgery</h3>
 
@@ -465,8 +463,8 @@ const SupportCareSentinelAI = () => {
             <h3>TechWomen</h3>
 
             <p>
-              Supporting connection, leadership, and participation across
-              New Zealand’s technology sector.
+              Supporting connection, leadership, and participation across New
+              Zealand’s technology sector.
             </p>
           </article>
 
@@ -482,8 +480,8 @@ const SupportCareSentinelAI = () => {
             <h3>EdTechNZ</h3>
 
             <p>
-              Connecting with digital learning and technology communities
-              across Aotearoa New Zealand.
+              Connecting with digital learning and technology communities across
+              Aotearoa New Zealand.
             </p>
           </article>
         </div>
@@ -499,9 +497,9 @@ const SupportCareSentinelAI = () => {
           <h2>Help Shape the Next Stage</h2>
 
           <p>
-            We welcome conversations with healthcare organisations,
-            researchers, technology partners, data and AI specialists, funders,
-            and organisations exploring responsible innovation.
+            We welcome conversations with healthcare organisations, researchers,
+            technology partners, data and AI specialists, funders, and
+            organisations exploring responsible innovation.
           </p>
         </div>
 
@@ -604,9 +602,7 @@ const SupportCareSentinelAI = () => {
           DOMINION ROAD SURGERY PANEL
           ===================================================== */}
       <aside
-        className={`slide-panel ${
-          activePanel === "dominion" ? "open" : ""
-        }`}
+        className={`slide-panel ${activePanel === "dominion" ? "open" : ""}`}
         aria-hidden={activePanel !== "dominion"}
       >
         <button
@@ -621,7 +617,7 @@ const SupportCareSentinelAI = () => {
         <div className="slide-panel-content">
           <div className="panel-organisation-logo-wrap">
             <img
-              src="/Dominion Road Surgery Logo.png"
+              src="/Dominion Road Surgery.avif"
               alt="Dominion Road Surgery"
               className="panel-organisation-logo"
             />
@@ -633,9 +629,7 @@ const SupportCareSentinelAI = () => {
             </div>
 
             <div className="panel-heading-copy">
-              <span className="panel-subtitle">
-                Clinical Pilot Partner
-              </span>
+              <span className="panel-subtitle">Clinical Pilot Partner</span>
 
               <h2>Dominion Road Surgery</h2>
             </div>
@@ -648,23 +642,15 @@ const SupportCareSentinelAI = () => {
             clinical intelligence can fit naturally into everyday practice.
           </p>
 
-          <h3 className="panel-section-title">
-            Collaboration Focus
-          </h3>
+          <h3 className="panel-section-title">Collaboration Focus</h3>
 
           <ul className="panel-points">
-            <li>
-              Clinical workflow discovery and primary-care insight
-            </li>
-            <li>
-              Clinician feedback on usability and practical adoption
-            </li>
+            <li>Clinical workflow discovery and primary-care insight</li>
+            <li>Clinician feedback on usability and practical adoption</li>
             <li>
               Exploration of early recognition, review, and follow-up workflows
             </li>
-            <li>
-              Real-world validation considerations for CareSentinelAI
-            </li>
+            <li>Real-world validation considerations for CareSentinelAI</li>
           </ul>
 
           <div className="panel-why-box">
@@ -799,9 +785,7 @@ const SupportCareSentinelAI = () => {
           PROCESSX PANEL
           ===================================================== */}
       <aside
-        className={`slide-panel ${
-          activePanel === "processx" ? "open" : ""
-        }`}
+        className={`slide-panel ${activePanel === "processx" ? "open" : ""}`}
         aria-hidden={activePanel !== "processx"}
       >
         <button
@@ -842,20 +826,14 @@ const SupportCareSentinelAI = () => {
             CareSentinelAI ecosystem.
           </p>
 
-          <h3 className="panel-section-title">
-            Collaboration Focus
-          </h3>
+          <h3 className="panel-section-title">Collaboration Focus</h3>
 
           <ul className="panel-points">
             <li>
               Technical development supporting the CareSentinelAI ecosystem
             </li>
-            <li>
-              Intelligent automation and workflow engineering
-            </li>
-            <li>
-              Scalable platform development and technology delivery
-            </li>
+            <li>Intelligent automation and workflow engineering</li>
+            <li>Scalable platform development and technology delivery</li>
             <li>
               Engineering collaboration aligned with TechnovaShield’s product
               direction and clinical requirements
@@ -897,9 +875,7 @@ const SupportCareSentinelAI = () => {
           INDIGENOUS DATA AUTHORITY PANEL
           ===================================================== */}
       <aside
-        className={`slide-panel ${
-          activePanel === "inda" ? "open" : ""
-        }`}
+        className={`slide-panel ${activePanel === "inda" ? "open" : ""}`}
         aria-hidden={activePanel !== "inda"}
       >
         <button
@@ -942,18 +918,14 @@ const SupportCareSentinelAI = () => {
             development.
           </p>
 
-          <h3 className="panel-section-title">
-            Collaboration Focus
-          </h3>
+          <h3 className="panel-section-title">Collaboration Focus</h3>
 
           <ul className="panel-points">
             <li>
               Indigenous data governance considerations across the development
               lifecycle
             </li>
-            <li>
-              Responsible data and AI practices
-            </li>
+            <li>Responsible data and AI practices</li>
             <li>
               Governance evidence, accountability, and assurance readiness
             </li>
@@ -972,8 +944,7 @@ const SupportCareSentinelAI = () => {
               exercise. This ongoing relationship helps TechnovaShield
               strengthen its governance approach and build evidence toward
               future independent assessment and certification readiness when
-              CareSentinelAI and the relevant processes are sufficiently
-              mature.
+              CareSentinelAI and the relevant processes are sufficiently mature.
             </p>
           </div>
 
