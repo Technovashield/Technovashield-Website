@@ -1,148 +1,654 @@
-﻿/* FocusAreas.css – Full Enhanced Version */
+﻿/* ==========================================================================
+   FocusAreas.css
+   Homepage - Our Solutions
+   Teal Feature Section
+   ========================================================================== */
 
-/* ===== Section Wrapper ===== */
+/* ==========================================================================
+   Section
+   ========================================================================== */
+
 .focus-section {
-  background: linear-gradient(180deg, #ffffff, #eafcff);
-  padding: 100px 30px;
+  width: 100%;
+
+  background: linear-gradient(135deg, #006d78 0%, #007f89 48%, #008f9b 100%);
+
+  padding: 70px 8px 64px;
+
   text-align: center;
+
+  position: relative;
+  overflow: hidden;
 }
 
-/* ===== Header Section ===== */
+.focus-section::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(255, 255, 255, 0.08),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 75%,
+      rgba(255, 255, 255, 0.07),
+      transparent 28%
+    );
+
+  pointer-events: none;
+}
+
+.focus-content {
+  position: relative;
+
+  z-index: 1;
+
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   Section Header
+   ========================================================================== */
+
 .focus-header {
-  margin-bottom: 60px;
+  width: 100%;
+  max-width: 900px;
+
+  margin: 0 auto 40px;
+}
+
+.focus-eyebrow {
+  margin: 0 0 12px;
+
+  color: #aef5fa;
+
+  font-size: 1.25rem;
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
 }
 
 .focus-title {
-  font-size: 3.5rem; /* Larger title */
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(2.3rem, 3.6vw, 3.5rem);
+
   font-weight: 800;
-  color: #00363d;
-  margin-bottom: 20px;
-  text-transform: none;
+
+  line-height: 1.15;
+
+  letter-spacing: -0.025em;
 }
 
 .focus-subtext {
-  font-size: 1.6rem; /* Increased readability */
-  color: #4f6367;
-  max-width: 900px;
-  margin: 0 auto;
-  line-height: 1.8;
-  font-weight: 400;
+  max-width: 820px;
+
+  margin: 18px auto 0;
+
+  color: #e5fbfd;
+
+  font-size: 1.25rem;
+
+  line-height: 1.7;
+
+  font-weight: 500;
 }
 
-/* ===== Grid Layout ===== */
+/* ==========================================================================
+   Solution Grid
+   ========================================================================== */
+
 .focus-grid {
+  width: 100%;
+
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 40px;
-  justify-content: center;
-  margin-top: 50px;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 18px;
 }
 
-/* ===== Individual Cards ===== */
+/* ==========================================================================
+   Solution Card
+   ========================================================================== */
+
 .focus-card {
-  background: #ffffff;
-  border-radius: 24px;
-  padding: 50px 35px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-  transition: all 0.4s ease;
-  cursor: pointer;
-  border: 1px solid rgba(0, 168, 181, 0.2);
-  animation: fadeInUp 1.2s ease-in-out;
+  position: relative;
+
+  width: 100%;
+
+  min-height: 430px;
+
+  padding: 42px 30px 32px;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  border: 1px solid rgba(255, 255, 255, 0.34);
+
+  border-radius: 20px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  text-align: left;
+
+  overflow: hidden;
+
+  box-shadow: 0 14px 34px rgba(0, 48, 56, 0.2);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease,
+    background-color 0.3s ease;
 }
 
 .focus-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 14px 35px rgba(0, 168, 181, 0.25);
-  border-color: rgba(0, 168, 181, 0.5);
+  transform: translateY(-8px);
+
+  background: #ffffff;
+
+  border-color: rgba(255, 255, 255, 0.8);
+
+  box-shadow: 0 20px 45px rgba(0, 48, 56, 0.28);
 }
 
-/* ===== Icon ===== */
+/* Flagship */
+
+.focus-card-featured {
+  border-color: rgba(174, 245, 250, 0.85);
+
+  box-shadow: 0 16px 38px rgba(0, 48, 56, 0.24);
+}
+
+.focus-card-featured::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 5px;
+
+  background: #00a8b5;
+}
+
+/* ==========================================================================
+   Badges
+   ========================================================================== */
+
+.focus-badge {
+  position: absolute;
+
+  top: 20px;
+  right: 20px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 28px;
+
+  padding: 5px 12px;
+
+  border-radius: 999px;
+
+  font-size: 1.25rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.02em;
+}
+
+.focus-badge-flagship {
+  background: #00a8b5;
+
+  color: #ffffff;
+}
+
+.focus-badge-new {
+  background: #e5fafc;
+
+  border: 1px solid rgba(0, 168, 181, 0.4);
+
+  color: #007f91;
+}
+
+/* ==========================================================================
+   Icon
+   ========================================================================== */
+
 .focus-icon {
-  font-size: 4rem; /* Larger icons */
+  width: 74px;
+  height: 74px;
+
+  margin-bottom: 26px;
+
+  border-radius: 18px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: #e9fbfd;
+
+  border: 1px solid rgba(0, 168, 181, 0.26);
+
   color: #00a8b5;
-  margin-bottom: 25px;
-  transition: color 0.3s ease, transform 0.3s ease;
+
+  font-size: 2.25rem;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
 }
 
 .focus-card:hover .focus-icon {
-  color: #007f91;
-  transform: scale(1.15);
-  text-shadow: 0 0 16px rgba(0, 168, 181, 0.6);
+  background: #00a8b5;
+
+  color: #ffffff;
+
+  transform: scale(1.05);
 }
 
-/* ===== Card Title & Text ===== */
+/* ==========================================================================
+   Card Content
+   ========================================================================== */
+
+.focus-card-content {
+  flex: 1;
+
+  width: 100%;
+}
+
 .focus-card-title {
-  font-size: 2rem; /* Bigger title */
+  margin: 0;
+
+  color: #003b46;
+
+  font-size: 1.5rem;
+
+  font-weight: 750;
+
+  line-height: 1.3;
+}
+
+.focus-card-subtitle {
+  margin: 6px 0 18px;
+
+  color: #007f91;
+
+  font-size: 1.25rem;
+
   font-weight: 700;
-  color: #00363d;
-  margin-bottom: 16px;
+
+  line-height: 1.4;
 }
 
 .focus-card-text {
-  font-size: 1.3rem; /* Easier to read */
-  color: #4f6367;
-  line-height: 1.8;
-  max-width: 90%;
-  margin: 0 auto;
+  margin: 0;
+
+  color: #526b72;
+
+  font-size: 1rem;
+
+  line-height: 1.7;
 }
 
-/* ===== Animation ===== */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
+/* ==========================================================================
+   Learn More
+   ========================================================================== */
+
+.focus-learn-more {
+  margin-top: 28px;
+
+  padding: 0;
+
+  background: transparent;
+
+  border: none;
+
+  color: #00a8b5;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  font-size: 1.25rem;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    color 0.25s ease,
+    gap 0.25s ease;
+}
+
+.focus-learn-more:hover {
+  color: #007f91;
+
+  gap: 13px;
+}
+
+.focus-learn-more span {
+  font-size: 1.2rem;
+
+  line-height: 1;
+}
+
+/* ==========================================================================
+   Laptop
+   ========================================================================== */
+
+@media (max-width: 1200px) {
+  .focus-section {
+    padding: 72px 20px 66px;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  .focus-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 22px;
+  }
+
+  .focus-card {
+    min-height: 390px;
   }
 }
 
-/* ===== Responsive Adjustments ===== */
-@media (max-width: 1024px) {
-  .focus-title {
-    font-size: 3rem;
-  }
-  .focus-subtext {
-    font-size: 1.4rem;
-  }
-  .focus-card-title {
-    font-size: 1.8rem;
-  }
-  .focus-card-text {
-    font-size: 1.1rem;
-  }
-}
+/* ==========================================================================
+   Tablet
+   ========================================================================== */
 
 @media (max-width: 768px) {
-  .focus-title {
-    font-size: 2.5rem;
+  .focus-section {
+    padding: 60px 18px 54px;
   }
+
+  .focus-header {
+    margin-bottom: 38px;
+  }
+
   .focus-subtext {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
+
+  .focus-grid {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+
   .focus-card {
-    padding: 40px 25px;
+    min-height: auto;
+
+    padding: 36px 26px 30px;
   }
+}
+
+/* ==========================================================================
+   Mobile
+   ========================================================================== */
+
+@media (max-width: 480px) {
+  .focus-section {
+    padding: 50px 16px 46px;
+  }
+
+  .focus-eyebrow {
+    font-size: 1rem;
+  }
+
+  .focus-title {
+    font-size: 2rem;
+  }
+
+  .focus-subtext {
+    font-size: 0.95rem;
+
+    line-height: 1.6;
+  }
+
+  .focus-card {
+    padding: 32px 22px 28px;
+  }
+
+  .focus-icon {
+    width: 64px;
+    height: 64px;
+
+    font-size: 1.9rem;
+  }
+
   .focus-card-title {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
   }
+
+  .focus-card-subtitle {
+    font-size: 1rem;
+  }
+
   .focus-card-text {
+    font-size: 0.95rem;
+  }
+
+  .focus-learn-more {
     font-size: 1rem;
   }
 }
 
 @media (max-width: 480px) {
-  .focus-title {
-    font-size: 2.2rem;
+  .focus-content,
+  .focus-grid,
+  .focus-card,
+  .focus-card-content {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
   }
-  .focus-subtext {
-    font-size: 1rem;
+
+  .focus-grid {
+    overflow: hidden;
   }
-  .focus-card-title {
-    font-size: 1.4rem;
+
+  .focus-card {
+    overflow: hidden;
   }
+
+  .focus-badge {
+    right: 14px;
+    max-width: calc(100% - 28px);
+    white-space: nowrap;
+  }
+
+  .focus-card-title,
+  .focus-card-subtitle,
   .focus-card-text {
-    font-size: 0.95rem;
+    overflow-wrap: break-word;
+    word-break: normal;
   }
+}
+@media (max-width: 480px) {
+  .focus-section {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .focus-content {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .focus-grid {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .focus-card {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+  }
+}
+@media (max-width: 480px) {
+  .focus-grid {
+    width: calc(100% - 8px);
+    max-width: calc(100% - 8px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .focus-card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .focus-badge {
+    right: 10px;
+  }
+}
+/* =========================================================
+   FIVE-SOLUTION GRID
+   Desktop: 5 across
+   Tablet: responsive
+   Mobile: 1 across
+   ========================================================= */
+
+@media (min-width: 1201px) {
+  .focus-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 18px;
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .focus-card {
+    min-width: 0;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+  .focus-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .focus-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   FIVE-SOLUTION GRID - FINAL DESKTOP DISTRIBUTION
+   ========================================================= */
+
+@media (min-width: 1201px) {
+  .focus-content {
+    max-width: 1700px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .focus-grid {
+    width: 100%;
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 22px;
+  }
+
+  .focus-card {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+  }
+}
+
+/* =========================================================
+   OUR SOLUTIONS - FULL WIDTH FIVE CARD DESKTOP GRID
+   Match the full-width distribution of the trust cards above
+   ========================================================= */
+
+@media (min-width: 1201px) {
+  .focus-section {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .focus-content {
+    width: 100%;
+    max-width: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .focus-grid {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .focus-card {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+  }
+}
+/* =========================================================
+   OUR SOLUTIONS - READABILITY REFINEMENT
+   ========================================================= */
+
+.focus-card-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.focus-card-subtitle {
+  font-size: 1.20rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.focus-card-text {
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.75;
+  color: #425f66;
+}
+
+.focus-learn-more {
+  font-size: 1.05rem;
+  font-weight: 750;
 }

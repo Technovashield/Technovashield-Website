@@ -1,125 +1,435 @@
-/* ✅ HealthcareImpact Section CSS — Refined Version with Bigger Fonts & Enhanced Button */
+/* ==========================================================================
+   HealthcareImpactSection.css
+   Homepage - Healthcare Impact Closing Section
+   ========================================================================== */
 
 .healthcare-impact-section {
   position: relative;
-  background: linear-gradient(120deg, #00a8b5, #007f91, #00d4b4);
-  background-size: 300% 300%;
-  animation: gradientMove 8s ease infinite;
-  color: white;
-  padding: 120px 30px;
-  text-align: center;
+
+  width: 100%;
+
   overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #002f38 0%,
+      #004a55 48%,
+      #006d78 100%
+    );
+
+  color: #ffffff;
+
+  padding: 74px 28px 68px;
 }
 
-/* Moving gradient animation */
-@keyframes gradientMove {
+/* ==========================================================================
+   Decorative Background
+   ========================================================================== */
+
+.healthcare-impact-section::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(255, 255, 255, 0.07),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 80%,
+      rgba(255, 255, 255, 0.05),
+      transparent 28%
+    );
+
+  pointer-events: none;
+}
+
+.healthcare-impact-glow {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.35;
+}
+
+.healthcare-impact-glow-one {
+  width: 420px;
+  height: 420px;
+
+  top: -160px;
+  left: -120px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(174, 245, 250, 0.28),
+      transparent 68%
+    );
+}
+
+.healthcare-impact-glow-two {
+  width: 460px;
+  height: 460px;
+
+  right: -140px;
+  bottom: -190px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.12),
+      transparent 68%
+    );
+}
+
+/* ==========================================================================
+   Main Content
+   ========================================================================== */
+
+.healthcare-impact-content {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+
+  max-width: 1700px;
+
+  margin: 0 auto;
+
+  text-align: center;
+}
+
+.healthcare-impact-eyebrow {
+  margin: 0 0 12px;
+
+  color: #aef5fa;
+
+  font-size: 1.25rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+}
+
+.healthcare-impact-title {
+  max-width: 1120px;
+
+  margin: 0 auto;
+
+  color: #ffffff;
+
+  font-size: clamp(2.6rem, 4vw, 4.2rem);
+
+  font-weight: 800;
+
+  line-height: 1.14;
+
+  letter-spacing: -0.03em;
+}
+
+.healthcare-impact-text {
+  max-width: 980px;
+
+  margin: 24px auto 0;
+
+  color: #def8fa;
+
+  font-size: 1.25rem;
+
+  font-weight: 400;
+
+  line-height: 1.75;
+}
+
+/* ==========================================================================
+   Impact Grid
+   ========================================================================== */
+
+.healthcare-impact-grid {
+  width: 100%;
+
+  margin-top: 38px;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 20px;
+}
+
+.healthcare-impact-item {
+  min-height: 190px;
+
+  padding: 28px 24px;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 16px;
+
+  text-align: left;
+
+  background:
+    rgba(255, 255, 255, 0.08);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.18);
+
+  border-radius: 18px;
+
+  backdrop-filter: blur(8px);
+
+  box-shadow:
+    0 14px 34px rgba(0, 20, 25, 0.16);
+
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.healthcare-impact-item:hover {
+  transform: translateY(-6px);
+
+  background:
+    rgba(255, 255, 255, 0.13);
+
+  border-color:
+    rgba(174, 245, 250, 0.4);
+
+  box-shadow:
+    0 18px 42px rgba(0, 20, 25, 0.24);
+}
+
+.healthcare-impact-icon {
+  flex: 0 0 58px;
+
+  width: 58px;
+  height: 58px;
+
+  border-radius: 16px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: rgba(255, 255, 255, 0.12);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.2);
+
+  color: #aef5fa;
+
+  font-size: 1.7rem;
+}
+
+.healthcare-impact-item h3 {
+  margin: 2px 0 8px;
+
+  color: #ffffff;
+
+  font-size: 1.5rem;
+
+  font-weight: 750;
+
+  line-height: 1.3;
+}
+
+.healthcare-impact-item p {
+  margin: 0;
+
+  color: #d9f4f6;
+
+  font-size: 1rem;
+
+  line-height: 1.65;
+}
+
+/* ==========================================================================
+   CTA
+   ========================================================================== */
+
+.healthcare-impact-cta {
+  margin-top: 36px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.healthcare-impact-cta-label {
+  margin: 0 0 18px;
+
+  color: #dff9fb;
+
+  font-size: 1.25rem;
+
+  font-weight: 600;
+
+  line-height: 1.5;
+}
+
+.healthcare-impact-btn {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 15px 30px;
+
+  border-radius: 999px;
+
+  background: #ffffff;
+
+  border: 2px solid #ffffff;
+
+  color: #007f91;
+
+  font-size: 1.25rem;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  box-shadow:
+    0 10px 28px rgba(255, 255, 255, 0.14);
+
+  transition:
+    transform 0.25s ease,
+    gap 0.25s ease,
+    background-color 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.healthcare-impact-btn:hover {
+  transform: translateY(-3px);
+
+  gap: 14px;
+
+  background: #eafcff;
+
+  color: #006d78;
+
+  box-shadow:
+    0 14px 34px rgba(255, 255, 255, 0.2);
+}
+
+/* ==========================================================================
+   Animation
+   ========================================================================== */
+
+@keyframes healthcareImpactGradient {
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
 }
 
-.healthcare-impact-section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.35);
-  z-index: 1;
-}
+/* ==========================================================================
+   Laptop
+   ========================================================================== */
 
-.healthcare-impact-content {
-  position: relative;
-  z-index: 2;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* Title styling */
-.healthcare-impact-title {
-  font-size: 4rem;
-  font-weight: 800;
-  margin-bottom: 30px;
-  text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.7);
-  line-height: 1.3;
-}
-
-/* Body text styling */
-.healthcare-impact-text {
-  font-size: 1.8rem;
-  line-height: 2;
-  color: #eafcff;
-  font-weight: 400;
-  margin-bottom: 50px;
-  text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.4);
-}
-
-/* Learn More Button styling */
-.healthcare-impact-btn {
-  background-color: #ffffff;
-  color: #007f91;
-  border: none;
-  border-radius: 40px;
-  padding: 18px 50px;
-  font-size: 1.5rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
-  letter-spacing: 0.5px;
-}
-
-.healthcare-impact-btn:hover {
-  background-color: #eafcff;
-  transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.5);
-}
-
-/* Responsive Adjustments */
-@media (max-width: 992px) {
-  .healthcare-impact-title {
-    font-size: 3rem;
+@media (max-width: 1200px) {
+  .healthcare-impact-section {
+    padding: 82px 24px 76px;
   }
-  .healthcare-impact-text {
-    font-size: 1.4rem;
-  }
-  .healthcare-impact-btn {
-    font-size: 1.3rem;
-    padding: 16px 42px;
+
+  .healthcare-impact-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
+/* ==========================================================================
+   Tablet
+   ========================================================================== */
 
 @media (max-width: 768px) {
+  .healthcare-impact-section {
+    padding: 66px 20px 60px;
+  }
+
+  .healthcare-impact-eyebrow {
+    font-size: 1rem;
+  }
+
   .healthcare-impact-title {
     font-size: 2.5rem;
   }
+
   .healthcare-impact-text {
-    font-size: 1.2rem;
-    line-height: 1.8;
+    font-size: 1rem;
   }
-  .healthcare-impact-btn {
-    font-size: 1.2rem;
-    padding: 14px 36px;
+
+  .healthcare-impact-grid {
+    grid-template-columns: 1fr;
+
+    margin-top: 38px;
+  }
+
+  .healthcare-impact-item {
+    min-height: auto;
+  }
+
+  .healthcare-impact-cta-label {
+    font-size: 1rem;
   }
 }
 
+/* ==========================================================================
+   Mobile
+   ========================================================================== */
+
 @media (max-width: 480px) {
+  .healthcare-impact-section {
+    padding: 54px 18px 50px;
+  }
+
   .healthcare-impact-title {
     font-size: 2rem;
   }
+
   .healthcare-impact-text {
-    font-size: 1rem;
+    font-size: 0.95rem;
+
+    line-height: 1.6;
   }
+
+  .healthcare-impact-item {
+    padding: 24px 20px;
+  }
+
+  .healthcare-impact-item h3 {
+    font-size: 1.3rem;
+  }
+
+  .healthcare-impact-item p {
+    font-size: 0.95rem;
+  }
+
   .healthcare-impact-btn {
     font-size: 1rem;
-    padding: 12px 30px;
+
+    padding: 13px 24px;
   }
 }

@@ -1,381 +1,664 @@
-﻿/* About Page Styles (Final Optimized Version) */
+﻿/* =========================================
+   ABOUT PAGE
+   ========================================= */
+
 .about-page {
   min-height: 100vh;
   background: #ffffff;
+  overflow-x: clip;
 }
 
-.container {
-  max-width: 1200px;
+.about-container {
+  width: min(100% - 48px, 1500px);
   margin: 0 auto;
-  padding: 0 20px;
 }
 
-/* Hero Section */
+/* =========================================
+   HERO
+   ========================================= */
+
 .about-hero {
   position: relative;
-  height: 75vh;
-  min-height: 520px;
+  min-height: 680px;
+  height: 78vh;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: linear-gradient(135deg, #00263a 0%, #004d7a 100%);
+  background: #062f46;
 }
 
-.hero-background,
-.hero-video {
+.about-hero-background,
+.about-hero-video,
+.about-hero-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
+}
+
+.about-hero-video {
   object-fit: cover;
 }
 
-.hero-video-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    135deg,
-    rgba(0, 38, 58, 0.8),
-    rgba(0, 77, 122, 0.6)
-  );
-  z-index: 2;
+.about-hero-overlay {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(3, 34, 52, 0.9) 0%,
+      rgba(5, 67, 88, 0.74) 48%,
+      rgba(0, 126, 140, 0.5) 100%
+    );
 }
 
-.hero-content {
+.about-hero-content {
   position: relative;
-  z-index: 3;
+  z-index: 2;
+  width: min(100% - 48px, 1100px);
+  margin: 0 auto;
   text-align: center;
-  padding: 0 20px;
-  max-width: 900px;
 }
 
-.hero-title {
-  font-size: 48px;
+.about-eyebrow {
+  display: inline-block;
+  margin-bottom: 22px;
+  font-size: 26px;
   font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #8ce7e6;
+}
+
+.about-hero-title {
+  max-width: 1000px;
+  margin: 0 auto;
+  font-size: clamp(52px, 6vw, 78px);
+  line-height: 1.06;
+  font-weight: 800;
   color: #ffffff;
-  margin-bottom: 20px;
-  line-height: 1.2;
 }
 
-.hero-subtitle {
-  font-size: 24px;
-  color: #c8f4e2;
-  line-height: 1.8;
+.about-hero-title span {
+  display: block;
+  color: #b8f0ed;
 }
 
-/* Section Spacing */
-.our-story-section,
-.philosophy-section,
-.partnerships-section,
-.team-leadership-section,
-.healthcare-impact-section,
-.cta-section {
-  padding: 80px 0;
+.about-hero-subtitle {
+  max-width: 960px;
+  margin: 28px auto 0;
+  font-size: 22px;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.9);
 }
 
-/* Our Story */
+/* =========================================
+   SHARED SECTION TYPOGRAPHY
+   ========================================= */
+
+.section-eyebrow {
+  display: inline-block;
+  margin-bottom: 14px;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: #0a8ea0;
+}
+
+.section-heading {
+  margin: 0;
+  font-size: clamp(40px, 4vw, 54px);
+  line-height: 1.15;
+  font-weight: 800;
+  color: #072f4a;
+}
+
+.section-subheading {
+  max-width: 850px;
+  margin: 20px auto 0;
+  font-size: 22px;
+  line-height: 1.75;
+  color: #526474;
+}
+
+.section-intro {
+  max-width: 950px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* =========================================
+   OUR STORY
+   ========================================= */
+
+.our-story-section {
+  padding: 110px 0;
+  background: #ffffff;
+}
+
 .story-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 50px;
+  grid-template-columns: minmax(0, 1.08fr) minmax(360px, 0.92fr);
+  gap: 80px;
   align-items: center;
 }
 
 .story-content h2 {
-  font-size: 40px; /* Bigger heading */
-  color: #00263a;
-  margin-bottom: 20px;
+  margin: 0 0 26px;
+  font-size: clamp(42px, 4vw, 56px);
+  line-height: 1.15;
+  font-weight: 800;
+  color: #072f4a;
 }
 
 .story-content p {
-  font-size: 25px; /* Bigger paragraph */
-  line-height: 1.85;
-  color: #333;
+  margin: 0 0 22px;
+  font-size: 22px;
+  line-height: 1.82;
+  color: #475569;
 }
 
-/* Reduce huge side gaps */
-.story-grid {
-  padding: 0 20px; /* Previously too wide */
+.story-content p:last-child {
+  margin-bottom: 0;
+}
+
+.story-image {
+  position: relative;
+}
+
+.story-image::before {
+  content: "";
+  position: absolute;
+  top: -18px;
+  right: -18px;
+  width: 72%;
+  height: 72%;
+  border-radius: 28px;
+  background: rgba(0, 168, 181, 0.09);
 }
 
 .story-image-img {
-  width: 140%;
-  height: auto;
-  max-height: 400px;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  min-height: 420px;
+  display: block;
   object-fit: cover;
-  border-radius: 14px;
-  box-shadow: 0 8px 24px rgba(0, 166, 166, 0.2);
+  border-radius: 24px;
+  box-shadow: 0 20px 50px rgba(7, 47, 74, 0.13);
 }
 
-/* Section Headings (Centered except Our Story) */
-.section-heading {
-  font-size: 40px;
-  color: #00263a;
-  text-align: center;
-  margin-bottom: 20px;
-  font-weight: 700;
-}
+/* =========================================
+   PHILOSOPHY
+   ========================================= */
 
-/* Philosophy */
 .philosophy-section {
-  background: #f8f9fa;
-}
-
-.section-subheading {
-  font-size: 28px;
-  line-height: 1.7;
-  color: #555;
-  text-align: center;
-  margin-bottom: 40px;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  padding: 110px 0;
+  background: #f5fafb;
 }
 
 .philosophy-cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Force 3 equal wide columns */
-  gap: 60px; /* Slightly bigger spacing */
-  padding: 0 50px; /* Reduce empty side-space */
-  margin-top: 60px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 30px;
+  margin-top: 58px;
 }
 
 .philosophy-card {
+  position: relative;
+  padding: 46px 36px 44px;
   background: #ffffff;
-  padding: 48px 40px;
-  border-radius: 12px;
+  border: 1px solid rgba(0, 168, 181, 0.14);
+  border-radius: 22px;
   text-align: center;
-  transition: all 0.4s ease;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-  border: 2px solid transparent;
+  box-shadow: 0 10px 30px rgba(7, 47, 74, 0.06);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.philosophy-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 25%;
+  width: 50%;
+  height: 4px;
+  border-radius: 0 0 999px 999px;
+  background: #00a8b5;
 }
 
 .philosophy-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(0, 166, 166, 0.2);
-  border-color: #00a6a6;
+  transform: translateY(-6px);
+  border-color: rgba(0, 168, 181, 0.3);
+  box-shadow: 0 18px 40px rgba(7, 47, 74, 0.1);
 }
 
 .philosophy-icon {
-  width: 110px;
-  height: 110px;
-  margin: 0 auto 20px;
+  width: 96px;
+  height: 96px;
   display: block;
+  margin: 0 auto 26px;
   object-fit: contain;
 }
 
 .philosophy-card h3 {
-  font-size: 26px;
-  color: #00263a;
-  margin-bottom: 12px;
-  font-weight: 700;
+  margin: 0 0 16px;
+  font-size: 27px;
+  line-height: 1.3;
+  font-weight: 800;
+  color: #072f4a;
 }
 
 .philosophy-card p {
-  font-size: 22px;
-  color: #555;
-  line-height: 1.6;
+  margin: 0;
+  font-size: 19px;
+  line-height: 1.72;
+  color: #526474;
 }
 
-/* Partnerships */
-.partnerships-section .section-heading {
+/* =========================================
+   TEAM & LEADERSHIP
+   ========================================= */
+
+.team-leadership-section {
+  padding: 110px 0;
+  background: #ffffff;
+}
+
+.team-leadership-content {
+  max-width: 980px;
+  margin: 0 auto;
   text-align: center;
-  font-size: 40px;
-  font-weight: 700;
-  color: #00263a;
-  margin-bottom: 20px;
-}
-
-.network-description {
-  font-size: 24px;
-  color: #444;
-  line-height: 1.85;
-  text-align: center;
-  max-width: 900px;
-  padding: 0 40px;
-  margin: 0 auto 20px;
-}
-
-.partners-carousel {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-  margin-top: 50px;
-  flex-wrap: wrap;
-  padding: 0 40px;
-}
-
-.partner-logo {
-  font-size: 22px;
-  font-weight: 600;
-  color: #777;
-  padding: 16px 30px;
-  background: #f8f9fa;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-}
-
-.partner-logo:hover {
-  color: #00a6a6;
-  transform: scale(1.05);
-}
-
-/* Team Section */
-.team-leadership-section .section-heading {
-  text-align: center;
-  font-size: 40px;
-  font-weight: 700;
-  color: #00263a;
-  margin-bottom: 20px;
 }
 
 .team-description {
-  font-size: 24px;
-  color: #444;
-  line-height: 1.8;
-  text-align: center;
   max-width: 900px;
-  margin: 0 auto 20px;
-  padding: 0 40px;
+  margin: 22px auto 0;
+  font-size: 22px;
+  line-height: 1.78;
+  color: #475569;
+}
+
+.team-description + .team-description {
+  margin-top: 14px;
 }
 
 .team-cta {
-  text-align: center;
-  margin-top: 30px;
-  font-size: 28px; /* Bigger button text */
-  padding: 16px 42px;
+  margin-top: 36px;
 }
 
-.team-cta .btn {
-  font-size: 24px !important; /* Bigger font */
-  padding: 16px 48px !important; /* Larger button */
+.about-primary-button,
+.about-cta-button,
+.impact-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-decoration: none;
+  font-weight: 700;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.about-primary-button {
+  padding: 16px 30px;
   border-radius: 10px;
+  background: #00a8b5;
+  color: #ffffff;
+  font-size: 20px;
+  box-shadow: 0 10px 24px rgba(0, 168, 181, 0.2);
 }
 
-/* Healthcare Impact */
+.about-primary-button:hover {
+  transform: translateY(-2px);
+  background: #087f90;
+  box-shadow: 0 14px 30px rgba(0, 168, 181, 0.28);
+}
+
+/* =========================================
+   HEALTHCARE IMPACT
+   ========================================= */
+
 .healthcare-impact-section {
   position: relative;
-  background: #00263a;
-  color: #fff;
+  padding: 120px 0;
   overflow: hidden;
+  background: #052f46;
+  color: #ffffff;
+}
+
+.impact-background,
+.impact-bg-image,
+.impact-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .impact-bg-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   object-fit: cover;
-  z-index: 1;
 }
 
 .impact-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 2;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(3, 34, 52, 0.96) 0%,
+      rgba(3, 34, 52, 0.88) 48%,
+      rgba(3, 34, 52, 0.72) 100%
+    );
 }
 
 .impact-content {
   position: relative;
-  z-index: 3;
-  max-width: 900px;
-  margin: 0 auto;
-  text-align: center;
-  padding: 60px 40px;
+  z-index: 2;
+  max-width: 980px;
+  padding: 18px 0;
+}
+
+.impact-eyebrow {
+  display: inline-block;
+  margin-bottom: 18px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: #8ce7e6;
 }
 
 .impact-content h2 {
-  font-size: 42px;
-  font-weight: 700;
-  margin-bottom: 20px;
+  max-width: 900px;
+  margin: 0 0 28px;
+  font-size: clamp(42px, 4vw, 58px);
+  line-height: 1.15;
+  font-weight: 800;
 }
 
 .impact-content p {
-  font-size: 26px;
+  max-width: 900px;
+  margin: 0 0 22px;
+  font-size: 22px;
   line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
 }
 
-/* CTA */
-.cta-section {
-  background: linear-gradient(135deg, #00263a 0%, #00a6a6 100%);
+.impact-link {
+  margin-top: 16px;
+  font-size: 20px;
+  color: #9bf0ed;
 }
 
-.cta-content {
-  text-align: center;
-  max-width: 800px;
+.impact-link:hover {
+  transform: translateX(4px);
+}
+
+/* =========================================
+   FINAL CTA
+   ========================================= */
+
+.about-cta-section {
+  padding: 100px 0;
+  background:
+    linear-gradient(
+      135deg,
+      #062f46 0%,
+      #07596b 55%,
+      #078b91 100%
+    );
+}
+
+.about-cta-content {
+  max-width: 950px;
   margin: 0 auto;
+  text-align: center;
 }
 
-.cta-content h2 {
-  font-size: 30px;
-  color: #c8f4e2;
-  margin-bottom: 30px;
-  font-weight: 600;
-  line-height: 1.5;
+.about-cta-eyebrow {
+  color: #9bf0ed;
 }
 
-/* Buttons */
-.btn {
-  display: inline-block;
-  padding: 14px 36px;
-  font-size: 24px;
-  font-weight: 600;
-  border-radius: 8px;
-  text-decoration: none;
-  border: none;
-  transition: 0.3s ease;
+.about-cta-content h2 {
+  margin: 0;
+  font-size: clamp(40px, 4.5vw, 58px);
+  line-height: 1.2;
+  font-weight: 800;
+  color: #ffffff;
 }
 
-.btn-primary {
-  background: #00a6a6;
-  color: #fff;
+.about-cta-content p {
+  max-width: 800px;
+  margin: 22px auto 0;
+  font-size: 20px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.86);
 }
 
-.btn-primary:hover {
-  background: #008888;
+.about-cta-button {
+  margin-top: 34px;
+  padding: 17px 32px;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #07596b;
+  font-size: 19px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+.about-cta-button:hover {
   transform: translateY(-2px);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.2);
 }
 
-.btn-glow {
-  box-shadow: 0 0 20px rgba(0, 166, 166, 0.4);
+/* =========================================
+   SMALL DESKTOP / TABLET
+   ========================================= */
+
+@media (max-width: 1100px) {
+  .story-grid {
+    gap: 48px;
+  }
+
+  .story-content p,
+  .team-description,
+  .impact-content p {
+    font-size: 20px;
+  }
 }
 
-.btn-glow:hover {
-  box-shadow: 0 0 30px rgba(0, 166, 166, 0.7);
-}
+/* =========================================
+   TABLET
+   ========================================= */
 
-/* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+  .about-container {
+    width: min(100% - 40px, 760px);
+  }
+
   .about-hero {
-    height: 60vh;
-    min-height: 400px;
+    min-height: 600px;
+    height: auto;
+    padding: 110px 0 90px;
   }
 
-  .hero-title {
-    font-size: 32px;
-  }
-
-  .hero-subtitle {
-    font-size: 16px;
+  .about-hero-subtitle {
+    font-size: 20px;
   }
 
   .our-story-section,
   .philosophy-section,
-  .partnerships-section,
-  .team-leadership-section,
-  .healthcare-impact-section,
-  .cta-section {
-    padding: 50px 0;
+  .team-leadership-section {
+    padding: 82px 0;
+  }
+
+  .story-grid {
+    grid-template-columns: 1fr;
+    gap: 46px;
+  }
+
+  .story-image {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .story-image-img {
+    min-height: 360px;
+  }
+
+  .philosophy-cards {
+    grid-template-columns: 1fr;
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .healthcare-impact-section {
+    padding: 92px 0;
+  }
+
+  .impact-content {
+    text-align: center;
+  }
+
+  .impact-content h2,
+  .impact-content p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 600px) {
+  .about-container {
+    width: min(100% - 32px, 560px);
+  }
+
+  .about-hero {
+    min-height: 560px;
+    padding: 96px 0 72px;
+  }
+
+  .about-hero-content {
+    width: min(100% - 32px, 560px);
+  }
+
+  .about-eyebrow,
+  .section-eyebrow,
+  .impact-eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.11em;
+  }
+
+  .about-hero-title {
+    font-size: 44px;
+  }
+
+  .about-hero-subtitle {
+    margin-top: 22px;
+    font-size: 17px;
+    line-height: 1.68;
+  }
+
+  .our-story-section,
+  .philosophy-section,
+  .team-leadership-section {
+    padding: 66px 0;
+  }
+
+  .story-content h2,
+  .section-heading {
+    font-size: 38px;
+  }
+
+  .story-content p,
+  .section-subheading,
+  .team-description {
+    font-size: 17px;
+    line-height: 1.72;
+  }
+
+  .story-image::before {
+    display: none;
+  }
+
+  .story-image-img {
+    min-height: 280px;
+    border-radius: 18px;
+  }
+
+  .philosophy-cards {
+    gap: 22px;
+    margin-top: 42px;
+  }
+
+  .philosophy-card {
+    padding: 38px 24px 36px;
+  }
+
+  .philosophy-icon {
+    width: 82px;
+    height: 82px;
+  }
+
+  .philosophy-card h3 {
+    font-size: 24px;
+  }
+
+  .philosophy-card p {
+    font-size: 17px;
+  }
+
+  .about-primary-button,
+  .about-cta-button {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .healthcare-impact-section {
+    padding: 72px 0;
+  }
+
+  .impact-content h2 {
+    font-size: 38px;
+  }
+
+  .impact-content p {
+    font-size: 17px;
+    line-height: 1.72;
+  }
+
+  .about-cta-section {
+    padding: 76px 0;
+  }
+
+  .about-cta-content h2 {
+    font-size: 38px;
+  }
+
+  .about-cta-content p {
+    font-size: 17px;
+  }
+}
+
+/* =========================================
+   VERY SMALL MOBILE
+   ========================================= */
+
+@media (max-width: 380px) {
+  .about-hero-title {
+    font-size: 38px;
+  }
+
+  .story-content h2,
+  .section-heading,
+  .impact-content h2,
+  .about-cta-content h2 {
+    font-size: 34px;
   }
 }

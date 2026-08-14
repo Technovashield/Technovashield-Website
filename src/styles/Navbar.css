@@ -1,177 +1,477 @@
-/* Navbar.css — Updated with Support CareSentinelAI Button */
+/* ==========================================================================
+   Navbar.css
+   TechnovaShield Premium Sticky Navigation
+   ========================================================================== */
+
 .navbar-header {
+  position: sticky;
+  top: 0;
+
+  z-index: 9000;
+
+  width: 100%;
+
   font-family: "Poppins", Arial, sans-serif;
-  font-weight: 500;
+
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
 }
 
-/* --- Top Strip --- */
+/* ==========================================================================
+   Utility Strip
+   ========================================================================== */
+
 .navbar-top {
-  background: linear-gradient(90deg, #015871, #0284c7);
-  color: white;
-  padding: 14px 60px;
+  width: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      #006d78 0%,
+      #008896 100%
+    );
+
+  color: #ffffff;
+  padding:10px 36px;
+}
+
+.navbar-top-inner {
+  width: 100%;
+  min-height: 38px;
+
+  padding: 0 38px;
+
   display: flex;
-  justify-content: flex-end;
   align-items: center;
-  height: 60px;
-  font-size: 1.6rem;
-  letter-spacing: 0.4px;
+  justify-content: space-between;
+
+  gap: 30px;
 }
 
-.navbar-top-links a {
-  color: #eafcff;
-  margin-left: 2rem;
-  text-decoration: none;
-  font-size: 1.5rem;
-  transition: color 0.3s ease;
+.navbar-top-message {
+  color: rgba(255, 255, 255, 0.78);
+
+  font-size: 1.25rem;
+  font-weight: 650;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+}
+
+.navbar-top-links {
+  display: flex;
+  align-items: center;
+
+  gap: 20px;
+}
+
+.top-link {
+  color: #e9fbfd;
+
+  font-size: 1.25rem;
   font-weight: 600;
-}
 
-.navbar-top-links a:hover {
-  color: #bdf3ff;
-}
-
-/* 🎯 NEW — Support CareSentinelAI Button */
-.support-button {
-  margin-left: 2rem;
-  background: linear-gradient(135deg, #00d0d8, #026aa7);
-  color: white !important;
-  padding: 0.9rem 2.2rem;
-  border: none;
-  border-radius: 40px;
-  font-size: 1.45rem;
-  font-weight: 800;
-  cursor: pointer;
   text-decoration: none;
-  transition: all 0.35s ease;
-  box-shadow: 0 6px 16px rgba(0, 150, 180, 0.35);
-  letter-spacing: 0.5px;
+
+  transition: color 0.25s ease;
+}
+
+.top-link:hover {
+  color: #ffffff;
+}
+
+.support-button {
+  padding: 7px 15px;
+
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.14);
+
+  border: 1px solid rgba(255, 255, 255, 0.28);
+
+  color: #ffffff;
+
+  font-size: 1.25rem;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition:
+    background-color 0.25s ease,
+    transform 0.25s ease;
 }
 
 .support-button:hover {
-  background: linear-gradient(135deg, #04bcc4, #015a8e);
-  transform: translateY(-3px) scale(1.04);
-  box-shadow: 0 10px 22px rgba(0, 150, 180, 0.5);
+  background: rgba(255, 255, 255, 0.22);
+
+  transform: translateY(-1px);
 }
 
-/* --- Main Navbar --- */
+/* ==========================================================================
+   Main Navbar
+   ========================================================================== */
+
 .navbar {
+  width: 100%;
+
+  background: rgba(248, 253, 255, 0.96);
+
+  border-bottom:
+    1px solid rgba(0, 168, 181, 0.12);
+
+  transition:
+    background-color 0.3s ease,
+    backdrop-filter 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.navbar-header-scrolled .navbar {
+  background: rgba(248, 253, 255, 0.88);
+
+  backdrop-filter: blur(16px);
+
+  box-shadow:
+    0 9px 28px rgba(0, 59, 70, 0.1);
+}
+
+.navbar-inner {
+  width: 100%;
+
+  min-height: 170px;
+
+  padding: 0 38px;
+
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: center;
-  padding: 1.2rem 3rem;
-  background: linear-gradient(90deg, #f8fdff, #e6f7fa);
-  color: #013950;
-  border-bottom: 1px solid #d0ebf4;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+
+  gap: 36px;
 }
 
-.logo-only {
+/* ==========================================================================
+   Brand
+   ========================================================================== */
+
+.navbar-brand {
+  flex: 0 0 auto;
+
   display: flex;
   align-items: center;
-}
 
-/* Logo Adjustments */
-.logo-img-only {
-  width: 145px;
-  height: 145px;
-  object-fit: contain;
-  margin: 8px 12px;
-  background-color: #f4fbff;
-  border-radius: 50%;
-  box-shadow: 0 0 10px rgba(0, 150, 180, 0.3);
-  padding: 6px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+  gap: 22px;
 
-.logo-img-only:hover {
-  transform: scale(1.06);
-  box-shadow: 0 0 16px rgba(0, 150, 180, 0.45);
-}
-
-/* --- Navigation Links --- */
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 3rem;
-}
-
-.nav-links a {
-  color: #01445e;
-  font-weight: 700;
-  font-size: 1.6rem;
   text-decoration: none;
+}
+
+.navbar-logo {
+  width: 130px;
+  height: 130px;
+
+  object-fit: contain;
+
+  border-radius: 50%;
+
+  padding: 4px;
+
+  background:
+    radial-gradient(
+      circle,
+      #ffffff 55%,
+      #e7fafc 100%
+    );
+
+  border: 2px solid rgba(0, 168, 181, 0.28);
+
+  box-shadow:
+    0 0 0 5px rgba(0, 168, 181, 0.06),
+    0 8px 22px rgba(0, 73, 86, 0.14);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.navbar-brand:hover .navbar-logo {
+  transform:
+    perspective(700px)
+    rotateY(8deg)
+    scale(1.05);
+
+  box-shadow:
+    0 0 0 7px rgba(0, 168, 181, 0.1),
+    0 15px 28px rgba(0, 59, 70, 0.22),
+    0 24px 44px rgba(0, 59, 70, 0.16);
+}
+
+.navbar-logo-rotating {
+  animation: navbarLogoRotate 1.6s cubic-bezier(0.45, 0, 0.25, 1);
+}
+
+@keyframes navbarLogoRotate {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+
+  25% {
+    transform: rotate(90deg) scale(1.05);
+  }
+
+  50% {
+    transform: rotate(180deg) scale(1.08);
+  }
+
+  75% {
+    transform: rotate(270deg) scale(1.05);
+  }
+
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+.navbar-brand-copy {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+}
+
+.navbar-brand-name {
+  color: #003b46;
+
+  font-size: 2.1rem;
+  font-weight: 800;
+
+  line-height: 1.2;
+}
+
+.navbar-brand-tagline {
+  margin-top: 4px;
+
+  color: #6c8287;
+
+  font-size: 1.25rem;
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   Navigation Links
+   ========================================================================== */
+
+.nav-links {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+
+  display: flex;
+  align-items: center;
+
+  gap: 28px;
+}
+
+.navbar-link {
   position: relative;
-  transition: color 0.3s ease;
+
+  padding: 29px 0 27px;
+
+  color: #294f57;
+
+  font-size: 1.25rem;
+  font-weight: 750;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+
+  transition: color 0.25s ease;
 }
 
-.nav-links a::after {
+.navbar-link::after {
   content: "";
+
   position: absolute;
-  bottom: -6px;
-  left: 0;
-  width: 0%;
-  height: 3px;
-  background-color: #02a5b8;
-  transition: width 0.3s ease;
+
+  left: 50%;
+  bottom: 18px;
+
+  width: 0;
+  height: 2px;
+
+  border-radius: 999px;
+
+  background: #00a8b5;
+
+  transform: translateX(-50%);
+
+  transition: width 0.25s ease;
 }
 
-.nav-links a:hover {
-  color: #02a5b8;
+.navbar-link:hover,
+.navbar-link-active {
+  color: #007f91;
 }
 
-.nav-links a:hover::after {
+.navbar-link:hover::after,
+.navbar-link-active::after {
   width: 100%;
 }
 
-/* --- Hamburger --- */
+/* ==========================================================================
+   Primary Navbar CTA
+   ========================================================================== */
+
+.nav-contact-item {
+  margin-left: 3px;
+}
+
+.navbar-contact-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 42px;
+
+  padding: 0 20px;
+
+  border-radius: 999px;
+
+  background: #00a8b5;
+
+  border: 2px solid #00a8b5;
+
+  color: #ffffff;
+
+  font-size: 1.25rem;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  box-shadow:
+    0 8px 20px rgba(0, 168, 181, 0.18);
+
+  transition:
+    transform 0.25s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.navbar-contact-button:hover {
+  transform: translateY(-2px);
+
+  background: #007f91;
+
+  border-color: #007f91;
+
+  box-shadow:
+    0 11px 24px rgba(0, 168, 181, 0.25);
+}
+
+/* ==========================================================================
+   Mobile Button
+   ========================================================================== */
+
 .hamburger {
   display: none;
-  flex-direction: column;
-  gap: 6px;
-  background: none;
-  border: none;
-  cursor: pointer;
+
+  width: 46px;
+  height: 46px;
+
   padding: 10px;
-  z-index: 1001;
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+
+  background: transparent;
+
+  border: none;
+
+  cursor: pointer;
+
+  z-index: 9100;
 }
 
 .hamburger span {
-  width: 32px;
-  height: 3px;
-  background-color: #01445e;
-  border-radius: 3px;
-  transition: all 0.3s ease;
+  width: 25px;
+  height: 2px;
+
+  border-radius: 999px;
+
+  background: #003b46;
+
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
 }
 
 .hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(6px, 6px);
+  transform:
+    translateY(7px)
+    rotate(45deg);
 }
+
 .hamburger.active span:nth-child(2) {
   opacity: 0;
 }
+
 .hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
+  transform:
+    translateY(-7px)
+    rotate(-45deg);
 }
 
-/* --- Responsive Design --- */
-@media (max-width: 1024px) {
-  .navbar {
-    padding: 1rem 2rem;
+/* ==========================================================================
+   Laptop
+   ========================================================================== */
+
+@media (max-width: 1150px) {
+  .navbar-inner {
+    padding: 0 24px;
+
+    gap: 20px;
   }
 
-  .nav-links a {
-    font-size: 1.3rem;
+  .nav-links {
+    gap: 20px;
+  }
+
+  .navbar-brand-tagline {
+    display: none;
   }
 }
 
-@media (max-width: 768px) {
-  .navbar-top {
-    justify-content: center;
-    padding: 10px 20px;
+/* ==========================================================================
+   Tablet / Mobile Navigation
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  .navbar-top-message {
+    display: none;
   }
 
-  .navbar {
-    padding: 0.8rem 1.2rem;
+  .navbar-top-inner {
+    justify-content: flex-end;
+
+    padding: 0 20px;
+  }
+
+  .navbar-inner {
+    min-height: 74px;
+
+    padding: 0 20px;
+  }
+
+  .navbar-logo {
+    width: 54px;
+    height: 54px;
   }
 
   .hamburger {
@@ -180,65 +480,94 @@
 
   .nav-links {
     position: fixed;
+
     top: 0;
     right: -100%;
+
+    z-index: 9050;
+
+    width: min(360px, 86vw);
     height: 100vh;
-    width: 75%;
-    background: linear-gradient(180deg, #f8fdff, #d9f5fa);
+
+    padding:
+      120px
+      28px
+      40px;
+
+    display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 2.5rem;
-    padding-top: 120px;
-    box-shadow: -4px 0 12px rgba(0, 0, 0, 0.1);
-    transition: right 0.4s ease;
-    z-index: 1000;
+    align-items: stretch;
+
+    gap: 4px;
+
+    background:
+      rgba(248, 253, 255, 0.98);
+
+    backdrop-filter: blur(18px);
+
+    box-shadow:
+      -14px
+      0
+      40px
+      rgba(0, 59, 70, 0.14);
+
+    transition: right 0.35s ease;
   }
 
   .nav-links.active {
     right: 0;
   }
 
-  .nav-links li {
-    width: 100%;
-    text-align: center;
-  }
-
-  .nav-links a {
-    font-size: 1.6rem;
-    padding: 1rem 2rem;
+  .navbar-link {
     display: block;
-    width: 100%;
+
+    padding: 16px 12px;
+
+    font-size: 1.05rem;
+
+    border-bottom:
+      1px solid rgba(0, 168, 181, 0.1);
   }
 
-  .nav-links a::after {
+  .navbar-link::after {
     display: none;
   }
 
-  /* Support Button inside mobile menu */
-  .nav-links a.support-button {
-    background: linear-gradient(135deg, #00d0d8, #026aa7);
-    padding: 1rem 2rem;
-    border-radius: 40px;
-    color: white;
-    margin-top: 1rem;
-    display: inline-block;
-    box-shadow: 0 6px 16px rgba(0, 150, 180, 0.4);
+  .nav-contact-item {
+    margin:
+      22px
+      0
+      0;
+  }
+
+  .navbar-contact-button {
+    width: 100%;
+
+    min-height: 48px;
   }
 }
 
-@media (max-width: 480px) {
-  .logo-img-only {
-    width: 80px;
-    height: 80px;
+/* ==========================================================================
+   Small Mobile
+   ========================================================================== */
+
+@media (max-width: 560px) {
+  .navbar-top {
+    display: none;
   }
 
-  .nav-links a {
-    font-size: 1.3rem;
+  .navbar-inner {
+    min-height: 70px;
+
+    padding: 0 16px;
   }
 
-  .support-button {
-    font-size: 1.2rem;
-    padding: 0.7rem 1.5rem;
+  .navbar-brand-copy {
+    display: none;
+  }
+
+  .navbar-logo {
+    width: 52px;
+    height: 52px;
   }
 }

@@ -1,225 +1,1114 @@
-import React, { useState } from "react";
-import "../styles/SupportCareSentinelAI.css";
+﻿import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import "../styles/SupportCareSentinelAI.css";
 
 const SupportCareSentinelAI = () => {
-  const [openPanel, setOpenPanel] = useState(null); // null = no panel open
+  const [activePanel, setActivePanel] = useState(null);
 
-  // Card Details Content
-  const panelContent = {
-    contributor: {
-      title: "One-Time Contributor",
-      icon: "fas fa-hand-holding-heart",
-      description: `
-        As a one-time contributor, your support directly funds the engineering
-        hours, cloud infrastructure, and early-risk detection research required
-        to build CareSentinelAI. These contributions help accelerate development,
-        support data validation, and reduce healthcare inequity across Aotearoa.
-      `,
-      points: [
-        "Funds engineering development time",
-        "Supports AI model training and testing",
-        "Accelerates clinical validation work",
-        "Helps deliver safer, faster early detection tools"
-      ]
-    },
-
-    pilot: {
-      title: "Partner in Pilot Validation",
-      icon: "fas fa-user-md",
-      description: `
-        Pilot validation partners play a crucial role in shaping CareSentinelAI.
-        Your clinic or organisation helps test the platform in real-world
-        environments, providing feedback, usability insights, and clinical
-        outcomes data to refine the system for nationwide use.
-      `,
-      points: [
-        "Participate in real-world pilot testing",
-        "Provide workflow and usability input",
-        "Help validate early detection accuracy",
-        "Contribute to national HealthTech innovation"
-      ]
-    },
-
-    community: {
-      title: "Industry or Community Supporter",
-      icon: "fas fa-users",
-      description: `
-        Industry groups, PHOs, iwi organisations, and community stakeholders are
-        essential in helping CareSentinelAI reach those who need it most. Your
-        support enables outreach, awareness, and equitable deployment across
-        diverse communities.
-      `,
-      points: [
-        "Support equitable healthcare delivery",
-        "Help build community and clinician awareness",
-        "Contribute to scaling and outreach",
-        "Enable wider impact across Aotearoa"
-      ]
+  useEffect(() => {
+    if (!activePanel) {
+      document.body.style.overflow = "";
+      return;
     }
+
+    document.body.style.overflow = "hidden";
+
+    const handleEscape = (event) => {
+      if (event.key === "Escape") {
+        setActivePanel(null);
+      }
+    };
+
+    window.addEventListener("keydown", handleEscape);
+
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", handleEscape);
+    };
+  }, [activePanel]);
+
+  const openPanel = (panelName) => {
+    setActivePanel(panelName);
   };
 
-  const handleOpen = (panelName) => {
-    setOpenPanel(panelName);
-  };
-
-  const handleClose = () => {
-    setOpenPanel(null);
+  const closePanel = () => {
+    setActivePanel(null);
   };
 
   return (
     <div className="support-page">
-      {/* HERO */}
+      {/* =====================================================
+          HERO
+          ===================================================== */}
       <section className="support-hero">
         <div className="particle-layer"></div>
 
-        <div className="hero-content">
-          <h1>Support CareSentinelAI</h1>
+        <div className="support-hero-content">
+          <span className="support-eyebrow">
+            Collaboration • Innovation • Healthcare Impact
+          </span>
+
+          <h1>Building Healthcare Innovation Together</h1>
+
           <p>
-            Help us bring early-risk detection to every clinician and community.
-            Your support accelerates development, pilot validation, and real-world impact.
+            TechnovaShield works with clinicians, technology organisations,
+            research communities, data governance specialists, and innovation
+            networks to develop responsible healthcare AI, synthetic data
+            capabilities, and intelligent digital solutions.
           </p>
         </div>
       </section>
 
-      {/* WHY */}
+      {/* =====================================================
+          WHY COLLABORATION MATTERS
+          ===================================================== */}
       <section className="support-why">
         <div className="why-content">
-          <h2>Why Your Support Matters</h2>
+          <span className="section-eyebrow">Our Ecosystem</span>
+
+          <h2>Why Collaboration Matters</h2>
+
           <p>
-            CareSentinelAI empowers clinicians with early detection insights —
-            predicting risks such as sepsis and deterioration before they become
-            life-threatening. Your support accelerates pilot rollout, research refinement,
-            and equitable deployment across Aotearoa.
+            Healthcare innovation cannot be developed in isolation. Clinical
+            insight, responsible technology, data governance, research,
+            engineering, and real-world implementation all play an important
+            role in building solutions that can create meaningful impact.
+          </p>
+
+          <p>
+            Our ecosystem brings together organisations and professionals who
+            contribute practical expertise, technical capability, governance
+            perspectives, and sector knowledge to strengthen the development
+            and future deployment of TechnovaShield initiatives.
           </p>
         </div>
       </section>
 
-      {/* SUPPORT CARDS */}
-      <section className="support-cards-section">
-        <h2 className="ways-header">Ways You Can Support</h2>
+      {/* =====================================================
+          STRATEGIC COLLABORATIONS
+          ===================================================== */}
+      <section className="ecosystem-section">
+        <div className="section-heading">
+          <span className="section-eyebrow">Strategic Collaborations</span>
 
-        <div className="support-grid">
+          <h2>Working Together for Real-World Impact</h2>
 
-          {/* CARD 1 */}
-          <div className="support-card">
-            <div className="card-top">
-              <h3>One-Time Contributor</h3>
-              <i className="fas fa-hand-holding-heart"></i>
+          <p>
+            Our collaborations connect clinical practice, technology,
+            Indigenous data governance, research, and innovation to help
+            translate responsible ideas into practical solutions.
+          </p>
+        </div>
+
+        <div className="ecosystem-grid">
+          {/* =================================================
+              01 — DOMINION ROAD SURGERY
+              ================================================= */}
+          <article className="ecosystem-card">
+            <span className="ecosystem-card-number">01</span>
+
+            <div className="collaboration-logo-wrap">
+              <img
+                src="/Dominion Road Surgery Logo.png"
+                alt="Dominion Road Surgery"
+                className="collaboration-logo dominion-logo"
+              />
             </div>
 
-            <div className="card-body">
-              <p>
-                Your contribution directly supports engineering hours, cloud infrastructure,
-                and testing resources needed for early-risk detection research.
-              </p>
+            <span className="ecosystem-type">
+              Clinical Pilot Partner
+            </span>
+
+            <h3>Dominion Road Surgery</h3>
+
+            <p>
+              Supporting real-world clinical validation of CareSentinelAI
+              through clinician engagement, workflow insight, and primary-care
+              perspectives.
+            </p>
+
+            <div className="ecosystem-tags">
+              <span>Clinical Validation</span>
+              <span>Primary Care</span>
+              <span>Workflow Insight</span>
+            </div>
+
+            <div className="ecosystem-actions">
               <button
-                onClick={() => handleOpen("contributor")}
-                className="card-btn"
+                type="button"
+                className="ecosystem-learn-btn"
+                onClick={() => openPanel("dominion")}
               >
-                Learn More <i className="fas fa-arrow-right"></i>
+                Learn More
+                <i className="fas fa-arrow-right"></i>
               </button>
-            </div>
-          </div>
 
-          {/* CARD 2 */}
-          <div className="support-card">
-            <div className="card-top">
-              <h3>Partner in Pilot Validation</h3>
-              <i className="fas fa-user-md"></i>
+              <a
+                href="https://www.dominionroadsurgery.co.nz/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ecosystem-website-btn"
+              >
+                Visit Website
+                <i className="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </article>
+
+          {/* =================================================
+              02 — NITILOGIC
+
+              Relationship confirmed for public use.
+              Final proposed website wording remains subject
+              to Amelie's confirmation.
+
+              If approval has not been received by launch,
+              temporarily comment out this card and the
+              corresponding NitiLogic slide panel below.
+              ================================================= */}
+          {/* <article className="ecosystem-card">
+            <span className="ecosystem-card-number">02</span>
+
+            <div className="collaboration-logo-wrap">
+              <img
+                src="/nitilogic-logo.png"
+                alt="NitiLogic"
+                className="collaboration-logo nitilogic-logo"
+              />
             </div>
 
-            <div className="card-body">
-              <p>
-                Become a clinical validation partner and support real-world testing, 
-                clinician feedback, and measurable improvements in patient care.
-              </p>
+            <span className="ecosystem-type">
+              Strategic Technology Partner
+            </span>
+
+            <h3>NitiLogic</h3>
+
+            <p>
+              Supporting TechnovaShield through strategic technology
+              collaboration focused on enterprise data architecture,
+              synthetic data generation, data engineering, and scalable
+              AI-ready infrastructure.
+            </p>
+
+            <div className="ecosystem-tags">
+              <span>Enterprise Data</span>
+              <span>Synthetic Data</span>
+              <span>Data Engineering</span>
+              <span>AI Infrastructure</span>
+            </div>
+
+            <div className="ecosystem-actions">
               <button
-                onClick={() => handleOpen("pilot")}
-                className="card-btn"
+                type="button"
+                className="ecosystem-learn-btn"
+                onClick={() => openPanel("nitilogic")}
               >
-                Learn More <i className="fas fa-arrow-right"></i>
+                Learn More
+                <i className="fas fa-arrow-right"></i>
               </button>
-            </div>
-          </div>
 
-          {/* CARD 3 */}
-          <div className="support-card">
-            <div className="card-top">
-              <h3>Industry or Community Supporter</h3>
-              <i className="fas fa-users"></i>
+              <a
+                href="https://nitilogic.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ecosystem-website-btn"
+              >
+                Visit Website
+                <i className="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </article> */}
+
+          {/* =================================================
+              03 — PROCESSX
+              ================================================= */}
+          <article className="ecosystem-card">
+            <span className="ecosystem-card-number">03</span>
+
+            <div className="collaboration-logo-wrap">
+              <img
+                src="/ProcessX_Logo.jfif"
+                alt="ProcessX"
+                className="collaboration-logo processx-logo"
+              />
             </div>
 
-            <div className="card-body">
-              <p>
-                Organisations, PHOs, iwi groups, and community networks help extend 
-                CareSentinelAI’s reach to underserved communities.
-              </p>
+            <span className="ecosystem-type">
+              Technical Development Partner
+            </span>
+
+            <h3>ProcessX</h3>
+
+            <p>
+              Supporting the technical development of the CareSentinelAI
+              ecosystem through intelligent automation, scalable technology
+              delivery, and engineering collaboration.
+            </p>
+
+            <div className="ecosystem-tags">
+              <span>Technical Development</span>
+              <span>Intelligent Automation</span>
+              <span>Platform Engineering</span>
+              <span>Scalable Delivery</span>
+            </div>
+
+            <div className="ecosystem-actions">
               <button
-                onClick={() => handleOpen("community")}
-                className="card-btn"
+                type="button"
+                className="ecosystem-learn-btn"
+                onClick={() => openPanel("processx")}
               >
-                Contact Us <i className="fas fa-arrow-right"></i>
+                Learn More
+                <i className="fas fa-arrow-right"></i>
               </button>
-            </div>
-          </div>
 
+              <a
+                href="https://process-x.com.au"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ecosystem-website-btn"
+              >
+                Visit Website
+                <i className="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </article>
+
+          {/* =================================================
+              04 — INDIGENOUS DATA AUTHORITY
+              ================================================= */}
+          <article className="ecosystem-card">
+            <span className="ecosystem-card-number">04</span>
+
+            <div className="collaboration-logo-wrap">
+              <img
+                src="/InDA_logo.png"
+                alt="Indigenous Data Authority"
+                className="collaboration-logo inda-logo"
+              />
+            </div>
+
+            <span className="ecosystem-type">
+              Indigenous Data Governance &amp; Assurance
+            </span>
+
+            <h3>Indigenous Data Authority</h3>
+
+            <p>
+              Supporting CareSentinelAI through an ongoing relationship focused
+              on Indigenous data governance, responsible data and AI practices,
+              accountability, and assurance as the platform develops.
+            </p>
+
+            <div className="ecosystem-tags">
+              <span>Indigenous Data Governance</span>
+              <span>Responsible AI</span>
+              <span>Data Assurance</span>
+              <span>Governance Readiness</span>
+            </div>
+
+            <div className="ecosystem-actions">
+              <button
+                type="button"
+                className="ecosystem-learn-btn"
+                onClick={() => openPanel("inda")}
+              >
+                Learn More
+                <i className="fas fa-arrow-right"></i>
+              </button>
+
+              <a
+                href="https://www.indigenousdataauthority.world/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ecosystem-website-btn"
+              >
+                Visit Website
+                <i className="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </article>
+
+          {/*
+          =====================================================
+          05 — HAUHAU RESEARCH
+
+          PREPARED BUT NOT YET PUBLIC.
+
+          Khalid has confirmed that HauHau Research may be
+          considered for recognition as a CareSentinelAI
+          supporter. Final website wording and logo use have
+          been sent for approval.
+
+          DO NOT UNCOMMENT UNTIL APPROVAL IS RECEIVED.
+          No individual names are to be displayed.
+          =====================================================
+
+          <article className="ecosystem-card">
+            <span className="ecosystem-card-number">05</span>
+
+            <div className="collaboration-logo-wrap">
+              <img
+                src="/hauhaultd_logo.jfif"
+                alt="HauHau Research"
+                className="collaboration-logo hauhau-logo"
+              />
+            </div>
+
+            <span className="ecosystem-type">
+              Research &amp; Innovation Supporter
+            </span>
+
+            <h3>HauHau Research</h3>
+
+            <p>
+              Supporting the CareSentinelAI journey through research
+              perspective, applied technology insight, and innovation
+              engagement as TechnovaShield progresses from development toward
+              validation and future real-world application.
+            </p>
+
+            <div className="ecosystem-tags">
+              <span>Research</span>
+              <span>Applied Innovation</span>
+              <span>Technology Insight</span>
+              <span>Validation Thinking</span>
+            </div>
+
+            <div className="ecosystem-actions">
+              <button
+                type="button"
+                className="ecosystem-learn-btn"
+                onClick={() => openPanel("hauhau")}
+              >
+                Learn More
+                <i className="fas fa-arrow-right"></i>
+              </button>
+
+              <a
+                href="https://hauhau.co.nz/index.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ecosystem-website-btn"
+              >
+                Visit Website
+                <i className="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </article>
+
+          END HAUHAU RESEARCH CARD
+          */}
         </div>
       </section>
 
-      {/* SLIDE-IN PANEL */}
-      {openPanel && (
-        <>
-          <div className="panel-overlay" onClick={handleClose}></div>
+      {/* =====================================================
+          SUPPORTING NETWORKS
+          ===================================================== */}
+      <section className="supporting-networks">
+        <div className="section-heading">
+          <span className="section-eyebrow">Supporting Networks</span>
 
-          <div className={`slide-panel ${openPanel ? "open" : ""}`}>
-            <button className="close-panel-btn" onClick={handleClose}>
-              ×
-            </button>
+          <h2>Connected to New Zealand’s Innovation Ecosystem</h2>
 
-            <div className="slide-panel-content">
-              <h2>
-                <i className={`${panelContent[openPanel].icon} panel-icon`}></i>
-                {panelContent[openPanel].title}
-              </h2>
+          <p>
+            TechnovaShield participates in professional and innovation
+            communities that strengthen our connection to New Zealand’s
+            technology, healthcare, and digital innovation ecosystem.
+          </p>
+        </div>
 
-              <p className="panel-description">
-                {panelContent[openPanel].description}
+        <div className="network-grid">
+          <article className="network-card">
+            <div className="network-logo-wrap">
+              <img
+                src="/AI Forum NZ Logo.png"
+                alt="AI Forum New Zealand"
+                className="network-logo"
+              />
+            </div>
+
+            <h3>AI Forum New Zealand</h3>
+
+            <p>
+              Connecting with New Zealand’s artificial intelligence community
+              and responsible AI ecosystem.
+            </p>
+          </article>
+
+          <article className="network-card">
+            <div className="network-logo-wrap">
+              <img
+                src="/NZTech Logo.png"
+                alt="NZTech"
+                className="network-logo"
+              />
+            </div>
+
+            <h3>NZTech</h3>
+
+            <p>
+              Engaging with New Zealand’s broader technology and innovation
+              community.
+            </p>
+          </article>
+
+          <article className="network-card">
+            <div className="network-logo-wrap">
+              <img
+                src="/TechWomen Logo.png"
+                alt="TechWomen New Zealand"
+                className="network-logo"
+              />
+            </div>
+
+            <h3>TechWomen</h3>
+
+            <p>
+              Supporting connection, leadership, and participation across
+              New Zealand’s technology sector.
+            </p>
+          </article>
+
+          <article className="network-card">
+            <div className="network-logo-wrap">
+              <img
+                src="/EdTechNZ Logo.png"
+                alt="EdTech New Zealand"
+                className="network-logo"
+              />
+            </div>
+
+            <h3>EdTechNZ</h3>
+
+            <p>
+              Connecting with digital learning and technology communities
+              across Aotearoa New Zealand.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      {/* =====================================================
+          WAYS TO WORK WITH US
+          ===================================================== */}
+      <section className="support-cards-section">
+        <div className="section-heading">
+          <span className="section-eyebrow">Ways to Work With Us</span>
+
+          <h2>Help Shape the Next Stage</h2>
+
+          <p>
+            We welcome conversations with healthcare organisations,
+            researchers, technology partners, data and AI specialists, funders,
+            and organisations exploring responsible innovation.
+          </p>
+        </div>
+
+        <div className="support-grid">
+          <article className="support-card">
+            <div className="card-top">
+              <h3>Clinical &amp; Research Collaboration</h3>
+              <i className="fas fa-stethoscope"></i>
+            </div>
+
+            <div className="card-body">
+              <p>
+                Work with us on clinical validation, workflow discovery,
+                research collaboration, responsible AI, and real-world
+                healthcare implementation.
               </p>
 
-              <ul className="panel-points">
-                {panelContent[openPanel].points.map((point, idx) => (
-                  <li key={idx}>{point}</li>
-                ))}
-              </ul>
-
-              <a href="/contact" className="panel-contact-btn">
-                Get In Touch
-              </a>
+              <Link to="/contact" className="card-btn">
+                Start a Conversation
+                <i className="fas fa-arrow-right"></i>
+              </Link>
             </div>
-          </div>
-        </>
+          </article>
+
+          <article className="support-card">
+            <div className="card-top">
+              <h3>Technology &amp; Data Collaboration</h3>
+              <i className="fas fa-database"></i>
+            </div>
+
+            <div className="card-body">
+              <p>
+                Collaborate on synthetic data, data engineering, intelligent
+                automation, AI infrastructure, platform development, and
+                privacy-aware technology solutions.
+              </p>
+
+              <Link to="/contact" className="card-btn">
+                Explore Collaboration
+                <i className="fas fa-arrow-right"></i>
+              </Link>
+            </div>
+          </article>
+
+          <article className="support-card">
+            <div className="card-top">
+              <h3>Strategic &amp; Commercial Support</h3>
+              <i className="fas fa-handshake"></i>
+            </div>
+
+            <div className="card-body">
+              <p>
+                Engage with TechnovaShield through strategic partnerships,
+                commercial opportunities, investment conversations, ecosystem
+                support, and pathways that help responsible innovation scale.
+              </p>
+
+              <Link to="/contact" className="card-btn">
+                Connect With Us
+                <i className="fas fa-arrow-right"></i>
+              </Link>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      {/* =====================================================
+          FINAL CTA
+          ===================================================== */}
+      <section className="support-contact">
+        <div className="contact-box">
+          <span className="section-eyebrow">Work With TechnovaShield</span>
+
+          <h2>Interested in Building Responsible Innovation Together?</h2>
+
+          <p>
+            Whether you are exploring a clinical pilot, synthetic data
+            requirement, research collaboration, technical partnership, or
+            strategic opportunity, we would be pleased to hear from you.
+          </p>
+
+          <Link to="/contact" className="contact-btn">
+            Start a Conversation
+          </Link>
+        </div>
+      </section>
+
+      {/* =====================================================
+          PANEL OVERLAY
+          ===================================================== */}
+      {activePanel && (
+        <div
+          className="panel-overlay"
+          onClick={closePanel}
+          aria-hidden="true"
+        ></div>
       )}
 
-      {/* CONTACT */}
-      <section className="support-contact" id="contact-support">
-  <div className="contact-box">
-    <h2>Connect With Us</h2>
-    <p>
-      Want to support CareSentinelAI or become a pilot partner?  
-      We’d love to hear from you.
-    </p>
+      {/* =====================================================
+          DOMINION ROAD SURGERY PANEL
+          ===================================================== */}
+      <aside
+        className={`slide-panel ${
+          activePanel === "dominion" ? "open" : ""
+        }`}
+        aria-hidden={activePanel !== "dominion"}
+      >
+        <button
+          type="button"
+          className="close-panel-btn"
+          onClick={closePanel}
+          aria-label="Close Dominion Road Surgery details"
+        >
+          ×
+        </button>
 
-    <div className="contact-details">
-      <p><strong>Email:</strong> admin@technovashield.com</p>
-      <p><strong>Phone:</strong> +64 21 0865 7999</p>
-    </div>
+        <div className="slide-panel-content">
+          <div className="panel-organisation-logo-wrap">
+            <img
+              src="/Dominion Road Surgery Logo.png"
+              alt="Dominion Road Surgery"
+              className="panel-organisation-logo"
+            />
+          </div>
 
-    <Link to="/contact" className="contact-btn">
-      Get in Touch
-    </Link>
-  </div>
-</section>
+          <div className="panel-heading-block">
+            <div className="panel-heading-icon">
+              <i className="fas fa-stethoscope"></i>
+            </div>
+
+            <div className="panel-heading-copy">
+              <span className="panel-subtitle">
+                Clinical Pilot Partner
+              </span>
+
+              <h2>Dominion Road Surgery</h2>
+            </div>
+          </div>
+
+          <p className="panel-description">
+            Dominion Road Surgery is supporting the real-world development of
+            CareSentinelAI by contributing primary-care workflow insight and
+            clinician perspectives that help TechnovaShield understand how
+            clinical intelligence can fit naturally into everyday practice.
+          </p>
+
+          <h3 className="panel-section-title">
+            Collaboration Focus
+          </h3>
+
+          <ul className="panel-points">
+            <li>
+              Clinical workflow discovery and primary-care insight
+            </li>
+            <li>
+              Clinician feedback on usability and practical adoption
+            </li>
+            <li>
+              Exploration of early recognition, review, and follow-up workflows
+            </li>
+            <li>
+              Real-world validation considerations for CareSentinelAI
+            </li>
+          </ul>
+
+          <div className="panel-why-box">
+            <h3>Why It Matters</h3>
+
+            <p>
+              Building alongside clinicians helps ensure CareSentinelAI is
+              shaped by real healthcare workflows and practical clinical needs,
+              rather than technology assumptions alone.
+            </p>
+          </div>
+
+          <a
+            href="https://www.dominionroadsurgery.co.nz/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="panel-website-btn"
+          >
+            Visit Dominion Road Surgery
+            <i className="fas fa-external-link-alt"></i>
+          </a>
+
+          <Link
+            to="/contact"
+            className="panel-contact-btn"
+            onClick={closePanel}
+          >
+            Discuss Clinical Collaboration
+          </Link>
+        </div>
+      </aside>
+
+      {/* =====================================================
+          NITILOGIC PANEL
+          ===================================================== */}
+      {/* <aside
+        className={`slide-panel ${
+          activePanel === "nitilogic" ? "open" : ""
+        }`}
+        aria-hidden={activePanel !== "nitilogic"}
+      >
+        <button
+          type="button"
+          className="close-panel-btn"
+          onClick={closePanel}
+          aria-label="Close NitiLogic details"
+        >
+          ×
+        </button>
+
+        <div className="slide-panel-content">
+          <div className="panel-organisation-logo-wrap">
+            <img
+              src="/nitilogic-logo.png"
+              alt="NitiLogic"
+              className="panel-organisation-logo"
+            />
+          </div>
+
+          <div className="panel-heading-block">
+            <div className="panel-heading-icon">
+              <i className="fas fa-database"></i>
+            </div>
+
+            <div className="panel-heading-copy">
+              <span className="panel-subtitle">
+                Strategic Technology Partner
+              </span>
+
+              <h2>NitiLogic</h2>
+            </div>
+          </div>
+
+          <p className="panel-description">
+            NitiLogic supports TechnovaShield through strategic technology
+            collaboration focused on strengthening enterprise data
+            architecture, synthetic data generation, data engineering, and
+            scalable AI-ready infrastructure.
+          </p>
+
+          <h3 className="panel-section-title">
+            Collaboration Focus
+          </h3>
+
+          <ul className="panel-points">
+            <li>
+              Enterprise dataset architecture and scalable data design
+            </li>
+            <li>
+              Synthetic data generation and data engineering capability
+            </li>
+            <li>
+              AI-ready infrastructure and technical architecture
+            </li>
+            <li>
+              Strategic technology collaboration supporting future scale
+            </li>
+          </ul>
+
+          <div className="panel-why-box">
+            <h3>Why It Matters</h3>
+
+            <p>
+              Strong data foundations are essential for developing,
+              validating, and scaling responsible AI systems. This
+              collaboration strengthens TechnovaShield’s capability across
+              enterprise data and synthetic data initiatives.
+            </p>
+          </div>
+
+          <a
+            href="https://nitilogic.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="panel-website-btn"
+          >
+            Visit NitiLogic
+            <i className="fas fa-external-link-alt"></i>
+          </a>
+
+          <Link
+            to="/contact"
+            className="panel-contact-btn"
+            onClick={closePanel}
+          >
+            Discuss Technology Collaboration
+          </Link>
+        </div>
+      </aside> */}
+
+      {/* =====================================================
+          PROCESSX PANEL
+          ===================================================== */}
+      <aside
+        className={`slide-panel ${
+          activePanel === "processx" ? "open" : ""
+        }`}
+        aria-hidden={activePanel !== "processx"}
+      >
+        <button
+          type="button"
+          className="close-panel-btn"
+          onClick={closePanel}
+          aria-label="Close ProcessX details"
+        >
+          ×
+        </button>
+
+        <div className="slide-panel-content">
+          <div className="panel-organisation-logo-wrap">
+            <img
+              src="/ProcessX_Logo.jfif"
+              alt="ProcessX"
+              className="panel-organisation-logo processx-panel-logo"
+            />
+          </div>
+
+          <div className="panel-heading-block">
+            <div className="panel-heading-icon">
+              <i className="fas fa-code"></i>
+            </div>
+
+            <div className="panel-heading-copy">
+              <span className="panel-subtitle">
+                Technical Development Partner
+              </span>
+
+              <h2>ProcessX</h2>
+            </div>
+          </div>
+
+          <p className="panel-description">
+            ProcessX is working with TechnovaShield as a technical development
+            partner supporting the continued engineering and evolution of the
+            CareSentinelAI ecosystem.
+          </p>
+
+          <h3 className="panel-section-title">
+            Collaboration Focus
+          </h3>
+
+          <ul className="panel-points">
+            <li>
+              Technical development supporting the CareSentinelAI ecosystem
+            </li>
+            <li>
+              Intelligent automation and workflow engineering
+            </li>
+            <li>
+              Scalable platform development and technology delivery
+            </li>
+            <li>
+              Engineering collaboration aligned with TechnovaShield’s product
+              direction and clinical requirements
+            </li>
+          </ul>
+
+          <div className="panel-why-box">
+            <h3>Why It Matters</h3>
+
+            <p>
+              Combining TechnovaShield’s healthcare product direction and
+              clinical requirements with additional engineering capability
+              supports the pathway from prototype development toward a more
+              scalable and deployment-ready CareSentinelAI ecosystem.
+            </p>
+          </div>
+
+          <a
+            href="https://process-x.com.au"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="panel-website-btn"
+          >
+            Visit ProcessX
+            <i className="fas fa-external-link-alt"></i>
+          </a>
+
+          <Link
+            to="/contact"
+            className="panel-contact-btn"
+            onClick={closePanel}
+          >
+            Discuss Technical Collaboration
+          </Link>
+        </div>
+      </aside>
+
+      {/* =====================================================
+          INDIGENOUS DATA AUTHORITY PANEL
+          ===================================================== */}
+      <aside
+        className={`slide-panel ${
+          activePanel === "inda" ? "open" : ""
+        }`}
+        aria-hidden={activePanel !== "inda"}
+      >
+        <button
+          type="button"
+          className="close-panel-btn"
+          onClick={closePanel}
+          aria-label="Close Indigenous Data Authority details"
+        >
+          ×
+        </button>
+
+        <div className="slide-panel-content">
+          <div className="panel-organisation-logo-wrap">
+            <img
+              src="/InDA_logo.png"
+              alt="Indigenous Data Authority"
+              className="panel-organisation-logo inda-panel-logo"
+            />
+          </div>
+
+          <div className="panel-heading-block">
+            <div className="panel-heading-icon">
+              <i className="fas fa-shield-alt"></i>
+            </div>
+
+            <div className="panel-heading-copy">
+              <span className="panel-subtitle">
+                Indigenous Data Governance &amp; Assurance
+              </span>
+
+              <h2>Indigenous Data Authority</h2>
+            </div>
+          </div>
+
+          <p className="panel-description">
+            The Indigenous Data Authority supports TechnovaShield and
+            CareSentinelAI through an ongoing relationship focused on
+            strengthening Indigenous data governance, responsible data and AI
+            practices, accountability, and assurance throughout the platform’s
+            development.
+          </p>
+
+          <h3 className="panel-section-title">
+            Collaboration Focus
+          </h3>
+
+          <ul className="panel-points">
+            <li>
+              Indigenous data governance considerations across the development
+              lifecycle
+            </li>
+            <li>
+              Responsible data and AI practices
+            </li>
+            <li>
+              Governance evidence, accountability, and assurance readiness
+            </li>
+            <li>
+              Ongoing review as CareSentinelAI progresses toward future
+              real-world deployment
+            </li>
+          </ul>
+
+          <div className="panel-why-box">
+            <h3>Why It Matters</h3>
+
+            <p>
+              Responsible data governance should be considered throughout
+              development rather than treated only as a final-stage compliance
+              exercise. This ongoing relationship helps TechnovaShield
+              strengthen its governance approach and build evidence toward
+              future independent assessment and certification readiness when
+              CareSentinelAI and the relevant processes are sufficiently
+              mature.
+            </p>
+          </div>
+
+          <a
+            href="https://www.indigenousdataauthority.world/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="panel-website-btn"
+          >
+            Visit Indigenous Data Authority
+            <i className="fas fa-external-link-alt"></i>
+          </a>
+
+          <Link
+            to="/contact"
+            className="panel-contact-btn"
+            onClick={closePanel}
+          >
+            Discuss Responsible Data &amp; AI
+          </Link>
+        </div>
+      </aside>
+
+      {/*
+      =========================================================
+      HAUHAU RESEARCH PANEL
+
+      PREPARED BUT NOT YET PUBLIC.
+      DO NOT UNCOMMENT UNTIL KHALID APPROVES THE FINAL
+      WEBSITE WORDING AND LOGO USE.
+
+      No individual names are to appear publicly.
+      =========================================================
+
+      <aside
+        className={`slide-panel ${
+          activePanel === "hauhau" ? "open" : ""
+        }`}
+        aria-hidden={activePanel !== "hauhau"}
+      >
+        <button
+          type="button"
+          className="close-panel-btn"
+          onClick={closePanel}
+          aria-label="Close HauHau Research details"
+        >
+          ×
+        </button>
+
+        <div className="slide-panel-content">
+          <div className="panel-organisation-logo-wrap">
+            <img
+              src="/hauhaultd_logo.jfif"
+              alt="HauHau Research"
+              className="panel-organisation-logo hauhau-panel-logo"
+            />
+          </div>
+
+          <div className="panel-heading-block">
+            <div className="panel-heading-icon">
+              <i className="fas fa-flask"></i>
+            </div>
+
+            <div className="panel-heading-copy">
+              <span className="panel-subtitle">
+                Research &amp; Innovation Supporter
+              </span>
+
+              <h2>HauHau Research</h2>
+            </div>
+          </div>
+
+          <p className="panel-description">
+            HauHau Research supports TechnovaShield and CareSentinelAI through
+            ongoing research and innovation engagement, bringing applied
+            technology perspective and research-oriented insight to the
+            platform’s development journey.
+          </p>
+
+          <h3 className="panel-section-title">
+            Current Focus
+          </h3>
+
+          <ul className="panel-points">
+            <li>
+              Research and innovation perspective
+            </li>
+            <li>
+              Applied technology and engineering insight
+            </li>
+            <li>
+              Support for evidence and validation thinking
+            </li>
+            <li>
+              Emerging AI and technology considerations
+            </li>
+            <li>
+              Ongoing research engagement as CareSentinelAI matures
+            </li>
+          </ul>
+
+          <div className="panel-why-box">
+            <h3>Why It Matters</h3>
+
+            <p>
+              Strong research engagement helps CareSentinelAI develop with
+              greater technical rigour, evidence awareness, and connection to
+              applied innovation. HauHau Research’s support adds an important
+              research perspective alongside TechnovaShield’s clinical,
+              technology, governance, and commercial ecosystem.
+            </p>
+          </div>
+
+          <a
+            href="https://hauhau.co.nz/index.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="panel-website-btn"
+          >
+            Visit HauHau Research
+            <i className="fas fa-external-link-alt"></i>
+          </a>
+
+          <Link
+            to="/contact"
+            className="panel-contact-btn"
+            onClick={closePanel}
+          >
+            Discuss Research Collaboration
+          </Link>
+        </div>
+      </aside>
+
+      END HAUHAU RESEARCH PANEL
+      */}
     </div>
   );
 };

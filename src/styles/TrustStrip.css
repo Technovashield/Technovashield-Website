@@ -1,0 +1,275 @@
+/* ==========================================================================
+   TrustStrip.css
+   Why Organisations Choose TechnovaShield
+   ========================================================================== */
+
+.trust-strip {
+  width: 100%;
+
+  background: #eefbfc;
+
+  padding: 62px 8px 56px;
+}
+
+/* ==========================================================================
+   Section Header
+   ========================================================================== */
+
+.trust-section-header {
+  width: 100%;
+  max-width: 900px;
+
+  margin: 0 auto 36px;
+
+  text-align: center;
+}
+
+.trust-section-eyebrow {
+  margin: 0 0 12px;
+
+  color: #00a8b5;
+
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.trust-section-title {
+  margin: 0;
+
+  color: #003b46;
+
+  font-size: clamp(2.2rem, 3.6vw, 3.4rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+
+.trust-section-subtitle {
+  max-width: 760px;
+  margin: 18px auto 0;
+
+  color: #526b72;
+
+  font-size: 1.25rem;
+  line-height: 1.7;
+}
+
+/* ==========================================================================
+   Trust Card Grid
+   ========================================================================== */
+
+.trust-strip-inner {
+  width: 100%;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+
+  gap: 16px;
+}
+
+.trust-item {
+  width: 100%;
+
+  background: #ffffff;
+
+  border: 1px solid rgba(0, 168, 181, 0.18);
+  border-radius: 18px;
+
+  padding: 36px 24px 34px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  text-align: center;
+
+  min-height: 245px;
+
+  box-shadow: 0 8px 24px rgba(0, 73, 86, 0.08);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.trust-item:hover {
+  transform: translateY(-8px);
+
+  border-color: rgba(0, 168, 181, 0.45);
+
+  box-shadow: 0 16px 40px rgba(0, 73, 86, 0.15);
+}
+
+/* ==========================================================================
+   Card Icon
+   ========================================================================== */
+
+.trust-icon {
+  width: 72px;
+  height: 72px;
+
+  margin-bottom: 22px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #e9fbfd;
+
+  border: 2px solid #00a8b5;
+
+  color: #00a8b5;
+
+  font-size: 2rem;
+  font-weight: 700;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.trust-item:hover .trust-icon {
+  background: #00a8b5;
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+/* ==========================================================================
+   Card Copy
+   ========================================================================== */
+
+.trust-copy {
+  width: 100%;
+}
+
+.trust-copy h3 {
+  margin: 0 0 12px;
+
+  color: #003b46;
+
+  font-size: 1.18rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.trust-copy p {
+  margin: 0;
+
+  color: #5a6f74;
+
+  font-size: 1.25rem;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   Laptop
+   ========================================================================== */
+
+@media (max-width: 1200px) {
+  .trust-strip {
+    padding: 68px 20px 60px;
+  }
+
+  .trust-section-header {
+    margin-bottom: 40px;
+  }
+
+  .trust-strip-inner {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+
+  .trust-item {
+    min-height: 230px;
+  }
+}
+
+/* ==========================================================================
+   Tablet
+   ========================================================================== */
+
+@media (max-width: 850px) {
+  .trust-strip {
+    padding: 58px 18px 52px;
+  }
+
+  .trust-section-header {
+    margin-bottom: 34px;
+  }
+
+  .trust-section-subtitle {
+    font-size: 1rem;
+  }
+
+  .trust-strip-inner {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .trust-item {
+    min-height: 220px;
+  }
+}
+
+/* ==========================================================================
+   Mobile
+   ========================================================================== */
+
+@media (max-width: 560px) {
+  .trust-strip {
+    padding: 48px 16px 42px;
+  }
+
+  .trust-section-header {
+    margin-bottom: 28px;
+  }
+
+  .trust-section-eyebrow {
+    font-size: 0.8rem;
+  }
+
+  .trust-section-title {
+    font-size: 2rem;
+  }
+
+  .trust-section-subtitle {
+    margin-top: 14px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .trust-strip-inner {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .trust-item {
+    min-height: auto;
+    padding: 30px 24px;
+  }
+
+  .trust-icon {
+    width: 64px;
+    height: 64px;
+
+    font-size: 1.8rem;
+  }
+
+  .trust-copy h3 {
+    font-size: 1.1rem;
+  }
+
+  .trust-copy p {
+    font-size: 1.25rem;
+  }
+}

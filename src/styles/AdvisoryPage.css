@@ -1,137 +1,356 @@
-/* PAGE */
+/* =========================================
+   ADVISORY PAGE
+   ========================================= */
+
 .advisory-page {
-  background-color: #f8fafc;
-  padding: 60px 20px;
-  text-align: center;
+  min-height: 100vh;
+  background: #f8fafc;
+  overflow-x: clip;
 }
 
-/* HEADER */
-.advisory-hero h1 {
-  font-size: 46px;   /* 👈 slightly big like Team */
+/* =========================================
+   HERO
+   ========================================= */
+
+.advisory-hero {
+  padding: 100px 24px 70px;
+  text-align: center;
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #f5fafb 100%
+  );
+}
+
+.advisory-hero-content {
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+.advisory-eyebrow {
+  display: inline-block;
+  margin-bottom: 16px;
+  font-size: 17px;
   font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: #0a8ea0;
+}
+
+.advisory-hero h1 {
+  margin: 0;
+  font-size: clamp(48px, 6vw, 68px);
+  line-height: 1.08;
+  font-weight: 800;
   color: #072f4a;
 }
 
 .advisory-hero p {
-  font-size: 24px;   /* 👈 match Team intro feel */
-  color: #333;
-  max-width: 900px;
-  margin: 15px auto 0;
-  line-height: 1.7;
+  max-width: 950px;
+  margin: 24px auto 0;
+  font-size: 22px;
+  line-height: 1.75;
+  color: #475569;
 }
 
-/* CONTAINER (NO CHANGE IN STRUCTURE) */
+/* =========================================
+   ADVISOR SECTION
+   ========================================= */
+
+.advisory-section {
+  padding: 46px 32px 100px;
+}
+
 .advisory-container {
-  display: flex;
-  justify-content: center;
-  gap: 50px;
-  flex-wrap: wrap;
-  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 36px;
+  max-width: 1450px;
+  margin: 0 auto;
 }
 
-/* CARD */
+/* =========================================
+   ADVISOR CARD
+   ========================================= */
+
 .advisory-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 210px minmax(0, 1fr);
+  gap: 34px;
+  align-items: center;
+  min-height: 500px;
+  padding: 44px;
+  overflow: hidden;
   background: #ffffff;
-  padding: 30px 25px;
-  border-radius: 16px;
-  width: 500px;   /* 👈 keep controlled size */
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-  text-align: center;
-  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 168, 181, 0.16);
+  border-radius: 26px;
+  box-shadow: 0 14px 40px rgba(7, 47, 74, 0.08);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.advisory-card::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 25%;
+  width: 50%;
+  height: 5px;
+  border-radius: 999px 999px 0 0;
+  background: #00a8b5;
 }
 
 .advisory-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 168, 181, 0.32);
+  box-shadow: 0 20px 48px rgba(7, 47, 74, 0.12);
 }
 
-/* IMAGE (BALANCED — NOT TOO BIG) */
-.advisory-card img {
-  width: 170px;   /* 👈 balanced */
-  height: 170px;
+/* =========================================
+   ADVISOR IMAGE
+   ========================================= */
 
+.advisory-image-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 210px;
+  height: 210px;
+  padding: 7px;
+  border-radius: 50%;
+  background: #eef9fa;
+}
+
+.advisory-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  display: block;
   border-radius: 50%;
   object-fit: cover;
   object-position: top center;
-
-  margin-bottom: 18px;
-  border: 4px solid #e6f7f9;
 }
 
-/* NAME */
-.advisory-card h3 {
-  font-size: 28px;   /* 👈 BIG like Team */
-  font-weight: 700;
+/* =========================================
+   CARD CONTENT
+   ========================================= */
+
+.advisory-card-content {
+  text-align: left;
+}
+
+.advisory-card h2 {
+  margin: 0;
+  font-size: 34px;
+  line-height: 1.2;
+  font-weight: 800;
   color: #072f4a;
-  margin-bottom: 6px;
 }
 
-/* ROLE */
-.role {
-  font-size: 22px;   /* 👈 bigger */
-  color: #0a8ea0;
-  margin-bottom: 12px;
-  font-weight: 600;
-}
-
-/* DESCRIPTION */
-.description {
-  font-size: 22px;   /* 👈 BIG (this was missing before) */
-  line-height: 1.7;
-  color: #444;
-}
-
-/* LINK */
-.advisory-card a {
-  display: inline-block;
-  margin-top: 12px;
+.advisory-role {
+  margin: 12px 0 0;
   font-size: 20px;
-  color: #05668d;
-  text-decoration: underline;
-  font-weight: 600;
+  line-height: 1.5;
+  font-weight: 700;
+  color: #0a8ea0;
 }
 
-/* WHY SECTION */
+.advisory-divider {
+  width: 90px;
+  height: 4px;
+  margin: 22px 0;
+  border-radius: 999px;
+  background: #00a8b5;
+}
+
+.advisory-description {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.75;
+  color: #475569;
+}
+
+.advisory-profile-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 24px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #087f90;
+  text-decoration: none;
+  transition:
+    transform 0.25s ease,
+    color 0.25s ease;
+}
+
+.advisory-profile-link:hover {
+  color: #056675;
+  transform: translateX(4px);
+}
+
+/* =========================================
+   WHY ADVISORY GUIDANCE MATTERS
+   ========================================= */
+
 .advisory-impact {
-  margin-top: 70px;
+  padding: 100px 24px;
+  background: #eef8f9;
+  text-align: center;
+}
+
+.advisory-impact-content {
+  max-width: 1050px;
+  margin: 0 auto;
 }
 
 .advisory-impact h2 {
-  font-size: 38px;
-  font-weight: 700;
+  margin: 0;
+  font-size: clamp(40px, 4vw, 54px);
+  line-height: 1.15;
+  font-weight: 800;
   color: #072f4a;
-  margin-bottom: 15px;
 }
 
 .advisory-impact p {
-  max-width: 900px;
-  margin: 0 auto;
-  font-size: 24px;
+  max-width: 980px;
+  margin: 24px auto 0;
+  font-size: 21px;
   line-height: 1.8;
-  color: #444;
+  color: #475569;
 }
 
-/* TABLET */
-@media (max-width: 992px) {
+/* =========================================
+   SMALL DESKTOP
+   ========================================= */
+
+@media (max-width: 1250px) {
   .advisory-card {
-    width: 320px;   /* slightly smaller */
+    grid-template-columns: 1fr;
+    min-height: auto;
+    text-align: center;
+  }
+
+  .advisory-image-wrapper {
+    margin: 0 auto;
+  }
+
+  .advisory-card-content {
+    text-align: center;
+  }
+
+  .advisory-divider {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 900px) {
+  .advisory-hero {
+    padding: 78px 22px 54px;
+  }
+
+  .advisory-hero p {
+    font-size: 19px;
+  }
+
+  .advisory-section {
+    padding: 32px 22px 76px;
   }
 
   .advisory-container {
-    gap: 40px;
+    grid-template-columns: 1fr;
+    max-width: 700px;
+  }
+
+  .advisory-card {
+    padding: 40px 34px;
+  }
+
+  .advisory-impact {
+    padding: 80px 22px;
+  }
+
+  .advisory-impact p {
+    font-size: 19px;
   }
 }
 
-/* MOBILE */
+/* =========================================
+   MOBILE
+   ========================================= */
+
 @media (max-width: 600px) {
+  .advisory-hero {
+    padding: 64px 18px 42px;
+  }
+
+  .advisory-eyebrow {
+    font-size: 14px;
+    letter-spacing: 0.11em;
+  }
+
+  .advisory-hero h1 {
+    font-size: 42px;
+  }
+
+  .advisory-hero p {
+    font-size: 17px;
+    line-height: 1.68;
+  }
+
+  .advisory-section {
+    padding: 22px 16px 60px;
+  }
+
   .advisory-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
+    gap: 24px;
   }
 
   .advisory-card {
-    width: 90%;   /* full width on mobile */
-    max-width: 400px;
+    gap: 26px;
+    padding: 32px 22px 36px;
+    border-radius: 20px;
+  }
+
+  .advisory-image-wrapper {
+    width: 180px;
+    height: 180px;
+  }
+
+  .advisory-card h2 {
+    font-size: 30px;
+  }
+
+  .advisory-role {
+    font-size: 18px;
+  }
+
+  .advisory-description {
+    font-size: 17px;
+    line-height: 1.7;
+  }
+
+  .advisory-profile-link {
+    font-size: 17px;
+  }
+
+  .advisory-impact {
+    padding: 68px 18px;
+  }
+
+  .advisory-impact h2 {
+    font-size: 38px;
+  }
+
+  .advisory-impact p {
+    font-size: 17px;
+    line-height: 1.72;
   }
 }

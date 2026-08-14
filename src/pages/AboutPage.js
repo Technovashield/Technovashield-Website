@@ -1,160 +1,255 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import '../styles/AboutPage.css';
-// import Footer from "../components/Footer";
+import "../styles/AboutPage.css";
 
 const AboutPage = () => {
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
-    <div className="about-page">
+    <main className="about-page">
       {/* Hero Section */}
       <section className="about-hero">
-        <div className="hero-background">
-          <video autoPlay loop muted playsInline className="hero-video">
+        <div className="about-hero-background">
+          <video autoPlay loop muted playsInline className="about-hero-video">
             <source src="/tech.mp4" type="video/mp4" />
           </video>
-          <div className="hero-video-overlay"></div>
+
+          <div className="about-hero-overlay"></div>
         </div>
-        <div className="hero-content">
-          <h1 className="hero-title">Empowering Innovation Through Secure Intelligence</h1>
-          <p className="hero-subtitle">
-            We're a New Zealand–based company creating AI-driven systems that protect, 
-            predict, and empower industries worldwide.
+
+        <div className="about-hero-content">
+          <span className="about-eyebrow">
+            Responsible Technology. Real-World Impact.
+          </span>
+
+          <h1 className="about-hero-title">
+            Technology with Purpose.
+            <span> Intelligence with Impact.</span>
+          </h1>
+
+          <p className="about-hero-subtitle">
+            TechnovaShield is a New Zealand technology company developing
+            responsible healthcare AI, clinical intelligence, synthetic data
+            solutions, and intelligent automation for real-world challenges.
           </p>
         </div>
       </section>
 
-      {/* Our Story Section */}
+      {/* Our Story */}
       <section className="our-story-section">
-        <div className="container">
+        <div className="about-container">
           <div className="story-grid">
             <div className="story-content">
+              <span className="section-eyebrow">Who We Are</span>
+
               <h2>Our Story</h2>
+
               <p>
-                TechnovaShield Limited was founded in New Zealand with the goal of bridging 
-                healthcare, automation, and cybersecurity through applied artificial intelligence. 
-                Our journey began with a vision to make technology more human — predictive, 
-                preventive, and accessible to all.
+                TechnovaShield Limited was founded in New Zealand with a belief
+                that advanced technology should solve meaningful real-world
+                problems. Our work has evolved around responsible artificial
+                intelligence, healthcare innovation, privacy-conscious data
+                solutions, and intelligent automation.
               </p>
+
               <p>
-                Today, our solutions like CareSentinelAI and CyberShield bring intelligence 
-                and safety to organizations and clinicians, redefining how AI can protect 
-                lives and digital ecosystems.
+                CareSentinelAI has become our flagship clinical intelligence
+                initiative, alongside our growing work in synthetic healthcare
+                data and privacy-preserving data generation. Together, these
+                capabilities reflect our focus on building practical,
+                trustworthy technology that can progress from research and
+                prototype environments toward real-world implementation.
               </p>
             </div>
+
             <div className="story-image">
-              <img src="/teamwork.png" alt="Innovation and Teamwork" className="story-image-img" />
+              <img
+                src="/teamwork.png"
+                alt="TechnovaShield innovation and collaboration"
+                className="story-image-img"
+              />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Our Philosophy Section */}
+      {/* What Drives Us */}
       <section className="philosophy-section">
-        <div className="container">
-          <h2 className="section-heading">What Drives Us</h2>
-          <p className="section-subheading">
-            At TechnovaShield, we build every solution on three foundational values:
-          </p>
+        <div className="about-container">
+          <div className="section-intro">
+            <span className="section-eyebrow">Our Principles</span>
+
+            <h2 className="section-heading">What Drives Us</h2>
+
+            <p className="section-subheading">
+              We build technology around three principles that guide how we
+              design, collaborate, and create impact.
+            </p>
+          </div>
+
           <div className="philosophy-cards">
-            <div className="philosophy-card">
-              <img src="/iconInnovation.png" alt="Innovation" className="philosophy-icon" />
+            <article className="philosophy-card">
+              <img
+                src="/iconInnovation.png"
+                alt=""
+                className="philosophy-icon"
+              />
+
               <h3>Innovation with Purpose</h3>
-              <p>Developing technology that creates measurable impact.</p>
-            </div>
-            <div className="philosophy-card">
-              <img src="/iconIntegrity.png" alt="Integrity" className="philosophy-icon" />
+
+              <p>
+                We focus innovation on practical problems where technology can
+                create meaningful and measurable value.
+              </p>
+            </article>
+
+            <article className="philosophy-card">
+              <img
+                src="/iconIntegrity.png"
+                alt=""
+                className="philosophy-icon"
+              />
+
               <h3>Integrity and Ethics</h3>
-              <p>Designing AI that respects privacy, fairness, and human values.</p>
-            </div>
-            <div className="philosophy-card">
-              <img src="/iconImpact.png" alt="Impact" className="philosophy-icon" />
+
+              <p>
+                We design responsible technology with privacy, transparency,
+                fairness, security, and human values in mind.
+              </p>
+            </article>
+
+            <article className="philosophy-card">
+              <img
+                src="/iconImpact.png"
+                alt=""
+                className="philosophy-icon"
+              />
+
               <h3>Impact for People</h3>
-              <p>Empowering clinicians, professionals, and organizations to achieve more with intelligent systems.</p>
+
+              <p>
+                We aim to support better decisions, stronger workflows, and
+                technology experiences that remain centred on people.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      {/* Team & Leadership */}
+      <section className="team-leadership-section">
+        <div className="about-container">
+          <div className="team-leadership-content">
+            <span className="section-eyebrow">People Behind the Work</span>
+
+            <h2 className="section-heading">Our Team & Leadership</h2>
+
+            <p className="team-description">
+              Our work is shaped by multidisciplinary expertise spanning
+              technology, healthcare, research, strategy, and responsible
+              innovation.
+            </p>
+
+            <p className="team-description">
+              Together, our team brings the perspectives needed to develop
+              solutions grounded in real-world needs while maintaining a
+              practical path from concept through development and validation.
+            </p>
+
+            <div className="team-cta">
+              <Link
+                to="/team"
+                className="about-primary-button"
+                onClick={scrollToTop}
+              >
+                Meet the Team
+                <span aria-hidden="true">→</span>
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Partnerships Section */}
-      <section className="partnerships-section">
-        <div className="container">
-          <h2 className="section-heading">Our Network</h2>
-          <p className="network-description">
-            Our innovation is powered by collaboration. We work with healthcare professionals, 
-            researchers, and strategic partners across Aotearoa New Zealand and beyond.
-          </p>
-          <p className="network-description">
-            Partnerships include AI Forum New Zealand, Creative HQ, Callaghan Innovation, 
-            and several clinical organizations engaged in pilot testing and co-design of CareSentinelAI.
-          </p>
-          <div className="partners-carousel">
-            <div className="partner-logo">AI Forum NZ</div>
-            <div className="partner-logo">Creative HQ</div>
-            <div className="partner-logo">Callaghan Innovation</div>
-            <div className="partner-logo">Clinical Partners</div>
-          </div>
-        </div>
-      </section>
-
-      {/* Team & Leadership Section */}
-      <section className="team-leadership-section">
-        <div className="container">
-          <h2 className="section-heading">Our Team & Leadership</h2>
-          <p className="team-description">
-            At TechnovaShield, innovation is driven by a multidisciplinary team of developers, 
-            strategists, and clinicians working together to make AI human-centered.
-          </p>
-          <p className="team-description">
-            Our leadership team, supported by collaborating clinicians such as Dr. David Karthak 
-            and RN Jennifer Karthak, ensures that every project reflects real-world healthcare 
-            priorities and ethical standards.
-          </p>
-          <div className="team-cta">
-            <Link to="/team" className="btn btn-primary" onClick={scrollToTop}>Meet the Team</Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Healthcare Impact Section */}
+      {/* Healthcare Impact */}
       <section className="healthcare-impact-section">
         <div className="impact-background">
-          <img src="/clinciansAI.png" alt="Healthcare AI" className="impact-bg-image" />
+          <img
+            src="/clinciansAI.png"
+            alt=""
+            className="impact-bg-image"
+          />
+
           <div className="impact-overlay"></div>
         </div>
-        <div className="container">
+
+        <div className="about-container">
           <div className="impact-content">
-            <h2>Driving AI Innovation in Healthcare</h2>
+            <span className="impact-eyebrow">
+              Our Flagship Healthcare Initiative
+            </span>
+
+            <h2>Driving Responsible AI Innovation in Healthcare</h2>
+
             <p>
-              CareSentinelAI is TechnovaShield's flagship solution for predictive healthcare. 
-              Co-designed with clinicians, it leverages AI to detect early warning signs of 
-              sepsis and other critical conditions. The platform integrates wearable, lab, 
-              and clinical data to provide real-time insights, reducing response time and 
-              improving patient outcomes.
+              CareSentinelAI is TechnovaShield&apos;s flagship clinical
+              intelligence platform, being developed to help clinicians
+              identify patients who may require earlier review and follow-up.
+              The platform brings together clinical information, risk
+              indicators, and explainable decision-support concepts to support
+              more proactive care.
             </p>
+
             <p>
-              Our mission is to make intelligent healthcare accessible, proactive, and 
-              trustworthy for every community.
+              Our approach combines clinical engagement, responsible AI
+              development, and privacy-conscious data practices, with the goal
+              of progressing CareSentinelAI from prototype through validation
+              and toward real-world pilot deployment.
             </p>
+
+            <Link
+              to="/products#caresentinelai"
+              className="impact-link"
+              onClick={scrollToTop}
+            >
+              Explore CareSentinelAI
+              <span aria-hidden="true">→</span>
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Call to Action Section */}
-      <section className="cta-section">
-        <div className="container">
-          <div className="cta-content">
-            <h2>Together, we believe in building technology that protects, predicts, and empowers.</h2>
-            <Link to="/products" className="btn btn-primary btn-glow" onClick={scrollToTop}>Explore Our Projects</Link>
+      {/* CTA */}
+      <section className="about-cta-section">
+        <div className="about-container">
+          <div className="about-cta-content">
+            <span className="section-eyebrow about-cta-eyebrow">
+              Explore TechnovaShield
+            </span>
+
+            <h2>
+              Building responsible technology for better decisions and better
+              outcomes.
+            </h2>
+
+            <p>
+              Discover our healthcare AI, synthetic data, intelligent
+              automation, and secure technology capabilities.
+            </p>
+
+            <Link
+              to="/products"
+              className="about-cta-button"
+              onClick={scrollToTop}
+            >
+              Explore Our Solutions
+              <span aria-hidden="true">→</span>
+            </Link>
           </div>
         </div>
       </section>
-
-      {/* <Footer /> */}
-    </div>
+    </main>
   );
 };
 

@@ -1,100 +1,106 @@
-import React from "react";
+﻿import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/NewsPage.css";
 
+const newsArticles = [
+  {
+    id: 1,
+    title: "Partnering with Clinicians to Tackle Sepsis",
+    excerpt:
+      "CareSentinelAI is being shaped through clinician engagement and real-world healthcare perspectives, helping TechnovaShield explore how clinical intelligence can support earlier recognition, review, and follow-up.",
+    image: "/news/news-hero-ai-dashboard.jpeg",
+    alt: "Clinician reviewing an AI-enabled healthcare dashboard",
+    link: "/news/post-1",
+    category: "Clinical Collaboration",
+  },
+  {
+    id: 2,
+    title:
+      "AI Is Transforming Healthcare — But Are We Bringing the Frontline With Us?",
+    excerpt:
+      "As artificial intelligence develops across healthcare, successful adoption will depend not only on technology but also on clinician understanding, trust, workflow integration, and responsible implementation.",
+    image: "/news/ai-frontline.png",
+    alt: "Artificial intelligence supporting frontline healthcare",
+    link: "/news/post-2",
+    category: "Healthcare AI",
+  },
+  {
+    id: 3,
+    title:
+      "Equity in Early Detection: Why Māori and Pasifika Perspectives Must Shape AI",
+    excerpt:
+      "Responsible healthcare AI must consider equity, cultural context, community perspectives, and appropriate data practices alongside clinical and technical performance.",
+    image: "/news/equity-ai-healthcare.png",
+    alt: "Equity and Indigenous perspectives shaping AI in healthcare",
+    link: "/news/post-3",
+    category: "Responsible AI",
+  },
+];
+
 const NewsPage = () => {
   return (
-    <div className="news-page">
-      {/* ---------------- HERO SECTION ---------------- */}
+    <main className="news-page">
+      {/* Hero */}
       <section className="news-hero">
         <div className="news-hero-overlay"></div>
 
         <div className="news-hero-content">
-          <h1>News & Research Updates</h1>
+          <span className="news-eyebrow">Insights & Updates</span>
+
+          <h1>News, Research & Perspectives</h1>
+
           <p>
-            Insights, clinical collaborations, and research progress from the
-            CareSentinelAI initiative — shaping the future of early detection in
-            Aotearoa.
+            Follow TechnovaShield&apos;s progress across healthcare AI,
+            CareSentinelAI, responsible innovation, synthetic data,
+            collaborations, and emerging technology.
           </p>
         </div>
       </section>
 
-      {/* ---------------- NEWS LIST ---------------- */}
-      <section className="news-container">
-        {/* POST 1 */}
-        <article className="news-card">
-          <img
-            src="/news/news-hero-ai-dashboard.jpeg"
-            alt="Clinician reviewing AI dashboard"
-            className="news-card-image"
-          />
+      {/* News Articles */}
+      <section className="news-section">
+        <div className="news-section-heading">
+          <span className="news-section-eyebrow">Latest Perspectives</span>
 
-          <div className="news-card-content">
-            <h2>Partnering with Clinicians to Tackle Sepsis</h2>
+          <h2>From TechnovaShield</h2>
 
-            <p className="news-card-excerpt">
-              CareSentinelAI is TechnovaShield’s research initiative focused on
-              improving early recognition of sepsis through clinician-led
-              collaboration across Aotearoa.
-            </p>
+          <p>
+            Explore our thinking, research perspectives, collaboration updates,
+            and progress as we build responsible technology for real-world
+            challenges.
+          </p>
+        </div>
 
-            <Link to="/news/post-1" className="news-read-more">
-              Read More →
-            </Link>
-          </div>
-        </article>
-        <article className="news-card">
-          <img
-            src="/news/ai-frontline.png"
-            alt="AI transforming healthcare frontline"
-            className="news-card-image"
-          />
+        <div className="news-container">
+          {newsArticles.map((article) => (
+            <article className="news-card" key={article.id}>
+              <div className="news-card-image-wrapper">
+                <img
+                  src={article.image}
+                  alt={article.alt}
+                  className="news-card-image"
+                />
+              </div>
 
-          <div className="news-card-content">
-            <h2>
-              AI Is Transforming Healthcare — But Are We Bringing the Frontline
-              With Us?
-            </h2>
+              <div className="news-card-content">
+                <span className="news-category">{article.category}</span>
 
-            <p className="news-card-excerpt">
-              As AI accelerates across Aotearoa’s healthcare system, are we
-              supporting frontline clinicians with the literacy, trust, and
-              integration they need?
-            </p>
+                <h3>{article.title}</h3>
 
-            <Link to="/news/post-2" className="news-read-more">
-              Read More →
-            </Link>
-          </div>
-        </article>
-        <article className="news-card">
-          <img
-            src="/news/equity-ai-healthcare.png"
-            alt="Equity and Indigenous perspectives shaping AI in healthcare"
-            className="news-card-image"
-          />
+                <div className="news-card-divider"></div>
 
-          <div className="news-card-content">
-            <h2>
-              Equity in Early Detection: Why Māori and Pasifika Perspectives
-              Must Shape AI
-            </h2>
+                <p className="news-card-excerpt">{article.excerpt}</p>
 
-            <p className="news-card-excerpt">
-              Early detection tools must reflect Kaupapa Māori principles,
-              equity, and community partnership — not just biomedical
-              indicators.
-            </p>
-
-            <Link to="/news/post-3" className="news-read-more">
-              Read More →
-            </Link>
-          </div>
-        </article>
-
-        {/* Add more articles here in future */}
+                <Link to={article.link} className="news-read-more">
+                  Read Article
+                  <span aria-hidden="true">→</span>
+                </Link>
+              </div>
+            </article>
+          ))}
+        </div>
       </section>
-    </div>
+    </main>
   );
 };
 

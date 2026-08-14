@@ -1,221 +1,854 @@
-﻿/* FeaturedProjects.css – Final Optimized Version (Readable Text + Larger Buttons) */
+﻿/* ==========================================================================
+   FeaturedProjects.css
+   Homepage - Explore Our Platforms
+   ========================================================================== */
 
 .projects-section {
-  padding: 120px 40px;
-  background: linear-gradient(180deg, #ffffff, #eafcff);
+  width: 100%;
+
+  background: linear-gradient(180deg, #0a8b96 0%, #0f7f89 100%);
+
+  padding: 72px 0 66px;
+
+  overflow: hidden;
 }
 
-.projects-content {
-  max-width: 100%;
-  margin: 0;
-  padding: 0 40px;
+.projects-section::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(255, 255, 255, 0.08),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 80%,
+      rgba(255, 255, 255, 0.06),
+      transparent 28%
+    );
+
+  pointer-events: none;
 }
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
 
 .projects-header {
+  width: 100%;
+
+  max-width: 900px;
+
+  margin: 0 auto 38px;
+
   text-align: center;
-  margin-bottom: 80px;
+}
+
+.projects-eyebrow {
+  margin: 0 0 12px;
+
+  color: #aef5fa;
+
+  font-size: 1.25rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
 }
 
 .projects-header h2 {
-  font-size: 3.5rem;
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(2.3rem, 3.6vw, 3.5rem);
+
   font-weight: 800;
-  color: #00363d;
-  margin-bottom: 20px;
+
+  line-height: 1.15;
+
+  letter-spacing: -0.025em;
 }
 
-.projects-header p {
-  font-size: 1.6rem;
-  color: #2e4a4d; /* darker and more readable */
-  font-weight: 500;
-  max-width: 900px;
+.projects-header > p:last-child {
+  max-width: 820px;
+
+  margin: 18px auto 0;
+
+  color: #e5fbfd;
+
+  font-size: 1.25rem;
+
+  font-weight: 400;
+
+  line-height: 1.7;
+}
+
+/* ==========================================================================
+   Showcase
+   ========================================================================== */
+
+.platform-showcase {
+  position: relative;
+
+  z-index: 2;
+
+  width: calc(100% - 16px);
+
   margin: 0 auto;
-  line-height: 1.8;
-}
 
-/* Grid layout – evenly spaced 3 cards horizontally */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 50px;
-  justify-items: center;
-  align-items: stretch;
-  width: 100%;
-}
+  background:
+    linear-gradient(
+      120deg,
+      #ffffff 0%,
+      #f1fbfc 100%
+    );
 
-/* Project Card Styling */
-.project-card {
-  background: #ffffff;
-  border-radius: 20px;
+  border-radius: 28px;
+
   overflow: hidden;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-  transition: all 0.4s ease;
-  border: 1px solid rgba(0, 168, 181, 0.2);
+
+  box-shadow:
+    0 24px 60px rgba(0, 42, 50, 0.26);
+}
+
+/* ==========================================================================
+   Slide
+   ========================================================================== */
+
+.platform-slide {
+  width: 100%;
+
+  min-height: 510px;
+
+  padding: 46px 72px 32px;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(430px, 1fr)
+    minmax(0, 0.95fr);
+
+  gap: 48px;
+
+  align-items: center;
+
+  animation: platformFadeIn 0.55s ease;
+}
+
+.platform-slide-reverse {
+  grid-template-columns:
+    minmax(0, 0.95fr)
+    minmax(430px, 1fr);
+}
+
+.platform-slide-reverse .platform-video-column {
+  order: 2;
+}
+
+.platform-slide-reverse .platform-copy {
+  order: 1;
+}
+
+/* ==========================================================================
+   Video
+   ========================================================================== */
+
+.platform-video-column {
   width: 100%;
 }
 
-.project-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 16px 28px rgba(0, 168, 181, 0.25);
-  border-color: rgba(0, 168, 181, 0.4);
+.platform-video-frame {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 16 / 9;
+
+  overflow: hidden;
+
+  border-radius: 24px;
+
+  background: #003b46;
+
+  border: 1px solid rgba(0, 168, 181, 0.24);
+
+  box-shadow:
+    0 20px 50px rgba(0, 73, 86, 0.18);
 }
 
-/* Highlighted Card */
-.featured-card {
-  background: linear-gradient(135deg, #00a8b5, #00d4b4);
-  color: #ffffff;
-  box-shadow: 0 12px 30px rgba(0, 168, 181, 0.3);
-  border: none;
+.platform-video {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  object-position: center;
 }
 
-.featured-card .project-info h3,
-.featured-card .project-info p,
-.featured-card .project-link {
-  color: #ffffff;
+.platform-video-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 59, 70, 0) 55%,
+      rgba(0, 59, 70, 0.32) 100%
+    );
+
+  pointer-events: none;
 }
 
-.featured-card .project-link:hover {
-  background: #ffffff;
-  color: #00a8b5;
-}
+.platform-preview-label {
+  position: absolute;
 
-/* Icon Section */
-.project-icon {
-  background: linear-gradient(135deg, #00a8b5, #007f91);
-  padding: 80px 30px;
-  text-align: center;
-}
+  left: 20px;
+  bottom: 18px;
 
-.project-icon i {
-  font-size: 4rem;
-  color: white;
-  transition: transform 0.3s ease;
-}
+  padding: 9px 16px;
 
-.project-card:hover .project-icon i {
-  transform: scale(1.1);
-}
+  border-radius: 999px;
 
-/* Info Section */
-.project-info {
-  padding: 40px;
-  text-align: center;
-}
+  background:
+    rgba(255, 255, 255, 0.94);
 
-.project-info h3 {
-  font-size: 2rem;
+  color: #007f91;
+
+  font-size: 1rem;
+
   font-weight: 700;
-  margin-bottom: 15px;
-  color: #00363d;
+
+  box-shadow:
+    0 7px 18px rgba(0, 73, 86, 0.1);
 }
 
-.project-info p {
-  font-size: 1.4rem; /* larger text for readability */
-  color: #2e4a4d; /* darker tone */
-  line-height: 1.8;
-  margin-bottom: 40px; /* more breathing space before button */
+/* ==========================================================================
+   Copy
+   ========================================================================== */
+
+.platform-copy {
+  width: 100%;
 }
 
-/* Button Styling */
-.project-link {
-  display: inline-block;
-  border: 2px solid #00a8b5;
+.platform-number {
+  margin-bottom: 8px;
+
+  color: rgba(0, 168, 181, 0.25);
+
+  font-size: clamp(4.5rem, 7vw, 7.5rem);
+
+  font-weight: 800;
+
+  line-height: 0.85;
+
+  letter-spacing: -0.06em;
+}
+
+.platform-heading-row {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  flex-wrap: wrap;
+
+  margin-bottom: 9px;
+}
+
+.platform-eyebrow {
+  margin: 0;
+
   color: #00a8b5;
-  padding: 16px 42px; /* larger button */
-  border-radius: 40px;
+
+  font-size: 1.25rem;
+
   font-weight: 700;
-  font-size: 1.4rem; /* larger text */
-  text-decoration: none;
-  transition: all 0.3s ease;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
 }
 
-.project-link:hover {
+.platform-flagship-badge {
+  padding: 6px 12px;
+
+  border-radius: 999px;
+
   background: #00a8b5;
+
   color: #ffffff;
-  box-shadow: 0 8px 24px rgba(0, 168, 181, 0.4);
+
+  font-size: 0.9rem;
+
+  font-weight: 700;
 }
 
-/* Responsive Design */
+.platform-copy h3 {
+  margin: 0;
+
+  color: #003b46;
+
+  font-size: clamp(2.4rem, 3.7vw, 3.8rem);
+
+  font-weight: 800;
+
+  line-height: 1.1;
+
+  letter-spacing: -0.03em;
+}
+
+.platform-subtitle {
+  margin: 10px 0 0;
+
+  color: #007f91;
+
+  font-size: 1.25rem;
+
+  font-weight: 700;
+
+  line-height: 1.4;
+}
+
+.platform-description {
+  max-width: 760px;
+
+  margin: 22px 0 0;
+
+  color: #526b72;
+
+  font-size: 1rem;
+
+  line-height: 1.7;
+}
+
+/* ==========================================================================
+   Features
+   ========================================================================== */
+
+.platform-features {
+  width: 100%;
+
+  margin-top: 26px;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 12px;
+}
+
+.platform-feature {
+  min-height: 56px;
+
+  padding: 11px 13px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  background: #ffffff;
+
+  border:
+    1px solid rgba(0, 168, 181, 0.17);
+
+  border-radius: 13px;
+
+  color: #294f57;
+
+  font-size: 1rem;
+
+  font-weight: 600;
+
+  line-height: 1.4;
+}
+
+.platform-feature span {
+  flex: 0 0 27px;
+
+  width: 27px;
+  height: 27px;
+
+  border-radius: 50%;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: #e4fafc;
+
+  color: #00a8b5;
+
+  font-size: 0.85rem;
+
+  font-weight: 800;
+}
+
+/* ==========================================================================
+   Link
+   ========================================================================== */
+
+.platform-link {
+  margin-top: 28px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 14px 28px;
+
+  border-radius: 999px;
+
+  background: #00a8b5;
+
+  border: 2px solid #00a8b5;
+
+  color: #ffffff;
+
+  font-size: 1.25rem;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    gap 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.platform-link:hover {
+  background: #007f91;
+
+  border-color: #007f91;
+
+  color: #ffffff;
+
+  gap: 14px;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 24px rgba(0, 168, 181, 0.23);
+}
+
+/* ==========================================================================
+   Navigation
+   ========================================================================== */
+
+.platform-nav {
+  position: absolute;
+
+  top: 50%;
+
+  z-index: 5;
+
+  width: 58px;
+  height: 58px;
+
+  border-radius: 50%;
+
+  border:
+    1px solid rgba(0, 168, 181, 0.35);
+
+  background:
+    rgba(255, 255, 255, 0.96);
+
+  color: #00a8b5;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  transform: translateY(-50%);
+
+  font-size: 1.6rem;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 26px rgba(0, 73, 86, 0.12);
+
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.platform-nav:hover {
+  background: #00a8b5;
+
+  color: #ffffff;
+}
+
+.platform-nav-left {
+  left: 18px;
+}
+
+.platform-nav-right {
+  right: 18px;
+}
+
+.platform-nav-left:hover {
+  transform:
+    translateY(-50%)
+    translateX(-3px);
+}
+
+.platform-nav-right:hover {
+  transform:
+    translateY(-50%)
+    translateX(3px);
+}
+
+/* ==========================================================================
+   Progress
+   ========================================================================== */
+
+.platform-showcase-footer {
+  width: 100%;
+
+  padding: 0 82px 34px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+.platform-progress-group {
+  flex: 1;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 12px;
+}
+
+.platform-progress {
+  padding: 0;
+
+  background: transparent;
+
+  border: none;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  cursor: pointer;
+}
+
+.platform-progress > span:first-child {
+  color: #789095;
+
+  font-size: 0.9rem;
+
+  font-weight: 700;
+}
+
+.platform-progress-line {
+  flex: 1;
+
+  height: 3px;
+
+  border-radius: 999px;
+
+  background:
+    rgba(0, 168, 181, 0.16);
+
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.platform-progress-active > span:first-child {
+  color: #00a8b5;
+}
+
+.platform-progress-active .platform-progress-line {
+  background: #00a8b5;
+
+  transform: scaleY(1.5);
+}
+
+.platform-count {
+  color: #003b46;
+
+  font-size: 1.25rem;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.platform-count span {
+  margin: 0 7px;
+
+  color: #9ab0b4;
+}
+
+/* ==========================================================================
+   Animation
+   ========================================================================== */
+
+@keyframes platformFadeIn {
+  from {
+    opacity: 0;
+
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   Laptop
+   ========================================================================== */
+
 @media (max-width: 1200px) {
-  .projects-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 992px) {
-  .projects-header h2 {
-    font-size: 3rem;
-  }
-
-  .projects-header p {
-    font-size: 1.3rem;
-  }
-
-  .projects-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
-  }
-
-  .project-info p {
-    font-size: 1.2rem;
-  }
-
-  .project-link {
-    font-size: 1.2rem;
-    padding: 14px 36px;
-  }
-}
-
-@media (max-width: 768px) {
   .projects-section {
-    padding: 80px 20px;
+    padding: 72px 0 66px;
   }
 
-  .projects-header h2 {
-    font-size: 2.5rem;
+  .platform-slide,
+  .platform-slide-reverse {
+    padding: 48px 72px 34px;
+
+    grid-template-columns:
+      minmax(340px, 1fr)
+      minmax(0, 0.9fr);
+
+    gap: 36px;
   }
 
-  .projects-header p {
-    font-size: 1.2rem;
+  .platform-slide-reverse .platform-video-column,
+  .platform-slide-reverse .platform-copy {
+    order: initial;
   }
 
-  .projects-grid {
+  .platform-features {
     grid-template-columns: 1fr;
+  }
+
+  .platform-showcase-footer {
+    padding: 0 72px 30px;
+  }
+}
+
+/* ==========================================================================
+   Tablet
+   ========================================================================== */
+
+@media (max-width: 850px) {
+  .projects-section {
+    padding: 60px 0 54px;
+  }
+
+  .projects-header {
+    margin-bottom: 38px;
+  }
+
+  .projects-header > p:last-child {
+    font-size: 1rem;
+  }
+
+  .platform-showcase {
+    width: calc(100% - 24px);
+  }
+
+  .platform-slide,
+  .platform-slide-reverse {
+    min-height: auto;
+
+    padding: 48px 56px 34px;
+
+    grid-template-columns: 1fr;
+
     gap: 30px;
   }
 
-  .project-info h3 {
-    font-size: 1.6rem;
+  .platform-slide-reverse .platform-video-column,
+  .platform-slide-reverse .platform-copy {
+    order: initial;
   }
 
-  .project-info p {
-    font-size: 1.1rem;
+  .platform-copy {
+    text-align: center;
   }
 
-  .project-link {
-    font-size: 1.1rem;
-    padding: 12px 30px;
+  .platform-heading-row {
+    justify-content: center;
+  }
+
+  .platform-description {
+    margin-left: auto;
+
+    margin-right: auto;
+  }
+
+  .platform-features {
+    grid-template-columns: 1fr;
+  }
+
+  .platform-showcase-footer {
+    padding: 0 56px 30px;
+  }
+
+  .platform-nav {
+    width: 48px;
+    height: 48px;
+
+    font-size: 1.3rem;
+  }
+
+  .platform-nav-left {
+    left: 8px;
+  }
+
+  .platform-nav-right {
+    right: 8px;
   }
 }
 
-@media (max-width: 480px) {
+/* ==========================================================================
+   Mobile
+   ========================================================================== */
+
+@media (max-width: 560px) {
+  .projects-section {
+    padding: 50px 0 46px;
+  }
+
+  .projects-header {
+    padding: 0 18px;
+
+    margin-bottom: 30px;
+  }
+
+  .projects-eyebrow {
+    font-size: 1rem;
+  }
+
   .projects-header h2 {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 
-  .projects-header p {
+  .projects-header > p:last-child {
+    font-size: 0.95rem;
+
+    line-height: 1.6;
+  }
+
+  .platform-showcase {
+    width: calc(100% - 20px);
+
+    border-radius: 20px;
+  }
+
+  .platform-slide,
+  .platform-slide-reverse {
+    padding: 42px 26px 28px;
+  }
+
+  .platform-number {
+    font-size: 4rem;
+  }
+
+  .platform-eyebrow {
     font-size: 1rem;
   }
 
-  .project-info h3 {
-    font-size: 1.4rem;
+  .platform-copy h3 {
+    font-size: 2rem;
   }
 
-  .project-info p {
+  .platform-subtitle {
     font-size: 1rem;
   }
 
-  .project-link {
+  .platform-description {
+    font-size: 0.95rem;
+
+    line-height: 1.6;
+  }
+
+  .platform-link {
     font-size: 1rem;
-    padding: 10px 26px;
+
+    padding: 12px 22px;
+  }
+
+  .platform-progress > span:first-child {
+    display: none;
+  }
+
+  .platform-progress-group {
+    gap: 8px;
+
+    margin: 0 54px;
+  }
+
+  .platform-showcase-footer {
+    padding: 0 28px 26px;
+  }
+
+  .platform-nav {
+    top: auto;
+
+    bottom: 17px;
+
+    transform: none;
+
+    width: 42px;
+    height: 42px;
+  }
+
+  .platform-nav-left {
+    left: 18px;
+  }
+
+  .platform-nav-right {
+    right: 18px;
+  }
+
+  .platform-nav-left:hover,
+  .platform-nav-right:hover {
+    transform: none;
+  }
+
+  .platform-count {
+    display: none;
   }
 }

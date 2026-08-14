@@ -1,30 +1,56 @@
-import React from "react";
+﻿import React from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/HeroSection.css";
 
 const HeroSection = () => {
-  const scrollToProjects = () => {
-    const section = document.getElementById("featured-projects");
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
+  const navigate = useNavigate();
+
+  const handleExploreSolutions = () => {
+    navigate("/products");
+  };
+
+  const handleContact = () => {
+    navigate("/contact");
   };
 
   return (
-    <section className="hero-section">
-      <video autoPlay loop muted playsInline className="hero-bg-video">
+    <section className="home-hero-section">
+      <video autoPlay loop muted playsInline className="home-hero-bg-video">
         <source src="/HeroSectionBackground.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
-      <div className="hero-overlay">
-        <div className="hero-content">
-          <h1 className="hero-title">Welcome to TechnovaShield</h1>
-          <p className="hero-tagline">
-            Innovating AI for Healthcare, Cybersecurity, and Automation.
+      <div className="home-hero-overlay">
+        <div className="home-hero-content">
+          <p className="home-hero-eyebrow">
+            Responsible Healthcare AI Engineering
           </p>
-          <button className="hero-btn" onClick={scrollToProjects}>
-            Explore Our Work
-          </button>
+
+          <h1 className="home-hero-title">
+            Healthcare AI Engineering for Better Decisions and Better Outcomes
+          </h1>
+
+          <p className="home-hero-tagline">
+            TechnovaShield develops responsible healthcare AI, clinical intelligence,
+            synthetic healthcare data solutions, and intelligent automation designed
+            to support safer, smarter, and more efficient healthcare.
+          </p>
+
+          <div className="home-hero-actions">
+            <button
+              className="home-hero-btn home-hero-btn-primary"
+              onClick={handleExploreSolutions}
+            >
+              Explore Solutions
+            </button>
+
+            <button
+              className="home-hero-btn home-hero-btn-secondary"
+              onClick={handleContact}
+            >
+              Contact Us
+            </button>
+          </div>
         </div>
       </div>
     </section>
@@ -32,3 +58,4 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+

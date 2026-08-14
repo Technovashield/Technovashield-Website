@@ -1,0 +1,111 @@
+/* ==========================================================================
+   PageTransition.css
+   Short TechnovaShield route transition
+   ========================================================================== */
+
+.page-transition-overlay {
+  position: fixed;
+  inset: 0;
+
+  z-index: 99999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    rgba(245, 252, 253, 0.96);
+
+  backdrop-filter: blur(12px);
+
+  animation: transitionOverlayFade 1.6s ease forwards;
+}
+
+.page-transition-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 14px;
+}
+
+.page-transition-logo {
+  width: 170px;
+  height: 170px;
+
+  object-fit: contain;
+
+  padding: 8px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      #ffffff 50%,
+      #e2fafc 100%
+    );
+
+  border: 2px solid rgba(0, 168, 181, 0.3);
+
+  box-shadow:
+    0 0 0 12px rgba(0, 168, 181, 0.06),
+    0 18px 48px rgba(0, 73, 86, 0.2);
+
+  animation: transitionLogoSpin 1.6s ease-in-out;
+}
+
+.page-transition-text {
+  color: #003b46;
+
+  font-size: 1rem;
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+}
+
+@keyframes transitionLogoSpin {
+  0% {
+    transform: rotate(0deg) scale(0.88);
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  70% {
+    transform: rotate(320deg) scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: rotate(360deg) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes transitionOverlayFade {
+  0% {
+    opacity: 0;
+  }
+
+  12% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-transition-overlay,
+  .page-transition-logo {
+    animation: none;
+  }
+}

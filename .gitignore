@@ -23,3 +23,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# local backup files
+/src/pages/ProductsPage.backup.js
+/src/pages/news-backup-*

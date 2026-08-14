@@ -1,52 +1,116 @@
-
-import React from "react";
+﻿import React from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/FocusAreas.css";
 
 const FocusAreas = () => {
-  const focusData = [
-    {
-      id: 1,
-      icon: "fas fa-heartbeat",
-      title: "Healthcare AI",
-      description:
-        "Empowering clinicians with predictive analytics and early detection tools through CareSentinelAI.",
-    },
-    {
-      id: 2,
-      icon: "fas fa-shield-alt",
-      title: "Cybersecurity",
-      description:
-        "Protecting networks and enterprises with AI-driven DDoS detection and real-time defense through CyberShield.",
-    },
-    {
-      id: 3,
-      icon: "fas fa-robot",
-      title: "Intelligent Automation",
-      description:
-        "Building smart UiPath bots that streamline processes and enhance efficiency for modern enterprises.",
-    },
-  ];
+  const navigate = useNavigate();
+
+  const solutions = [
+  {
+    id: 1,
+    icon: "fas fa-heartbeat",
+    title: "CareSentinelAI",
+    subtitle: "Clinical Intelligence Platform",
+    description:
+      "AI-enabled clinical intelligence designed to support patient prioritisation, earlier identification of deterioration, and proactive clinical review.",
+    badge: "Flagship",
+    badgeType: "flagship",
+  },
+  {
+    id: 2,
+    icon: "fas fa-notes-medical",
+    title: "CareSentinelAI Enterprise Dataset",
+    subtitle: "Healthcare Synthetic Data Programme",
+    description:
+      "A structured, privacy-preserving healthcare dataset programme supporting responsible clinical AI development, testing, validation, analytics, and controlled innovation.",
+    badge: "Featured",
+    badgeType: "new",
+  },
+  {
+    id: 3,
+    icon: "fas fa-database",
+    title: "Synthetic Data Generation Services",
+    subtitle: "Privacy-Preserving Data Solutions",
+    description:
+      "Purpose-designed synthetic datasets for AI development, software testing, analytics, research, and innovation across healthcare and other data-intensive industries.",
+    badge: "New",
+    badgeType: "new",
+  },
+  {
+    id: 4,
+    icon: "fas fa-robot",
+    title: "Intelligent Automation",
+    subtitle: "Workflow Automation",
+    description:
+      "Intelligent automation solutions that streamline repetitive processes, improve operational efficiency, and support secure digital workflows.",
+  },
+  {
+    id: 5,
+    icon: "fas fa-shield-alt",
+    title: "Cybersecurity",
+    subtitle: "Secure Digital Infrastructure",
+    description:
+      "Practical cybersecurity capabilities focused on protecting digital systems, sensitive information, and technology environments.",
+  },
+];
+
+  const handleLearnMore = () => {
+    navigate("/products");
+  };
 
   return (
-    <section className="focus-section" id="focus">
+    <section className="focus-section" id="solutions">
       <div className="focus-content">
         <div className="focus-header">
-          <h2 className="focus-title">What We Do</h2>
+          <p className="focus-eyebrow">What We Deliver</p>
+
+          <h2 className="focus-title">Our Solutions</h2>
+
           <p className="focus-subtext">
-            Innovative solutions across healthcare, cybersecurity, and
-            automation — empowering organizations with AI-driven intelligence.
+            Responsible healthcare technology combining clinical intelligence,
+            synthetic healthcare data, intelligent automation, and secure
+            engineering.
           </p>
         </div>
 
         <div className="focus-grid">
-          {focusData.map((item) => (
-            <div key={item.id} className="focus-card">
-              <div className="focus-icon">
+          {solutions.map((item) => (
+            <article
+              key={item.id}
+              className={`focus-card ${
+                item.badgeType === "flagship" ? "focus-card-featured" : ""
+              }`}
+            >
+              {item.badge && (
+                <span
+                  className={`focus-badge focus-badge-${item.badgeType}`}
+                >
+                  {item.badge}
+                </span>
+              )}
+
+              <div className="focus-icon" aria-hidden="true">
                 <i className={item.icon}></i>
               </div>
-              <h3 className="focus-card-title">{item.title}</h3>
-              <p className="focus-card-text">{item.description}</p>
-            </div>
+
+              <div className="focus-card-content">
+                <h3 className="focus-card-title">{item.title}</h3>
+
+                <p className="focus-card-subtitle">{item.subtitle}</p>
+
+                <p className="focus-card-text">{item.description}</p>
+              </div>
+
+              <button
+                type="button"
+                className="focus-learn-more"
+                onClick={handleLearnMore}
+                aria-label={`Learn more about ${item.title}`}
+              >
+                Learn More
+                <span aria-hidden="true">→</span>
+              </button>
+            </article>
           ))}
         </div>
       </div>
