@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/SupportCareSentinelAI.css";
 
@@ -154,23 +154,19 @@ const SupportCareSentinelAI = () => {
           </article>
 
           {/* =================================================
-              02 — NITILOGIC
+              02 — NITI LOGIC
 
-              Relationship confirmed for public use.
-              Final proposed website wording remains subject
-              to Amelie's confirmation.
-
-              If approval has not been received by launch,
-              temporarily comment out this card and the
-              corresponding NitiLogic slide panel below.
+              Strategic Technology Partner.
+              Public relationship wording, logo use and website
+              association approved by Amelie / Niti Logic.
               ================================================= */}
-          {/* <article className="ecosystem-card">
+          <article className="ecosystem-card">
             <span className="ecosystem-card-number">02</span>
 
             <div className="collaboration-logo-wrap">
               <img
                 src="/nitilogic-logo.png"
-                alt="NitiLogic"
+                alt="Niti Logic"
                 className="collaboration-logo nitilogic-logo"
               />
             </div>
@@ -179,20 +175,21 @@ const SupportCareSentinelAI = () => {
               Strategic Technology Partner
             </span>
 
-            <h3>NitiLogic</h3>
+            <h3>Niti Logic</h3>
 
             <p>
-              Supporting TechnovaShield through strategic technology
-              collaboration focused on enterprise data architecture,
-              synthetic data generation, data engineering, and scalable
-              AI-ready infrastructure.
+              Niti Logic and TechnovaShield/CareSentinelAI collaborate as
+              strategic technology partners, bringing complementary capabilities
+              across AI governance, synthetic data, technology and commercial
+              innovation to explore responsible AI solutions for real-world
+              applications.
             </p>
 
             <div className="ecosystem-tags">
-              <span>Enterprise Data</span>
+              <span>AI Governance</span>
               <span>Synthetic Data</span>
-              <span>Data Engineering</span>
-              <span>AI Infrastructure</span>
+              <span>Technology</span>
+              <span>Commercial Innovation</span>
             </div>
 
             <div className="ecosystem-actions">
@@ -215,7 +212,7 @@ const SupportCareSentinelAI = () => {
                 <i className="fas fa-external-link-alt"></i>
               </a>
             </div>
-          </article> */}
+          </article>
 
           {/* =================================================
               03 — PROCESSX
@@ -684,9 +681,11 @@ const SupportCareSentinelAI = () => {
       </aside>
 
       {/* =====================================================
-          NITILOGIC PANEL
+          NITI LOGIC PANEL
+          Strategic Technology Partner
+          Public wording approved by Amelie / Niti Logic.
           ===================================================== */}
-      {/* <aside
+      <aside
         className={`slide-panel ${
           activePanel === "nitilogic" ? "open" : ""
         }`}
@@ -696,7 +695,7 @@ const SupportCareSentinelAI = () => {
           type="button"
           className="close-panel-btn"
           onClick={closePanel}
-          aria-label="Close NitiLogic details"
+          aria-label="Close Niti Logic details"
         >
           ×
         </button>
@@ -705,7 +704,7 @@ const SupportCareSentinelAI = () => {
           <div className="panel-organisation-logo-wrap">
             <img
               src="/nitilogic-logo.png"
-              alt="NitiLogic"
+              alt="Niti Logic"
               className="panel-organisation-logo"
             />
           </div>
@@ -720,44 +719,44 @@ const SupportCareSentinelAI = () => {
                 Strategic Technology Partner
               </span>
 
-              <h2>NitiLogic</h2>
+              <h2>Niti Logic</h2>
             </div>
           </div>
 
           <p className="panel-description">
-            NitiLogic supports TechnovaShield through strategic technology
-            collaboration focused on strengthening enterprise data
-            architecture, synthetic data generation, data engineering, and
-            scalable AI-ready infrastructure.
+            Niti Logic is a strategic technology partner within the
+            TechnovaShield and CareSentinelAI ecosystem, bringing complementary
+            expertise in AI governance architecture, technology strategy and
+            commercial innovation.
           </p>
+
+          <p className="panel-description">
+            Together, Niti Logic and TechnovaShield/CareSentinelAI are exploring
+            how complementary capabilities across governance, synthetic data,
+            AI and technology can support responsible, privacy-preserving
+            solutions for real-world applications.
+          </p>
+
 
           <h3 className="panel-section-title">
             Collaboration Focus
           </h3>
 
           <ul className="panel-points">
-            <li>
-              Enterprise dataset architecture and scalable data design
-            </li>
-            <li>
-              Synthetic data generation and data engineering capability
-            </li>
-            <li>
-              AI-ready infrastructure and technical architecture
-            </li>
-            <li>
-              Strategic technology collaboration supporting future scale
-            </li>
+            <li>AI governance architecture</li>
+            <li>Synthetic data and privacy-preserving data capability</li>
+            <li>Technology strategy and complementary AI capability</li>
+            <li>Commercial innovation and ecosystem collaboration</li>
           </ul>
 
           <div className="panel-why-box">
             <h3>Why It Matters</h3>
 
             <p>
-              Strong data foundations are essential for developing,
-              validating, and scaling responsible AI systems. This
-              collaboration strengthens TechnovaShield’s capability across
-              enterprise data and synthetic data initiatives.
+              The partnership brings together complementary capabilities across
+              AI governance, synthetic data, technology and commercial
+              innovation to support responsible, privacy-preserving solutions
+              for real-world applications.
             </p>
           </div>
 
@@ -767,7 +766,7 @@ const SupportCareSentinelAI = () => {
             rel="noopener noreferrer"
             className="panel-website-btn"
           >
-            Visit NitiLogic
+            Visit Niti Logic
             <i className="fas fa-external-link-alt"></i>
           </a>
 
@@ -779,7 +778,7 @@ const SupportCareSentinelAI = () => {
             Discuss Technology Collaboration
           </Link>
         </div>
-      </aside> */}
+      </aside>
 
       {/* =====================================================
           PROCESSX PANEL

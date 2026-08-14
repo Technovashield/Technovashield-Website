@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/HeroSection.css";
 
@@ -58,4 +58,3 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
-

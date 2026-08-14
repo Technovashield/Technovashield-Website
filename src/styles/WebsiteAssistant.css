@@ -1,0 +1,1435 @@
+/* =========================================================
+   SENTINELAI — TECHNOVASHIELD DIGITAL ASSISTANT
+   Full-height right-side conversational experience
+   ========================================================= */
+
+.website-assistant {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  z-index: 1800;
+  font-family: inherit;
+}
+
+/* =========================================================
+   FLOATING LAUNCHER
+   ========================================================= */
+
+.assistant-launcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+
+  min-height: 76px;
+
+  padding: 14px 25px 14px 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 999px;
+
+  cursor: pointer;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0f766e 0%,
+      #0b5f59 55%,
+      #083f3c 100%
+    );
+
+  color: #ffffff;
+
+  box-shadow:
+    0 20px 44px rgba(15, 118, 110, 0.38),
+    0 0 0 0 rgba(20, 184, 166, 0.24);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+
+  animation:
+    sentinelFloat 3.5s ease-in-out infinite,
+    sentinelPulse 3.5s ease-out infinite;
+}
+
+.assistant-launcher:hover {
+  transform: translateY(-4px) scale(1.025);
+
+  box-shadow:
+    0 24px 52px rgba(15, 118, 110, 0.46),
+    0 0 0 9px rgba(20, 184, 166, 0.08);
+}
+
+.assistant-launcher.active {
+  display: none;
+}
+
+.assistant-launcher > i {
+  display: grid;
+  place-items: center;
+
+  flex: 0 0 auto;
+
+  width: 44px;
+  height: 44px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.15);
+
+  font-size: 1.35rem;
+}
+
+.assistant-launcher span {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  line-height: 1.1;
+}
+
+.assistant-launcher strong {
+  display: block;
+
+  font-size: 1.55rem;
+  font-weight: 800;
+}
+
+.assistant-launcher small {
+  display: block;
+
+  margin-top: 5px;
+
+  font-size: 1.35rem;
+  font-weight: 650;
+
+  color: rgba(255, 255, 255, 0.84);
+}
+
+/* =========================================================
+   FULL-HEIGHT DESKTOP PANEL
+   ========================================================= */
+
+.assistant-panel {
+  position: fixed;
+
+  top: 105px;
+  right: 20px;
+  bottom: 18px;
+
+  width: min(680px, calc(100vw - 50px));
+  height: auto;
+  max-height: none;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(15, 118, 110, 0.2);
+  border-radius: 28px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 32px 90px rgba(15, 23, 42, 0.3),
+    0 10px 30px rgba(15, 118, 110, 0.14);
+
+  animation: assistantPanelIn 0.3s ease-out;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.assistant-header {
+  position: relative;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+
+  padding: 26px 30px 24px;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(45, 212, 191, 0.24),
+      transparent 40%
+    ),
+    linear-gradient(
+      135deg,
+      #0f766e 0%,
+      #0b5f59 58%,
+      #083f3c 100%
+    );
+
+  color: #ffffff;
+}
+
+.assistant-eyebrow {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.assistant-header h2 {
+  margin: 0;
+
+  font-size: 2.45rem;
+  line-height: 1.1;
+  font-weight: 850;
+
+  color: #ffffff;
+}
+
+.assistant-header p {
+  margin: 11px 0 0;
+
+  max-width: 510px;
+
+  font-size: 1.16rem;
+  line-height: 1.55;
+  font-weight: 500;
+
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.assistant-close {
+  flex: 0 0 auto;
+
+  width: 48px;
+  height: 48px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  background: rgba(255, 255, 255, 0.13);
+  color: #ffffff;
+
+  font-size: 1.65rem;
+  line-height: 1;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.assistant-close:hover {
+  transform: rotate(5deg);
+  background: rgba(255, 255, 255, 0.22);
+}
+
+/* =========================================================
+   SAFETY NOTICE
+   ========================================================= */
+
+.assistant-safety-note {
+  flex-shrink: 0;
+
+  padding: 14px 24px;
+
+  border-bottom: 1px solid #fed7aa;
+
+  background:
+    linear-gradient(
+      90deg,
+      #fff7ed,
+      #fffbeb
+    );
+
+  color: #7c2d12;
+
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 650;
+}
+
+/* =========================================================
+   Q&A CONVERSATION
+   IMPORTANT: THIS IS THE ONLY MAIN SCROLLING REGION
+   ========================================================= */
+
+.assistant-conversation {
+  flex: 1 1 auto;
+
+  min-height: 0;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  padding: 26px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #f8fafc 0%,
+      #f1f5f9 100%
+    );
+
+  scroll-behavior: smooth;
+}
+
+.assistant-conversation::-webkit-scrollbar {
+  width: 10px;
+}
+
+.assistant-conversation::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.assistant-conversation::-webkit-scrollbar-thumb {
+  background: rgba(15, 118, 110, 0.24);
+  border-radius: 999px;
+}
+
+/* =========================================================
+   QUESTION + ANSWER BUBBLES
+   ========================================================= */
+
+.assistant-message {
+  max-width: 90%;
+
+  margin-bottom: 20px;
+
+  padding: 18px 20px;
+
+  border-radius: 20px;
+
+  font-size: 1.55rem;
+  line-height: 1.6;
+  font-weight: 600;
+
+  box-shadow:
+    0 7px 20px rgba(15, 23, 42, 0.07);
+}
+
+.assistant-message.assistant {
+  margin-right: auto;
+
+  border: 1px solid #dbe5ea;
+  border-bottom-left-radius: 7px;
+
+  background: #ffffff;
+
+  color: #243746;
+}
+
+.assistant-message.user {
+  margin-left: auto;
+
+  border-bottom-right-radius: 7px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0f766e,
+      #0b5f59
+    );
+
+  color: #ffffff;
+
+  font-weight: 650;
+}
+
+/* =========================================================
+   FOLLOW-UP AREA
+   ========================================================= */
+
+.assistant-follow-up-label {
+  flex-shrink: 0;
+
+  padding: 15px 24px 8px;
+
+  background: #ffffff;
+
+  color: #334155;
+
+  font-size: 1.05rem;
+  font-weight: 850;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.assistant-quick-questions {
+  flex-shrink: 0;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+
+  padding: 8px 24px 16px;
+
+  border-bottom: 1px solid #e2e8f0;
+
+  background: #ffffff;
+}
+
+.assistant-quick-questions button {
+  min-height: 54px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 11px 15px;
+
+  border: 1px solid rgba(15, 118, 110, 0.25);
+  border-radius: 15px;
+
+  cursor: pointer;
+
+  background:
+    linear-gradient(
+      180deg,
+      #f0fdfa,
+      #ecfdf5
+    );
+
+  color: #115e59;
+
+  text-align: left;
+
+  font-size: 1.02rem;
+  line-height: 1.35;
+  font-weight: 750;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.assistant-quick-questions button:hover {
+  transform: translateY(-2px);
+
+  background: #ccfbf1;
+
+  border-color: rgba(15, 118, 110, 0.45);
+
+  box-shadow:
+    0 7px 16px rgba(15, 118, 110, 0.1);
+}
+
+/* =========================================================
+   INPUT
+   ========================================================= */
+
+.assistant-form {
+  flex-shrink: 0;
+
+  display: flex;
+  gap: 12px;
+
+  padding: 16px 24px;
+
+  border-top: 1px solid #eef2f7;
+
+  background: #ffffff;
+}
+
+.assistant-form input {
+  flex: 1;
+  min-width: 0;
+  min-height: 58px;
+
+  padding: 14px 17px;
+
+  border: 1px solid #aebdc9;
+  border-radius: 15px;
+
+  outline: none;
+
+  background: #ffffff;
+
+  color: #0f172a;
+
+  font: inherit;
+  font-size: 1.16rem;
+  font-weight: 550;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.assistant-form input::placeholder {
+  color: #8695a5;
+}
+
+.assistant-form input:focus {
+  border-color: #0f766e;
+
+  box-shadow:
+    0 0 0 4px rgba(15, 118, 110, 0.1);
+}
+
+.assistant-form button {
+  flex: 0 0 auto;
+
+  min-height: 58px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  padding: 0 22px;
+
+  border: none;
+  border-radius: 15px;
+
+  cursor: pointer;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0f766e,
+      #0b5f59
+    );
+
+  color: #ffffff;
+
+  font-size: 1.08rem;
+  font-weight: 800;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.assistant-form button:hover {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 8px 18px rgba(15, 118, 110, 0.22);
+}
+
+/* =========================================================
+   CONTACT FOOTER
+   ========================================================= */
+
+.assistant-footer {
+  flex-shrink: 0;
+
+  padding: 13px 24px 18px;
+
+  border-top: 1px solid #f1f5f9;
+
+  background: #ffffff;
+
+  color: #64748b;
+
+  text-align: center;
+
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.assistant-footer a {
+  color: #0f766e;
+
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.assistant-footer a:hover {
+  text-decoration: underline;
+}
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+
+@keyframes sentinelFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes sentinelPulse {
+  0% {
+    box-shadow:
+      0 20px 44px rgba(15, 118, 110, 0.38),
+      0 0 0 0 rgba(20, 184, 166, 0.23);
+  }
+
+  65% {
+    box-shadow:
+      0 20px 44px rgba(15, 118, 110, 0.38),
+      0 0 0 15px rgba(20, 184, 166, 0);
+  }
+
+  100% {
+    box-shadow:
+      0 20px 44px rgba(15, 118, 110, 0.38),
+      0 0 0 0 rgba(20, 184, 166, 0);
+  }
+}
+
+@keyframes assistantPanelIn {
+  from {
+    opacity: 0;
+    transform: translateX(28px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) and (min-width: 641px) {
+  .assistant-panel {
+    right: 14px;
+
+    width: min(620px, calc(100vw - 28px));
+  }
+
+  .assistant-message {
+    font-size: 1.2rem;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 640px) {
+  .website-assistant {
+    right: 14px;
+    bottom: 14px;
+  }
+
+  .assistant-launcher {
+    min-height: 64px;
+
+    padding: 11px 17px 11px 13px;
+  }
+
+  .assistant-launcher > i {
+    width: 40px;
+    height: 40px;
+  }
+
+  .assistant-launcher strong {
+    font-size: 1.05rem;
+  }
+
+  .assistant-launcher small {
+    font-size: 0.85rem;
+  }
+
+  .assistant-panel {
+    position: fixed;
+
+    top: 8px;
+    right: 8px;
+    bottom: 8px;
+    left: 8px;
+
+    width: auto;
+    height: auto;
+    max-height: none;
+
+    border-radius: 22px;
+  }
+
+  .assistant-header {
+    padding: 20px 18px 17px;
+  }
+
+  .assistant-eyebrow {
+    font-size: 0.78rem;
+  }
+
+  .assistant-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .assistant-header p {
+    font-size: 0.95rem;
+  }
+
+  .assistant-close {
+    width: 42px;
+    height: 42px;
+  }
+
+  .assistant-safety-note {
+    padding: 11px 15px;
+
+    font-size: 0.82rem;
+  }
+
+  .assistant-conversation {
+    padding: 16px;
+  }
+
+  .assistant-message {
+    max-width: 94%;
+
+    padding: 14px 15px;
+
+    font-size: 1.02rem;
+    line-height: 1.55;
+  }
+
+  .assistant-follow-up-label {
+    padding: 11px 15px 5px;
+
+    font-size: 0.8rem;
+  }
+
+  .assistant-quick-questions {
+    grid-template-columns: 1fr;
+
+    gap: 7px;
+
+    padding: 7px 15px 11px;
+  }
+
+  .assistant-quick-questions button {
+    min-height: 44px;
+
+    padding: 9px 11px;
+
+    font-size: 0.84rem;
+  }
+
+  .assistant-form {
+    gap: 8px;
+
+    padding: 11px 15px;
+  }
+
+  .assistant-form input {
+    min-height: 50px;
+
+    padding: 11px 12px;
+
+    font-size: 0.95rem;
+  }
+
+  .assistant-form button {
+    min-height: 50px;
+
+    padding: 0 15px;
+  }
+
+  .assistant-form button span {
+    display: none;
+  }
+
+  .assistant-footer {
+    padding: 9px 15px 12px;
+
+    font-size: 0.82rem;
+  }
+}
+
+/* =========================================================
+   ACCESSIBILITY — REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .assistant-launcher,
+  .assistant-panel {
+    animation: none;
+  }
+
+  .assistant-launcher,
+  .assistant-close,
+  .assistant-quick-questions button,
+  .assistant-form button {
+    transition: none;
+  }
+}
+
+/* =========================================================
+   SENTINELAI FINAL DESKTOP POSITION + FOLLOW-UP READABILITY
+   ========================================================= */
+
+/* Keep the full assistant below the complete site navbar */
+.assistant-panel {
+  top: 160px;
+  right: 20px;
+  bottom: 18px;
+}
+
+/* Ensure header and close control always remain visible */
+.assistant-header {
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.assistant-close {
+  position: relative;
+  z-index: 3;
+
+  width: 50px;
+  height: 50px;
+
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+
+/* Make the continuation heading easier to read */
+.assistant-follow-up-label {
+  font-size: 1.18rem;
+  font-weight: 850;
+
+  padding: 17px 24px 10px;
+}
+
+/* Make the suggested conversation questions substantially larger */
+.assistant-quick-questions {
+  gap: 12px;
+  padding: 10px 24px 18px;
+}
+
+.assistant-quick-questions button {
+  min-height: 66px;
+
+  padding: 14px 17px;
+
+  font-size: 1.18rem;
+  line-height: 1.42;
+  font-weight: 750;
+}
+
+/* Keep the lower controls readable too */
+.assistant-form input {
+  font-size: 1.18rem;
+}
+
+.assistant-form button {
+  font-size: 1.12rem;
+}
+
+.assistant-footer {
+  font-size: 1.05rem;
+}
+
+/* Slightly more conversation space on taller screens */
+@media (min-height: 900px) and (min-width: 641px) {
+  .assistant-panel {
+    top: 155px;
+    bottom: 18px;
+  }
+}
+
+/* If the laptop screen is shorter, still preserve the header */
+@media (max-height: 850px) and (min-width: 641px) {
+  .assistant-panel {
+    top: 150px;
+    bottom: 10px;
+  }
+
+  .assistant-header {
+    padding-top: 20px;
+    padding-bottom: 18px;
+  }
+
+  .assistant-quick-questions button {
+    min-height: 58px;
+    font-size: 1.08rem;
+  }
+}
+
+/* =========================================================
+   SENTINELAI FINAL DESKTOP POSITION + FOLLOW-UP READABILITY
+   ========================================================= */
+
+/* Keep the full assistant below the complete site navbar */
+.assistant-panel {
+  top: 160px;
+  right: 20px;
+  bottom: 18px;
+}
+
+/* Ensure header and close control always remain visible */
+.assistant-header {
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.assistant-close {
+  position: relative;
+  z-index: 3;
+
+  width: 50px;
+  height: 50px;
+
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+
+/* Make the continuation heading easier to read */
+.assistant-follow-up-label {
+  font-size: 1.18rem;
+  font-weight: 850;
+
+  padding: 17px 24px 10px;
+}
+
+/* Make the suggested conversation questions substantially larger */
+.assistant-quick-questions {
+  gap: 12px;
+  padding: 10px 24px 18px;
+}
+
+.assistant-quick-questions button {
+  min-height: 66px;
+
+  padding: 14px 17px;
+
+  font-size: 1.18rem;
+  line-height: 1.42;
+  font-weight: 750;
+}
+
+/* Keep the lower controls readable too */
+.assistant-form input {
+  font-size: 1.18rem;
+}
+
+.assistant-form button {
+  font-size: 1.12rem;
+}
+
+.assistant-footer {
+  font-size: 1.05rem;
+}
+
+/* Slightly more conversation space on taller screens */
+@media (min-height: 900px) and (min-width: 641px) {
+  .assistant-panel {
+    top: 155px;
+    bottom: 18px;
+  }
+}
+
+/* If the laptop screen is shorter, still preserve the header */
+@media (max-height: 850px) and (min-width: 641px) {
+  .assistant-panel {
+    top: 150px;
+    bottom: 10px;
+  }
+
+  .assistant-header {
+    padding-top: 20px;
+    padding-bottom: 18px;
+  }
+
+  .assistant-quick-questions button {
+    min-height: 58px;
+    font-size: 1.08rem;
+  }
+}
+
+/* =========================================================
+   SENTINELAI HEADER VISIBILITY FIX
+   Keeps full header and close button below sticky navigation.
+   ========================================================= */
+
+@media (min-width: 641px) {
+
+  .assistant-panel {
+    top: 175px;
+    right: 18px;
+    bottom: 14px;
+    z-index: 9999;
+  }
+
+  .assistant-header {
+    position: relative;
+    z-index: 10000;
+
+    flex-shrink: 0;
+
+    padding:
+      26px
+      90px
+      24px
+      30px;
+  }
+
+  .assistant-close {
+    position: absolute;
+
+    top: 18px;
+    right: 18px;
+
+    z-index: 10001;
+
+    width: 50px;
+    height: 50px;
+
+    display: grid;
+    place-items: center;
+
+    margin: 0;
+    padding: 0;
+
+    font-size: 1.75rem;
+    font-weight: 800;
+    line-height: 1;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.16);
+    color: #ffffff;
+
+    border: 1px solid rgba(255, 255, 255, 0.28);
+  }
+
+  .assistant-close:hover {
+    background: rgba(255, 255, 255, 0.26);
+    transform: scale(1.05);
+  }
+}
+
+/* =========================================================
+   SENTINELAI STACKING FIX
+   Ensures the open assistant sits above the site navigation.
+   ========================================================= */
+
+.website-assistant {
+  z-index: 50000 !important;
+}
+
+.assistant-panel {
+  z-index: 50001 !important;
+}
+
+.assistant-header {
+  z-index: 50002 !important;
+}
+
+.assistant-close {
+  z-index: 50003 !important;
+}
+
+/* =========================================================
+   SENTINELAI HIGH-CONTRAST FLOATING LAUNCHER
+   Designed to remain visible over light AND dark backgrounds.
+   ========================================================= */
+
+.assistant-launcher {
+  position: relative;
+
+  min-width: 245px;
+  min-height: 86px;
+
+  gap: 17px;
+
+  padding: 14px 27px 14px 15px;
+
+  border: 2px solid #18bfc2;
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #f0fdfa 55%,
+      #e6fffb 100%
+    );
+
+  color: #073b4c;
+
+  box-shadow:
+    0 16px 42px rgba(0, 0, 0, 0.22),
+    0 0 0 5px rgba(24, 191, 194, 0.12),
+    0 0 28px rgba(24, 191, 194, 0.35);
+
+  animation:
+    sentinelFloat 3.5s ease-in-out infinite,
+    sentinelBrightPulse 3.5s ease-out infinite;
+}
+
+.assistant-launcher:hover {
+  transform: translateY(-5px) scale(1.035);
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #ccfbf1 100%
+    );
+
+  border-color: #00aeb3;
+
+  box-shadow:
+    0 22px 52px rgba(0, 0, 0, 0.26),
+    0 0 0 7px rgba(24, 191, 194, 0.14),
+    0 0 36px rgba(24, 191, 194, 0.42);
+}
+
+/* Stronger SentinelAI icon */
+.assistant-launcher > i {
+  flex: 0 0 auto;
+
+  width: 52px;
+  height: 52px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0f766e,
+      #069ca0
+    );
+
+  color: #ffffff;
+
+  font-size: 1.55rem;
+
+  box-shadow:
+    0 6px 16px rgba(15, 118, 110, 0.28);
+}
+
+/* SentinelAI title */
+.assistant-launcher strong {
+  color: #073b4c;
+
+  font-size: 1.5rem;
+  line-height: 1.1;
+  font-weight: 850;
+}
+
+/* Talk to me */
+.assistant-launcher small {
+  margin-top: 6px;
+
+  color: #0f766e;
+
+  font-size: 1.18rem;
+  line-height: 1.1;
+  font-weight: 750;
+}
+
+/* Small active / available indicator */
+.assistant-launcher::after {
+  content: "";
+
+  position: absolute;
+
+  top: 7px;
+  right: 13px;
+
+  width: 13px;
+  height: 13px;
+
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+
+  background: #22c55e;
+
+  box-shadow:
+    0 0 0 2px rgba(34, 197, 94, 0.16),
+    0 0 10px rgba(34, 197, 94, 0.45);
+}
+
+/* Hide launcher while SentinelAI itself is open */
+.assistant-launcher.active {
+  display: none;
+}
+
+/* More visible pulse than the previous dark-teal button */
+@keyframes sentinelBrightPulse {
+  0% {
+    box-shadow:
+      0 16px 42px rgba(0, 0, 0, 0.22),
+      0 0 0 4px rgba(24, 191, 194, 0.12),
+      0 0 24px rgba(24, 191, 194, 0.28);
+  }
+
+  65% {
+    box-shadow:
+      0 16px 42px rgba(0, 0, 0, 0.22),
+      0 0 0 13px rgba(24, 191, 194, 0),
+      0 0 34px rgba(24, 191, 194, 0.4);
+  }
+
+  100% {
+    box-shadow:
+      0 16px 42px rgba(0, 0, 0, 0.22),
+      0 0 0 4px rgba(24, 191, 194, 0.12),
+      0 0 24px rgba(24, 191, 194, 0.28);
+  }
+}
+
+/* Mobile launcher */
+@media (max-width: 640px) {
+  .assistant-launcher {
+    min-width: 205px;
+    min-height: 70px;
+
+    gap: 12px;
+
+    padding: 10px 20px 10px 11px;
+  }
+
+  .assistant-launcher > i {
+    width: 44px;
+    height: 44px;
+
+    font-size: 1.25rem;
+  }
+
+  .assistant-launcher strong {
+    font-size: 1.17rem;
+  }
+
+  .assistant-launcher small {
+    margin-top: 4px;
+
+    font-size: 0.92rem;
+  }
+
+  .assistant-launcher::after {
+    width: 11px;
+    height: 11px;
+
+    top: 6px;
+    right: 10px;
+  }
+}
+
+/* =========================================================
+   MIRA DIGITAL ASSISTANT — PERSONA + AVATAR
+   Public-facing presentation layer
+   ========================================================= */
+
+.assistant-header-identity {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  min-width: 0;
+}
+
+.assistant-header-avatar {
+  flex: 0 0 auto;
+
+  width: 92px;
+  height: 92px;
+
+  object-fit: cover;
+  object-position: center;
+
+  border: 3px solid rgba(255, 255, 255, 0.92);
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.22),
+    0 0 0 5px rgba(45, 212, 191, 0.14);
+}
+
+.assistant-header-copy {
+  min-width: 0;
+}
+
+.assistant-header-copy .assistant-eyebrow {
+  margin-bottom: 6px;
+}
+
+.assistant-header-copy h2 {
+  margin: 0;
+}
+
+/* Mira avatar beside assistant replies */
+.assistant-message.assistant {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.assistant-message-avatar {
+  flex: 0 0 auto;
+
+  width: 48px;
+  height: 48px;
+
+  object-fit: cover;
+  object-position: center;
+
+  border: 2px solid rgba(15, 118, 110, 0.2);
+  border-radius: 50%;
+
+  box-shadow:
+    0 4px 12px rgba(15, 23, 42, 0.12);
+}
+
+.assistant-message.assistant > span {
+  min-width: 0;
+}
+
+/* Replace previous icon circle with Mira's selected avatar */
+.assistant-launcher-avatar {
+  flex: 0 0 auto;
+
+  width: 58px;
+  height: 58px;
+
+  object-fit: cover;
+  object-position: center;
+
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 7px 18px rgba(15, 118, 110, 0.3),
+    0 0 0 3px rgba(24, 191, 194, 0.18);
+}
+
+/* The old Font Awesome launcher icon is no longer used */
+.assistant-launcher > i {
+  display: none;
+}
+
+/* Mira launcher is slightly wider to fit the new invitation */
+.assistant-launcher {
+  min-width: 300px;
+}
+
+.assistant-launcher strong {
+  font-size: 1.48rem;
+}
+
+.assistant-launcher small {
+  font-size: 1.08rem;
+  white-space: nowrap;
+}
+
+/* Keep the selected avatar usable on smaller screens */
+@media (max-width: 640px) {
+  .assistant-launcher {
+    min-width: 245px;
+  }
+
+  .assistant-launcher-avatar {
+    width: 48px;
+    height: 48px;
+  }
+
+  .assistant-launcher strong {
+    font-size: 1.14rem;
+  }
+
+  .assistant-launcher small {
+    font-size: 0.86rem;
+  }
+
+  .assistant-header-identity {
+    gap: 13px;
+    align-items: flex-start;
+  }
+
+  .assistant-header-avatar {
+    width: 64px;
+    height: 64px;
+  }
+
+  .assistant-message-avatar {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+
+/* =========================================================
+   MIRA AVATAR — FINAL SIZE ENHANCEMENT
+   Makes the selected avatar more visually prominent.
+   ========================================================= */
+
+/* Mira avatar in the floating launcher */
+.assistant-launcher-avatar {
+  width: 78px;
+  height: 78px;
+
+  border-width: 3px;
+}
+
+/* Allow the launcher to accommodate the larger avatar */
+.assistant-launcher {
+  min-width: 325px;
+  min-height: 104px;
+
+  gap: 19px;
+
+  padding: 12px 29px 12px 13px;
+}
+
+/* Mira avatar in the open assistant header */
+.assistant-header-avatar {
+  width: 120px;
+  height: 120px;
+}
+
+/* Mira avatar beside her conversation responses */
+.assistant-message-avatar {
+  width: 58px;
+  height: 58px;
+}
+
+/* Mobile sizing */
+@media (max-width: 640px) {
+  .assistant-launcher {
+    min-width: 265px;
+    min-height: 82px;
+
+    gap: 13px;
+  }
+
+  .assistant-launcher-avatar {
+    width: 60px;
+    height: 60px;
+  }
+
+  .assistant-header-avatar {
+    width: 78px;
+    height: 78px;
+  }
+
+  .assistant-message-avatar {
+    width: 44px;
+    height: 44px;
+  }
+}
