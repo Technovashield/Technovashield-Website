@@ -452,7 +452,7 @@
    Tablet / Mobile Navigation
    ========================================================================== */
 
-@media (max-width: 900px) {
+@media (max-width: 1050px) {
   .navbar-top-message {
     display: none;
   }
@@ -569,5 +569,78 @@
   .navbar-logo {
     width: 52px;
     height: 52px;
+  }
+}
+
+/* ==========================================================================
+   Responsive Hotfix - Standard Laptop
+   Compact desktop navigation for 1051px-1440px
+   ========================================================================== */
+
+@media (min-width: 1051px) and (max-width: 1440px) {
+  .navbar-top {
+    padding: 6px 22px;
+  }
+
+  .navbar-top-inner {
+    min-height: 32px;
+    padding: 0 18px;
+    gap: 18px;
+  }
+
+  .navbar-top-message,
+  .top-link,
+  .support-button {
+    font-size: clamp(0.82rem, 0.8vw, 0.95rem);
+  }
+
+  .navbar-top-links {
+    gap: 14px;
+  }
+
+  .support-button {
+    padding: 5px 12px;
+  }
+
+  .navbar-inner {
+    min-height: clamp(96px, 8vw, 116px);
+    padding: 0 22px;
+    gap: 18px;
+  }
+
+  .navbar-brand {
+    gap: 14px;
+  }
+
+  .navbar-logo {
+    width: clamp(72px, 6vw, 86px);
+    height: clamp(72px, 6vw, 86px);
+  }
+
+  .navbar-brand-name {
+    font-size: clamp(1.35rem, 1.45vw, 1.6rem);
+  }
+
+  .navbar-brand-tagline {
+    font-size: 0.95rem;
+  }
+
+  .nav-links {
+    gap: clamp(11px, 1.2vw, 18px);
+  }
+
+  .navbar-link {
+    padding: 20px 0 18px;
+    font-size: clamp(0.9rem, 0.9vw, 1rem);
+  }
+
+  .navbar-link::after {
+    bottom: 11px;
+  }
+
+  .navbar-contact-button {
+    min-height: 38px;
+    padding: 0 16px;
+    font-size: clamp(0.9rem, 0.9vw, 1rem);
   }
 }

@@ -25,6 +25,10 @@ const WebsiteAssistant = () => {
     sentinelConfig.defaultFollowUps
   );
 
+  const hasStartedConversation = conversation.some(
+    (message) => message.type === "user"
+  );
+
   const getResponse = (input) => {
     return getSentinelResponse(input);
   };
@@ -138,21 +142,25 @@ const WebsiteAssistant = () => {
             ))}
           </div>
 
-          <div className="assistant-follow-up-label">
-            Continue the conversation
-          </div>
+          {!hasStartedConversation && (
+            <>
+              <div className="assistant-follow-up-label">
+                Continue the conversation
+              </div>
 
-          <div className="assistant-quick-questions">
-            {followUps.map((item) => (
-              <button
-                key={item}
-                type="button"
-                onClick={() => submitQuestion(item)}
-              >
-                {item}
-              </button>
-            ))}
-          </div>
+              <div className="assistant-quick-questions">
+                {followUps.map((item) => (
+                  <button
+                    key={item}
+                    type="button"
+                    onClick={() => submitQuestion(item)}
+                  >
+                    {item}
+                  </button>
+                ))}
+              </div>
+            </>
+          )}
 
           <form className="assistant-form" onSubmit={handleSubmit}>
             <input

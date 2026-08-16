@@ -1433,3 +1433,520 @@
     height: 44px;
   }
 }
+
+/* ==========================================================================
+   ELARA RESPONSIVE PRODUCTION HOTFIX
+   Compact laptop/tablet presentation without changing functionality/content
+   ========================================================================== */
+
+/* ---------- Standard laptop: 1051px - 1440px ---------- */
+
+@media (min-width: 1051px) and (max-width: 1440px) {
+
+  .website-assistant {
+    right: 16px;
+    bottom: 16px;
+  }
+
+  .assistant-launcher {
+    min-width: 230px;
+    min-height: 70px;
+
+    gap: 12px;
+
+    padding: 9px 20px 9px 10px;
+  }
+
+  .assistant-launcher-avatar {
+    width: 50px;
+    height: 50px;
+  }
+
+  .assistant-launcher strong {
+    font-size: 1.08rem;
+  }
+
+  .assistant-launcher small {
+    margin-top: 3px;
+
+    font-size: 0.84rem;
+  }
+
+  .assistant-panel {
+    top: 158px;
+    right: 14px;
+    bottom: 10px;
+
+    width: min(500px, calc(100vw - 28px));
+    max-height: none;
+  }
+
+  .assistant-header {
+    padding: 16px 66px 14px 18px;
+  }
+
+  .assistant-header-identity {
+    gap: 13px;
+  }
+
+  .assistant-header-avatar {
+    width: 68px;
+    height: 68px;
+  }
+
+  .assistant-eyebrow {
+    font-size: 0.72rem;
+  }
+
+  .assistant-header h2,
+  .assistant-header-copy h2 {
+    font-size: 1.45rem;
+    line-height: 1.15;
+  }
+
+  .assistant-header p {
+    font-size: 0.86rem;
+    line-height: 1.35;
+  }
+
+  .assistant-close {
+    top: 14px;
+    right: 14px;
+
+    width: 38px;
+    height: 38px;
+
+    font-size: 1.3rem;
+  }
+
+  .assistant-safety-note {
+    padding: 8px 16px;
+
+    font-size: 0.76rem;
+    line-height: 1.4;
+  }
+
+  .assistant-conversation {
+    padding: 14px 16px;
+  }
+
+  .assistant-message {
+    padding: 11px 13px;
+
+    font-size: 0.94rem;
+    line-height: 1.5;
+  }
+
+  .assistant-message.assistant {
+    gap: 9px;
+  }
+
+  .assistant-message-avatar {
+    width: 38px;
+    height: 38px;
+  }
+
+  .assistant-follow-up-label {
+    padding: 9px 16px 4px;
+
+    font-size: 0.86rem;
+  }
+
+  .assistant-quick-questions {
+    gap: 7px;
+
+    padding: 5px 16px 9px;
+  }
+
+  .assistant-quick-questions button {
+    min-height: 42px;
+
+    padding: 8px 10px;
+
+    font-size: 0.84rem;
+    line-height: 1.3;
+  }
+
+  .assistant-form {
+    gap: 8px;
+
+    padding: 9px 16px;
+  }
+
+  .assistant-form input {
+    min-height: 46px;
+
+    padding: 10px 12px;
+
+    font-size: 0.92rem;
+  }
+
+  .assistant-form button {
+    min-height: 46px;
+
+    padding: 0 15px;
+
+    font-size: 0.9rem;
+  }
+
+  .assistant-footer {
+    padding: 7px 16px 9px;
+
+    font-size: 0.76rem;
+    line-height: 1.35;
+  }
+}
+
+
+/* ---------- Tablet: 641px - 1050px ---------- */
+
+@media (min-width: 641px) and (max-width: 1050px) {
+
+  .website-assistant {
+    right: 14px;
+    bottom: 14px;
+  }
+
+  .assistant-launcher {
+    min-width: 220px;
+    min-height: 66px;
+
+    gap: 11px;
+
+    padding: 8px 18px 8px 9px;
+  }
+
+  .assistant-launcher-avatar {
+    width: 48px;
+    height: 48px;
+  }
+
+  .assistant-launcher strong {
+    font-size: 1.02rem;
+  }
+
+  .assistant-launcher small {
+    margin-top: 2px;
+
+    font-size: 0.8rem;
+  }
+
+  .assistant-panel {
+    top: 132px;
+    right: 10px;
+    bottom: 10px;
+
+    width: min(520px, calc(100vw - 20px));
+    max-height: none;
+  }
+
+  .assistant-header {
+    padding: 15px 62px 13px 16px;
+  }
+
+  .assistant-header-identity {
+    gap: 11px;
+  }
+
+  .assistant-header-avatar {
+    width: 60px;
+    height: 60px;
+  }
+
+  .assistant-header h2,
+  .assistant-header-copy h2 {
+    font-size: 1.35rem;
+  }
+
+  .assistant-header p {
+    font-size: 0.82rem;
+  }
+
+  .assistant-close {
+    top: 12px;
+    right: 12px;
+
+    width: 38px;
+    height: 38px;
+
+    font-size: 1.25rem;
+  }
+
+  .assistant-safety-note {
+    padding: 8px 14px;
+
+    font-size: 0.74rem;
+  }
+
+  .assistant-conversation {
+    padding: 13px 14px;
+  }
+
+  .assistant-message {
+    padding: 10px 12px;
+
+    font-size: 0.9rem;
+    line-height: 1.48;
+  }
+
+  .assistant-message-avatar {
+    width: 36px;
+    height: 36px;
+  }
+
+  .assistant-follow-up-label {
+    padding: 8px 14px 4px;
+
+    font-size: 0.82rem;
+  }
+
+  .assistant-quick-questions {
+    gap: 6px;
+
+    padding: 4px 14px 8px;
+  }
+
+  .assistant-quick-questions button {
+    min-height: 40px;
+
+    padding: 7px 9px;
+
+    font-size: 0.8rem;
+    line-height: 1.28;
+  }
+
+  .assistant-form {
+    padding: 8px 14px;
+  }
+
+  .assistant-form input,
+  .assistant-form button {
+    min-height: 44px;
+  }
+
+  .assistant-form input {
+    font-size: 0.88rem;
+  }
+
+  .assistant-form button {
+    font-size: 0.86rem;
+  }
+
+  .assistant-footer {
+    padding: 6px 14px 8px;
+
+    font-size: 0.74rem;
+  }
+}
+
+
+/* ---------- Mobile correction ---------- */
+
+@media (max-width: 640px) {
+
+  .assistant-launcher {
+    min-width: 210px;
+    min-height: 66px;
+
+    gap: 10px;
+
+    padding: 8px 17px 8px 9px;
+  }
+
+  .assistant-launcher-avatar {
+    width: 46px;
+    height: 46px;
+  }
+
+  .assistant-launcher strong {
+    font-size: 1rem;
+  }
+
+  .assistant-launcher small {
+    margin-top: 2px;
+
+    font-size: 0.78rem;
+  }
+
+  .assistant-header-avatar {
+    width: 58px;
+    height: 58px;
+  }
+
+  .assistant-message-avatar {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* ==========================================================================
+   ELARA LAPTOP HEIGHT CORRECTION
+   Allow open assistant to use the full laptop viewport.
+   ========================================================================== */
+
+@media (min-width: 1051px) and (max-width: 1440px) {
+
+  .assistant-panel {
+    top: 12px;
+    right: 14px;
+    bottom: 12px;
+
+    height: auto;
+    max-height: none;
+  }
+
+  .assistant-header {
+    padding: 13px 62px 11px 16px;
+  }
+
+  .assistant-header-avatar {
+    width: 58px;
+    height: 58px;
+  }
+
+  .assistant-header h2,
+  .assistant-header-copy h2 {
+    font-size: 1.35rem;
+  }
+
+  .assistant-header p {
+    margin-top: 4px;
+
+    font-size: 0.82rem;
+    line-height: 1.3;
+  }
+
+  .assistant-safety-note {
+    padding: 7px 14px;
+
+    font-size: 0.72rem;
+    line-height: 1.35;
+  }
+
+  .assistant-conversation {
+    min-height: 150px;
+    overflow-y: auto;
+  }
+
+  .assistant-follow-up-label {
+    padding-top: 7px;
+  }
+
+  .assistant-quick-questions {
+    padding-bottom: 7px;
+  }
+
+  .assistant-quick-questions button {
+    min-height: 38px;
+
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+
+  .assistant-form {
+    padding-top: 7px;
+    padding-bottom: 7px;
+  }
+
+  .assistant-footer {
+    padding-top: 5px;
+    padding-bottom: 6px;
+  }
+}
+
+/* ==========================================================================
+   ELARA LAPTOP WIDE-DRAWER CORRECTION
+   Gives conversation content more horizontal room on standard laptops.
+   ========================================================================== */
+
+@media (min-width: 1051px) and (max-width: 1440px) {
+
+  .assistant-panel {
+    top: 10px;
+    right: 10px;
+    bottom: 10px;
+
+    width: min(820px, calc(100vw - 40px));
+    max-width: 820px;
+
+    height: auto;
+    max-height: none;
+  }
+
+  .assistant-header {
+    padding: 14px 68px 12px 18px;
+  }
+
+  .assistant-header-identity {
+    gap: 14px;
+  }
+
+  .assistant-header-avatar {
+    width: 64px;
+    height: 64px;
+  }
+
+  .assistant-header h2,
+  .assistant-header-copy h2 {
+    font-size: 1.45rem;
+  }
+
+  .assistant-header p {
+    font-size: 0.88rem;
+    line-height: 1.35;
+  }
+
+  .assistant-safety-note {
+    padding: 8px 18px;
+
+    font-size: 0.76rem;
+  }
+
+  .assistant-conversation {
+    flex: 1 1 auto;
+
+    min-height: 220px;
+
+    padding: 16px 18px;
+
+    overflow-y: auto;
+  }
+
+  .assistant-message {
+    max-width: 88%;
+
+    font-size: 0.96rem;
+    line-height: 1.5;
+  }
+
+  .assistant-follow-up-label {
+    padding: 8px 18px 5px;
+
+    font-size: 0.88rem;
+  }
+
+  .assistant-quick-questions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 8px;
+
+    padding: 6px 18px 10px;
+  }
+
+  .assistant-quick-questions button {
+    min-height: 44px;
+
+    padding: 8px 12px;
+
+    font-size: 0.86rem;
+    line-height: 1.3;
+  }
+
+  .assistant-form {
+    padding: 9px 18px;
+  }
+
+  .assistant-footer {
+    padding: 6px 18px 8px;
+  }
+}
