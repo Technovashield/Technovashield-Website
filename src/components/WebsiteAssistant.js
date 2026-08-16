@@ -29,6 +29,10 @@ const WebsiteAssistant = () => {
     (message) => message.type === "user"
   );
 
+  const visibleConversation = hasStartedConversation
+    ? conversation.slice(1)
+    : conversation;
+
   const getResponse = (input) => {
     return getSentinelResponse(input);
   };
@@ -123,7 +127,7 @@ const WebsiteAssistant = () => {
           </div>
 
           <div className="assistant-conversation">
-            {conversation.map((message, index) => (
+            {visibleConversation.map((message, index) => (
               <div
                 key={`${message.type}-${index}`}
                 className={`assistant-message ${message.type}`}
